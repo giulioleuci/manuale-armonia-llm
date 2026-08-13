@@ -37,6 +37,7 @@ Struttura attuale invariata. Nuova sezione finale `\section{Collocazione sulle s
 - **Risoluzioni anticipate** (nuova sezione): VII7 → V6/5 → I; VII6/5 → V4/3 → I (o I6); VII4/3 → V4/2 → I6; VII4/2 → V7 → I. Con esempio `partilate`.
 
 **II7 nel modo minore** — aggiunte a `\section{La settima sul secondo grado nel modo minore}`:
+- Collocazione: II grado del modo minore armonico (presente anche sul VI grado della minore melodica ascendente come accordo derivato).
 - La quinta diminuita (oltre alla settima) risolve obbligatoriamente per grado congiunto discendente. [box regola]
 - Rivolti regolati come la 2ª specie del cap. 13, con le alterazioni del minore. [tabella sintesi + rinvio]
 - Polemica sull'omissione della quinta nel collegamento I – II7 → V. [box osservazione]
@@ -46,7 +47,7 @@ Struttura attuale invariata. Nuova sezione finale `\section{Collocazione sulle s
 ### Capitolo 13 — `13_specie_settima.tex`
 
 **Seconda specie** — sezione espansa:
-- Collocazione corretta: II, III, VI del modo maggiore; IV del modo minore armonico; nota sul VI della minore melodica ascendente (accordo derivato, da verificare/indicare come da norme generali). Focus sul II del maggiore (l'accordo più importante).
+- Collocazione corretta: II, III, VI del modo maggiore; IV del modo minore armonico. Le collocazioni della minore melodica ascendente (I, IV, V) e della minore naturale/melodica discendente (VII) indicate dal file sono errate (non producono accordi di settima minore) e vengono corrette/rimosse. Focus sul II del maggiore (l'accordo più importante).
 - Stato fondamentale: settima preparata e tenuta, risolve scendendo; le altre note parti libere raddoppiabili; quinta omettibile.
 - Rivolti con tabella di sintesi: II6/5 (basso IV → V, usato nella formula I – II6/5 – I6/4 – V); II4/3 (basso VI → V discendente); II4/2 (basso I → VII, risolve su V6 o V6/5).
 - Evitamento delle quinte consecutive: nel collegamento I – II7 → V si armonizza omettendo la quinta (II7 con raddoppio). [box regola/errore; rinvio alla regola esistente sul raddoppio della terza]
