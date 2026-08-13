@@ -1,0 +1,65 @@
+\documentclass[11pt, a4paper, oneside]{book}
+
+% --- PACCHETTI BASE ---
+\input{preamble}
+\input{styles}
+\input{music_macros}
+
+\begin{document}
+	
+	
+	\title{Appunti sparsi di Armonia}
+	\author{Giulio Leuci\\e vari Large Language Model}
+	\date{\today}
+	\maketitle
+	
+	\frontmatter
+	\tableofcontents
+	
+	\mainmatter
+	
+	% ============================================================
+	% CAPITOLI
+	% ============================================================
+	\input{Capitoli/prefazione}
+	\input{Capitoli/01_fondamenti}  % Fondamenti
+	\input{Capitoli/02_triadi}  % Le triadi
+	\input{Capitoli/03_secondo_rivolto} % Il secondo rivolto: quando e come usarlo
+	\input{Capitoli/04_scrittura_quattro_parti}  % La scrittura a quattro parti
+	\input{Capitoli/05_funzioni_armoniche}  % Funzioni armoniche
+	\input{Capitoli/06_cadenze_sintassi}  % Le cadenze e la sintassi musicale
+	\input{Capitoli/07_struttura_frase} % La struttura della frase e il periodo
+	\input{Capitoli/08_teoria_dissonanza} % Teoria generale della dissonanza
+	\input{Capitoli/09_settima_dominante}  % La settima di dominante
+	\input{Capitoli/10_ritardi}  % I ritardi
+	\input{Capitoli/11_note_estranee} % Le note estranee all'armonia
+	\input{Capitoli/12_settima_sensibile}  % VII7 nel modo maggiore e II7 nel modo minore
+	\input{Capitoli/13_specie_settima}  % Le sette specie di settima
+	\input{Capitoli/14_regola_ottava}  % La Regola dell'Ottava: versione completa
+	\input{Capitoli/15_tonicizzazione} % Tonicizzazione e dominanti secondarie
+	\input{Capitoli/16_modulazione_vicini}  % Modulazione ai toni vicini
+	\input{Capitoli/17_progressioni}  % Progressioni armoniche
+	\input{Capitoli/18_metodo_basso_numerato} % Come affrontare il basso numerato
+	\input{Capitoli/19_dal_numerato_al_senza_numeri} % Dal basso numerato al basso senza numeri
+	\input{Capitoli/20_metodo_basso_senza_numeri} % Metodo di lavoro per il basso senza numeri
+	
+	\backmatter
+	
+	\chapter*{Indici}
+	\addcontentsline{toc}{chapter}{Indici}
+	
+	\tcblistof[\subsection*]{definizioni}{Definizioni}
+	
+	\tcblistof[\subsection*]{regole}{Regole}
+	
+	\tcblistof[\subsection*]{esempi}{Esempi}
+	
+	\tcblistof[\subsection*]{errori}{Errori comuni}
+	
+	\tcblistof[\subsection*]{fisica}{Con la fisica}
+	
+	\tcblistof[\subsection*]{matematica}{Con la matematica}
+	
+	\listoffigures
+	
+\end{document}

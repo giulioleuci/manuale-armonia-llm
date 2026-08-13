@@ -1,0 +1,78 @@
+\chapter{Tonicizzazione e dominanti secondarie}
+\label{chap:tonicizzazione}
+
+In questo capitolo esploriamo il fenomeno della tonicizzazione, che rappresenta il primo passo verso la comprensione della modulazione.
+
+\section{Modulazione e tonicizzazione: due fenomeni distinti}
+\label{sec:mod_vs_ton}
+
+\begin{definizione}[Modulazione]
+    È il cambio \textbf{stabile} di centro tonale, confermato da una cadenza nella nuova tonalità. Rimanda a \ref{chap:modulazione}.
+\end{definizione}
+
+\begin{definizione}[Tonicizzazione]
+    È il trattamento \textbf{momentaneo} di un grado non tonicale come fosse una tonica locale, senza abbandonare la tonalità principale. Il ritorno alla tonica originale avviene immediatamente dopo uno o due accordi.
+\end{definizione}
+
+\begin{regola}
+    Se l'accordo tonicizzato è seguito da una cadenza nella nuova tonalità locale → modulazione. Se è seguito da un ritorno alla tonalità originale → tonicizzazione.
+\end{regola}
+
+\section{Il meccanismo: la dominante secondaria}
+\label{sec:meccanismo_dominante}
+
+\begin{definizione}[Dominante secondaria]
+    È un accordo costruito e funzionante come dominante di un grado diverso dalla tonica. Si indica come V/II ("dominante del secondo"), V/V ("dominante del quinto"), ecc. È sempre una triade maggiore o una settima di dominante.
+\end{definizione}
+
+\begin{regola}
+    Qualsiasi grado può essere tonicizzato tranne il VII (la triade diminuita non può essere tonica). I casi più comuni sono II, IV e V.
+\end{regola}
+
+\section{I casi più frequenti nel basso dato}
+\label{sec:casi_frequenti}
+
+\subsection{V/V (dominante della dominante)}
+\begin{itemize}
+    \item Struttura: accordo sul II grado alzato cromaticamente (\Fadiesis  in Do M).
+    \item Risoluzione: su V o V7.
+    \item Condotta: \Fadiesis  (sensibile della dominante) sale a Sol.
+\end{itemize}
+\musica{
+    \partilate
+    { \key do \major \time 4/4 }
+    { sol'2 sol'2 | fad'2 sol'2 }
+    { mi'2 re'2 | re'2 re'2 }
+    { do'2 si2 | la2 si2 }
+    { do2 sol,2 | re2 sol,2 }
+    \lyricmode { "I"2 "V" | "V/V"2 "V" }
+    \figuremode { s2 s | <7>2 s }
+}
+
+\subsection{V/IV (dominante della sottodominante)}
+\begin{itemize}
+    \item Struttura: accordo sul I grado con settima minore (\Sibemolle  in Do M).
+    \item Risoluzione: su IV.
+\end{itemize}
+\musica{
+    \partilate
+    { \key do \major \time 4/4 }
+    { do'2 sib | la2 r }
+    { sol2 sol | fa2 r }
+    { mi2 mi | do2 r }
+    { do2 do | fa,2 r }
+    \lyricmode { "I"2 "V/IV" | "IV"2 }
+    \figuremode { s2 <7>2 | s2 }
+}
+
+\section{Riconoscimento nel basso dato}
+\label{sec:riconoscimento}
+
+\begin{regola}
+    Se nel basso appare un'alterazione non prevista dalla chiave, chiedersi: "questa nota è la sensibile (terza) di una dominante secondaria?". I segnali tipici sono il \Fadiesis  sul II grado (V/V) o il \Sibemolle  sul I grado (V/IV).
+\end{regola}
+
+\section{Collegamento alla modulazione}
+\label{sec:collegamento_mod}
+
+Tonicizzazione e modulazione sono due punti di un \textit{continuum}. Una tonicizzazione prolungata e confermata da una cadenza diventa a tutti gli effetti una modulazione (\ref{chap:modulazione}).

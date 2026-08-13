@@ -1,0 +1,49 @@
+% --- TCOLORBOX ---
+\usepackage[many]{tcolorbox}
+
+\tcbset{
+	stilebase/.style={
+		enhanced,
+		breakable, 
+		colback=white,
+		attach boxed title to top left={yshift=-2mm, xshift=2mm},
+		boxrule=1pt, 
+		separator sign={:},
+		before skip=12pt, 
+		after skip=12pt,
+		fonttitle=\bfseries\large
+	}
+}
+
+% Fabbrica di box per OCP (Open/Closed Principle)
+\newcommand{\newmanualbox}[3]{%
+    % #1 = environment name
+    % #2 = title prefix
+    % #3 = additional tcb keys
+    \newtcolorbox[auto counter,number within=chapter,list inside=#1]{#1}[1][]{%
+        stilebase,
+        adjusted title={#2 \thetcbcounter: ##1},
+        #3
+    }%
+}
+
+% Ambiente per definizioni
+\newmanualbox{definizione}{Definizione}{colframe=black!80!white}
+
+% Ambiente per esempi
+\newmanualbox{esempio}{Esempio}{colframe=black!60!white, boxrule=0.6pt}
+
+% Ambiente per regole
+\newmanualbox{regola}{Regola}{colframe=black!80!white}
+
+% Ambiente per errori comuni
+\newmanualbox{errore}{Errore}{colframe=black!95!white}
+
+% Ambiente per fisica
+\newmanualbox{fisica}{Con la fisica}{colback=black!8!white,colframe=black!50!white,boxrule=0.4pt,fontupper=\small,sharp corners}
+
+% Ambiente per matematica
+\newmanualbox{matematica}{Con la matematica}{colback=black!8!white,colframe=black!50!white,boxrule=0.4pt,fontupper=\small,sharp corners}
+
+% Ambiente per osservazioni
+\newmanualbox{osservazione}{Osservazione}{colback=black!2!white,colframe=black!40!white,boxrule=0.4pt,fontupper=\small\itshape,sharp corners}

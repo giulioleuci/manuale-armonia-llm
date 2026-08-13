@@ -1,0 +1,32 @@
+% --- MACRO MUSICALI E SEMANTICHE ---
+
+% Macro native per alterazioni nel testo LaTeX
+\newcommand{\diesis}{\ensuremath{\sharp}}
+\newcommand{\bemolle}{\ensuremath{\flat}}
+\newcommand{\nat}{\ensuremath{\natural}}
+
+% Macro combinate per le note più comuni
+\newcommand{\Dodiesis}{Do\diesis{}}
+\newcommand{\Dobemolle}{Do\bemolle{}}
+\newcommand{\Rediesis}{Re\diesis{}}
+\newcommand{\Rebemolle}{Re\bemolle{}}
+\newcommand{\Midiesis}{Mi\diesis{}}
+\newcommand{\Mibemolle}{Mi\bemolle{}}
+\newcommand{\Fadiesis}{Fa\diesis{}}
+\newcommand{\Fabemolle}{Fa\bemolle{}}
+\newcommand{\Soldiesis}{Sol\diesis{}}
+\newcommand{\Solbemolle}{Sol\bemolle{}}
+\newcommand{\Ladiesis}{La\diesis{}}
+\newcommand{\Labemolle}{La\bemolle{}}
+\newcommand{\Sidiesis}{Si\diesis{}}
+\newcommand{\Sibemolle}{Si\bemolle{}}
+
+% Macro integrata per l'inclusione di blocchi LilyPond.
+\newcommand{\musica}[1]{%
+	\begin{center}
+		\lily[nofragment]{
+            \include "definizioni.ly"
+			#1
+		}%
+	\end{center}
+}

@@ -1,0 +1,220 @@
+MANUALETTO PRATICO DI ARMONIZZAZIONE DEL BASSO DATO CON GLI ACCORDI DI SETTIMA (QUADRIADI)
+SETTIMA DI 1ª SPECIE (DOMINANTE)
+Tipologia e Natura:
+Accordo principale o naturale ed indipendente.
+Non necessita della preparazione della settima.
+Struttura Intervallare e Sigle:
+Intervalli interni: $3^a$ maggiore, $5^a$ giusta, $7^a$ minore.
+Sigle: $7$, $V^7$.
+Collocazione Sulle Scale:
+Si trova sul V grado sia del modo Maggiore sia del modo Minore (Armonico e Melodico ascendente).
+Stato Fondamentale:
+Grado su cui si costruisce al Basso: V grado.
+Comportamento delle voci/Regole:
+Contiene al suo interno l'intervallo di tritono (quinta diminuita) formato dalla sensibile tonale ($3^a$ dell'accordo) e dalla sensibile modale ($7^a$ dell'accordo).
+Sensibile tonale ($3^a$): nota a risoluzione obbligata, sale di semitono al I grado. Non si può assolutamente raddoppiare.
+Sensibile modale ($7^a$): nota a risoluzione obbligata, scende di semitono nel modo maggiore e di tono nel modo minore. Non si può assolutamente raddoppiare.
+Fondamentale: parte libera, sale di $4^a$ o scende di $5^a$.
+Quinta: parte libera, può salire o scendere. Può essere omessa a favore del raddoppio della fondamentale.
+Stato Completo vs Incompleto: Se l'accordo è completo (4 suoni), la risoluzione sul I grado produce una triade di tonica incompleta (senza quinta). Scolasticamente (specie in conclusione di basso), si preferisce lo stato incompleto dell'accordo ($V^{(8)}7$, senza la quinta e con il raddoppio della fondamentale all'ottava) per ottenere la triade di tonica allo stato completo.
+Tutte le Risoluzioni possibili:
+Risoluzione Naturale (sul I grado): Risolve sul I grado (triade di tonica).
+Cadenza d'inganno (sul VI grado): Risolve sul VI grado, purché la triade di destinazione sia in stato completo.
+Primo Rivolto:
+Grado su cui si trova al Basso: VII grado (sensibile tonale).
+Comportamento e Movimento delle Voci:
+Sigla: $V^6_5$.
+Il Basso (sensibile tonale) risolve salendo per grado congiunto sulla tonica (I grado).
+La settima scende di grado. La fondamentale resta legata (essendo nota in comune).
+Risoluzione: Risolve sul I grado (stato fondamentale).
+Secondo Rivolto:
+Grado su cui si trova al Basso: II grado della scala.
+Comportamento e Movimento delle Voci:
+Sigla: $V^4_3$.
+Entrambe le note obbligate (sensibile che sale e settima che scende) devono risolvere.
+Se risolve su $I^6$, il movimento vincolato delle voci porta inevitabilmente a raddoppiare la terza della triade di tonica.
+Risoluzione: Risolve sul I grado (stato fondamentale) oppure sul III grado armonizzato con il primo rivolto della tonica ($I^6$).
+Terzo Rivolto:
+Grado su cui si trova al Basso: IV grado della scala (la settima dell'accordo al Basso).
+Comportamento e Movimento delle Voci:
+Sigla: $V^4_2$ o $V^2$.
+Il Basso (settima) risolve scendendo per moto discendente sul III grado.
+La sensibile sale sempre di grado.
+Risoluzione: Risolve obbligatoriamente sul III grado armonizzato con il primo rivolto della triade di tonica ($I^6$).
+Note per il Basso Dato & Casi Particolari:
+Eccezione di Bach: Se la sensibile si trova in una voce interna e muove per moto contrario con il basso, può eccezionalmente saltare di $3^a$ discendente sul I grado per permettere alla voce superiore di risolvere sulla tonica.
+Uso nelle Cadenze: Trova applicazione al posto della triade di dominante all'interno della Cadenza Composta Consonante ($I^6_4 - V^7$), Dissonante ($V^5_4 - V^7_3$) e nella Cadenza Doppia ($V - I^6_4 - V^5_4 - V^7_3$).
+SETTIMA DI 2ª SPECIE (SETTIMA MINORE)
+Tipologia e Natura:
+Accordo secondario o artificiale, indipendente con funzione di sottodominante.
+Obbligo di preparazione della settima sia allo stato fondamentale che di rivolto.
+La preparazione richiede che il suono dissonante (la $7^a$) sia presente nell'accordo precedente nella stessa voce con durata pari o superiore.
+Struttura Intervallare e Sigle:
+Intervalli interni: $3^a$ minore, $5^a$ giusta, $7^a$ minore.
+Sigle: $m7$, $-7$, $II^7$.
+Collocazione Sulle Scale:
+II, III e VI grado della scala Maggiore.
+IV grado della scala Minore Armonica.
+I, IV e V grado della scala Minore Melodica ascendente.
+VII grado della scala Minore Naturale e Melodica discendente.
+(Nota del testo: L'accordo di gran lunga più importante è quello sul II grado del modo Maggiore).
+Stato Fondamentale (sul II grado Maggiore):
+Grado su cui si costruisce al Basso: II grado.
+Comportamento delle voci/Regole:
+Settima preparata e tenuta, poi risolve scendendo per grado congiunto.
+Le altre note (compresa la fondamentale) sono parti libere e si possono raddoppiare.
+La quinta si può omettere raddoppiando una delle altre voci (tranne la settima).
+Tutte le Risoluzioni possibili:
+Risolve naturalmente sul V grado (armonizzato con la triade semplice o con la cadenza composta consonante/dissonante, oppure con la $V^7$).
+Primo Rivolto:
+Grado su cui si trova al Basso: IV grado della scala.
+Comportamento e Movimento delle Voci: Sigla $II^6_5$. Il Basso (terza dell'accordo) risolve per grado congiunto ascendente sulla dominante (V grado).
+Risoluzione: Risolve sul V grado. È impiegato diffusamente nella formula cadenzale: $I$ (oppure $I^6$ / $VI$) $- II^6_5 - I^6_4 - V$. Può risolvere anche sulla triade o settima di sensibile allo stato di rivolto.
+Secondo Rivolto:
+Grado su cui di trova al Basso: VI grado della scala (sopradominante).
+Comportamento e Movimento delle Voci: Sigla $II^4_3$.
+Risoluzione: Il Basso risolve per moto discendente sul V grado.
+Terzo Rivolto:
+Grado su cui si trova al Basso: I grado della scala (tonica - contiene la settima al Basso).
+Comportamento e Movimento delle Voci: Sigla $II^4_2$. La settima al Basso deve essere preparata e risolve per moto discendente sul VII grado.
+Risoluzione: Risolve sul VII grado armonizzato con il primo rivolto della dominante ($V^6$) o con $V^6_5$, oppure se il Basso ritorna al I grado, con $V^6_5$.
+Note per il Basso Dato & Casi Particolari:
+Evitamento delle 5ª consecutive ($I - II^7 \to V$): Nel collegamento dal I grado al $II^7$ che va al V, per evitare l'errore di quinte parallele si deve armonizzare il $II^7$ omettendo la quinta ($II^7_3$, cioè solo fondamentale, terza e settima con raddoppio).
+Progressioni: Il $VI^7$ e gli altri gradi di 2ª specie sono usati scolasticamente nelle progressioni discendenti (es. $III^7 - VI^7 - II^7$).
+IV grado del Minore: La $2^a$ specie sul IV grado minore è un accordo derivato (da una nona di $3^a$ specie sul II grado senza fondamentale) e si comporta esattamente come la $4^a$ specie sul IV grado maggiore.
+SETTIMA DI 3ª SPECIE (SEMIDIMINUITA)
+(Trattata nel testo sotto due distinte entità funzionali: la Settima sul II grado Minore e la Settima di Sensibile sul VII Maggiore)
+A. Settima di 3ª Specie sul II Grado del Modo Minore
+Tipologia e Natura:
+Accordo secondario e indipendente, con funzione di sottodominante.
+Obbligo di preparazione della settima e risoluzione per grado discendente.
+Struttura Intervallare e Sigle:
+Intervalli interni: $3^a$ minore, $5^a$ diminuita, $7^a$ minore.
+Sigle: $\varnothing$, $\varnothing 7$, $m^7(b5)$, $-7(b5)$.
+Collocazione Sulle Scale: II grado della scala Minore Armonica. (Presente anche sul VI grado della Minore Melodica ascendente come accordo derivato).
+Stato Fondamentale:
+Grado su cui si costruisce al Basso: II grado.
+Comportamento delle voci/Regole:
+Oltre alla settima, anche la quinta (essendo quinta diminuita, cioè intervallo dissonante) deve obbligatoriamente risolvere per grado congiunto discendente in tutti i collegamenti.
+Risoluzione: Risolve sul V grado (dominante).
+Rivolti ($II^6_5$, $II^4_3$, $II^4_2$):
+Trattamento: Valgono esattamente le medesime regole applicative, gradi al Basso e movimenti prescritti per la $2^a$ specie ($II^7$ Maggiore), tenendo conto delle alterazioni proprie del modo minore e dell'obbligo di far scendere la $5^a$ diminuita.
+Note per il Basso Dato:
+Polemica sull'omissione della 5ª ($I - II^7 \to V$): A differenza della 2ª specie, nel collegamento $I - II^7 \to V$, la quinta diminuita è un elemento caratteristico dell'accordo; alcuni teorici ne vietano l'omissione, mentre altri accettano l'accordo senza quinta e con raddoppio della terza per evitare quinte parallele.
+B. Settima di Sensibile sul VII Grado del Modo Maggiore (3ª Specie Principale)
+Tipologia e Natura:
+Accordo principale e derivato (deriva dall'accordo di nona di dominante maggiore senza la fondamentale).
+NON necessita di preparazione.
+Collocazione Sulle Scale: VII grado della scala Maggiore.
+Stato Fondamentale:
+Grado al Basso: VII grado (Sensibile).
+Comportamento delle voci/Regole:
+Fondamentale (sensibile): sale di grado alla tonica, non si raddoppia.
+Quinta e Settima: note a risoluzione obbligata, scendono di grado e non si possono raddoppiare.
+Terza: parte libera. ATTENZIONE: Quando la terza si trova nella Parte Grave (PS) al di sotto della settima, deve obbligatoriamente salire di grado per evitare due quinte parallele per moto retto.
+Disposizione degli intervalli: La settima deve trovarsi a distanza di $7^a$ dalla sensibile e mai di $2^a$ o $9^a$.
+Risoluzione: Risolve sul I grado (tonica).
+Primo Rivolto ($VII^6_5$):
+Grado al Basso: II grado della scala.
+Risoluzione: Il Basso (II grado) risolve per grado congiunto ascendente sul III grado armonizzato con $I^6$.
+Secondo Rivolto ($VII^4_3$):
+Grado al Basso: IV grado della scala.
+Risoluzione: Il Basso risolve per moto discendente sul V grado (armonizzato con $I^6_4$) per poi andare al III grado ($I^6$).
+Terzo Rivolto ($VII^4_2$):
+Grado al Basso: VI grado della scala.
+Comportamento e Risoluzione: Il Basso risolve per moto discendente sul V grado armonizzato con $I^6_4$.Volendo utilizzare la cadenza composta consonante sul V grado, si consiglia una risoluzione a due movimenti ($VII^4_2 \to I^6_4 \to V$).
+Nota speciale di distanza: Per alcuni teorici la distanza di $9^a$ tra la sensibile e la settima è tollerata allo stato di $3^\circ$ rivolto, purché la settima sia preparata da un accordo consonante.
+Note per il Basso Dato (Risoluzioni Anticipate nei Rivolti):
+Se si hanno a disposizione due movimenti, è sempre possibile far risolvere anticipatamente la settima dell'accordo (sia allo stato fondamentale che nei rivolti) per trasformare il $VII^7$ direttamente in un accordo di settima di dominante ($V^7$) o relativo rivolto prima di cadere sulla tonica:
+$VII^7 \to V^6_5 \to I$
+
+
+$VII^6_5 \to V^4_3 \to I$ (oppure $I^6$)
+$VII^4_3 \to V^4_2 \to I^6$
+
+
+$VII^4_2 \to V^7 \to I$
+
+
+SETTIMA DI 4ª SPECIE (GRANDE SETTIMA / MAGGIORE)
+Tipologia e Natura:
+Accordo secondario o artificiale, indipendente.
+Obbligo di preparazione della settima sia allo stato fondamentale sia di rivolto.
+La settima risolve per grado discendente.
+Struttura Intervallare e Sigle:
+Intervalli interni: $3^a$ maggiore, $5^a$ giusta, $7^a$ maggiore.
+Sigle: $Maj7$, $7+$, $\Delta$.
+Collocazione Sulle Scale:
+I e IV grado della scala Maggiore.
+VI grado della scala Minore Armonica.
+III e VI grado della scala Minore Melodica discendente.
+(L'analisi dettagliata del manuale si concentra sul I grado del modo Maggiore).
+Stato Fondamentale (sul I grado Maggiore):
+Grado su cui si costruisce al Basso: I grado.
+Comportamento delle voci/Regole:
+Ha funzione di sottodominante (o con accordo di settima sul IV grado).
+La settima va preparata nella voce.
+Le altre note sono parti libere; la quinta si può omettere a favore del raddoppio della fondamentale.
+Risoluzione: Risolve sul IV grado armonizzato con triade o con accordo di settima.
+Primo Rivolto:
+Grado al Basso: III grado della scala.
+Comportamento e Movimento: Sigla $I^6_5$. Il Basso risolve per grado congiunto ascendente sul IV grado (sottodominante).
+Risoluzione: Risolve sul IV grado.
+Secondo Rivolto:
+Grado al Basso: V grado della scala.
+Comportamento e Movimento: Sigla $I^4_3$. Il Basso risolve per moto discendente sul IV grado.
+Risoluzione: Risolve sul IV grado.
+Terzo Rivolto:
+Grado al Basso: VII grado della scala (la settima preparata si trova al Basso).
+Comportamento e Movimento: Sigla $I^4_2$.
+Risoluzione: Il Basso risolve per moto discendente sul VI grado armonizzato con il primo rivolto della sottodominante ($IV^6$).
+SETTIMA DI 5ª SPECIE (SETTIMA DIMINUITA)
+Tipologia e Natura:
+Accordo principale e derivato (nasce dall'accordo di nona di dominante minore senza la fondamentale).
+NON necessita di preparazione della settima.
+È l'unico accordo di settima a contenere l'intervallo di $7^a$ diminuita ed è perciò chiaramente distinguibile.
+Struttura Intervallare e Sigle:
+Intervalli interni: $3^a$ minore, $5^a$ diminuita, $7^a$ diminuita.
+Sigle: $dim7$, $o$, $o7$, $VII^7$ (con il 7 tagliato), $VII^{o7}$.
+Collocazione Sulle Scale:
+VII grado della scala Minore Armonica e Melodica (chiamata settima di sensibile del modo minore).
+Stato Fondamentale:
+Grado al Basso: VII grado (Sensibile).
+Comportamento delle voci/Regole:
+Valgono le medesime norme stabilite per la settima di sensibile di $3^a$ specie.
+Sensibile (fondamentale) sale alla tonica. Quinta e Settima scendono per grado.
+Risoluzione: Risolve sul I grado (tonica).
+Rivolti e Note per il Basso Dato:
+Segnalazione sui Rivolti: Le regole di risoluzione dei rivolti ricalcano quelle della settima di sensibile ($3^a$ specie sul VII).
+Eccezione UNICA ed essenziale per il Terzo Rivolto:
+A differenza della $3^a$ specie, nella $5^a$ specie il terzo rivolto può essere disposto senza alcuna necessità di preparare la settima al Basso.
+Motivo teorico: L'urto di $2^a$ aumentata che si crea tra la fondamentale (sensibile) e la settima è enarmonico all'intervallo consonante di $3^a$ minore, rendendolo all'udito privo della durezza tipica delle seconde.
+SETTIMA DI 6ª SPECIE (MINORE CON SETTIMA MAGGIORE)
+Tipologia e Natura:
+Accordo secondario e artificiale.
+Accordo moderno (non usato nell'armonia diatonica tradizionale/classica, dove veniva considerato un accordo alterato).
+Struttura Intervallare e Sigle:
+Intervalli interni: $3^a$ minore, $5^a$ giusta, $7^a$ maggiore.
+Sigle: $m^{maj7}$, $m\Delta$.
+Collocazione Sulle Scale:
+I grado della scala Minore Armonica e Melodica.
+Stato Fondamentale:
+Grado al Basso: I grado.
+Risoluzione: Risolve generalmente sul IV grado.
+Rivolti:
+Segnalazione dal testo: I rivolti non sono dettagliati nel documento. Si applicano le norme generali sulle dissonanze secondarie (risoluzione discendente della settima).
+SETTIMA DI 7ª SPECIE (AUMENTATA CON SETTIMA MAGGIORE)
+Tipologia e Natura:
+Accordo secondario e artificiale.
+Accordo di ambito moderno/jazzistico (considerato alterato nella prassi classica).
+Struttura Intervallare e Sigle:
+Intervalli interni: $3^a$ maggiore, $5^a$ aumentata, $7^a$ maggiore.
+Sigle: $maj^7(\sharp 5)$, $+\Delta$.
+Collocazione Sulle Scale:
+III grado della scala Minore Armonica e Melodica.
+Stato Fondamentale:
+Grado al Basso: III grado.
+Risoluzione: Risolve generalmente sul VI grado.
+Rivolti:
+Segnalazione dal testo: I rivolti non sono dettagliati nel documento. Si applicano le norme generali sulle dissonanze secondarie (risoluzione discendente della settima ed ascensione della quinta aumentata).
+

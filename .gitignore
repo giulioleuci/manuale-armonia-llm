@@ -1,0 +1,25 @@
+# LaTeX / lualatex build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.definizioni
+*.errori
+*.esempi
+*.fisica
+*.matematica
+*.regole
+*.synctex.gz
+*.pdf
+
+# LilyPond / lyluatex temporary files
+tmp-ly/
+
+# macOS
+.DS_Store

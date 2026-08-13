@@ -1,0 +1,234 @@
+\chapter{La settima di dominante}
+\label{chap:settima_dominante}
+
+Se la triade è la "molecola" base dell'armonia, la \textbf{settima di dominante} (V7) è il suo motore. Aggiungendo una quarta nota alla triade di dominante, si genera un accordo di straordinaria tensione e forza propulsiva. La sua corretta gestione è una delle competenze chiave nello studio dell'armonia tonale.
+
+\section{Genesi e struttura}
+\label{sec:genesi_v7}
+
+L'accordo di settima di dominante si costruisce aggiungendo una terza minore sopra la quinta della triade di dominante. In Do Maggiore, la dominante è Sol (Sol-Si-Re). Aggiungendo una terza minore sopra il Re, otteniamo un Fa. L'accordo completo è Sol-Si-Re-Fa.
+
+\begin{definizione}[Il Tritono]
+	\label{def:tritono}
+	Il \textbf{tritono} è un intervallo di tre toni interi, che può presentarsi come una quarta aumentata o una quinta diminuita. È l'intervallo più dissonante del sistema diatonico e, storicamente, veniva chiamato \textit{diabolus in musica}.
+\end{definizione}
+
+La caratteristica fondamentale della V7 è la presenza, al suo interno, di un tritono tra la sua terza (la sensibile) e la sua settima. In Do Maggiore, questo avviene tra il \textbf{Si} (sensibile) e il \textbf{Fa} (settima dell'accordo). Questa dissonanza interna è la vera fonte della sua instabilità e del suo bisogno di risoluzione.
+
+\begin{esempio}[La V7 e il suo tritono in Do Maggiore]
+	\label{ex:tritono_v7}
+	\musica{
+		\new Staff {
+			\clef treble
+			<sol' si' re'' fa''>1-\markup{V7}
+			<si' fa''>1-\markup{"Tritono (5a dim.)"}
+		}
+	}
+\end{esempio}
+
+\begin{regola}[Preparazione e Risoluzione della Dissonanza]
+        \label{reg:preparazione_risoluzione}
+        Come esposto nel Capitolo \ref{chap:teoria_dissonanza}, ogni nota dissonante segue un ciclo di tre fasi: preparazione, percussione e risoluzione.
+        Per la settima di dominante, la regola della preparazione è spesso omessa data la sua familiarità, ma la \textbf{risoluzione è obbligatoria}.
+\end{regola}
+
+\begin{fisica}[I battimenti e la tensione del tritono]
+	\label{phys:battimenti_tritono}
+	
+	Il tritono è considerato l'intervallo più dissonante del sistema diatonico. Questa percezione di "ruvidità" e tensione non è solo una convenzione culturale, ma ha una base fisica oggettiva legata al fenomeno dei \textbf{battimenti acustici}.
+	
+	\textbf{Cosa sono i battimenti}
+	
+	Quando due onde sonore con frequenze vicine ma non identiche suonano simultaneamente, si verifica un fenomeno di \textbf{interferenza}. Le due onde si sommano, alternando momenti di interferenza \textit{costruttiva} (le onde si rafforzano a vicenda) e \textit{distruttiva} (si attenuano a vicenda). Questo causa una fluttuazione periodica dell'intensità sonora che percepiamo come un "tremolo" o \textbf{battimento}.
+	
+	La frequenza del battimento è data dalla differenza tra le due frequenze:
+	\[
+	f_{\text{battimento}} = |f_2 - f_1|
+	\]
+	
+	\textbf{Il tritono e i battimenti multipli}
+	
+	Consideriamo il tritono Si-Fa. Nel temperamento equabile:
+	\begin{itemize}
+		\item Si: frequenza $f_1$
+		\item Fa: frequenza $f_2 \approx 1.414 f_1$ (rapporto $\sqrt{2}:1$, cioè 6 semitoni)
+	\end{itemize}
+	
+	Il rapporto $\sqrt{2}:1$ è \textbf{irrazionale}: non può essere espresso come frazione di numeri interi. Questo ha conseguenze cruciali per gli armonici:
+	
+	\begin{itemize}
+		\item Gli armonici di Si: $f_1, 2f_1, 3f_1, 4f_1, 5f_1, \ldots$
+		\item Gli armonici di Fa: $1.414f_1, 2.828f_1, 4.243f_1, 5.657f_1, \ldots$
+	\end{itemize}
+	
+	Notiamo che gli armonici superiori di queste due note \textit{non coincidono mai} ma cadono sempre in posizioni intermedie, creando multiple coppie di frequenze vicine. Per esempio:
+	\begin{itemize}
+		\item $2f_1$ (secondo armonico di Si) vs. $2.828f_1$ (secondo armonico di Fa) $\rightarrow$ differenza $\approx 0.828f_1$
+		\item $4f_1$ vs. $4.243f_1$ $\rightarrow$ differenza $\approx 0.243f_1$
+	\end{itemize}
+	
+	Ogni coppia di armonici vicini ma non coincidenti genera il proprio battimento. Il risultato è una \textbf{ruvidità acustica complessa} con battimenti a diverse frequenze che si sovrappongono, creando quella sensazione di instabilità e tensione che identifichiamo con la dissonanza.
+	
+	\textbf{Confronto con intervalli consonanti}
+	
+	Confrontiamo con la quinta giusta (Sol-Re in Do maggiore):
+	\begin{itemize}
+		\item Rapporto $3:2$ (razionale, semplice)
+		\item Gli armonici tendono a coincidere: il 3° armonico di Sol coincide con il 2° armonico di Re
+		\item Pochi o nessun battimento $\rightarrow$ suono "pulito" e stabile
+	\end{itemize}
+	
+	\textbf{La risoluzione come riduzione dei battimenti}
+	
+	Quando la V7 risolve sulla tonica, il tritono si muove verso intervalli più consonanti:
+	\begin{itemize}
+		\item Si $\rightarrow$ Do (sensibile che sale)
+		\item Fa $\rightarrow$ Mi (settima che scende)
+		\item Il tritono Si-Fa (dissonante) diventa la terza Do-Mi o la sesta Mi-Do (consonanti)
+	\end{itemize}
+	
+	Questo movimento rappresenta una \textbf{transizione da rapporti complessi a rapporti semplici}, ovvero da molti battimenti a pochi o nessun battimento. L'orecchio percepisce questa transizione come un passaggio dalla tensione al riposo.
+	
+	\textbf{Conclusione}
+	
+	La tensione del tritono e, per estensione, della settima di dominante, ha una base fisica misurabile: i battimenti generati dall'interferenza tra armonici in rapporti complessi. La risoluzione armonica non è solo una convenzione stilistica, ma corrisponde a una transizione fisica da uno stato di alta interferenza acustica a uno di bassa interferenza.
+\end{fisica}
+
+\section{Risoluzione naturale (V7 - I)}
+\label{sec:risoluzione_v7}
+
+La risoluzione naturale della settima di dominante è sull'accordo di tonica. Le note che formano il tritono hanno dei movimenti melodici obbligati che non possono essere violati.
+
+\begin{regola}[Vettori obbligati della V7]
+	\label{reg:vettori_obbligati}
+	Nella risoluzione V7 $\rightarrow$ I, le due note del tritono devono muoversi come segue:
+	\begin{itemize}
+		\item La \textbf{terza} dell'accordo (la sensibile) \textbf{sale} di semitono per risolvere sulla tonica. (Es. in Do: Si $\nearrow$ Do).
+		\item La \textbf{settima} dell'accordo \textbf{scende} di grado per risolvere sulla terza della tonica. (Es. in Do: Fa $\searrow$ Mi).
+	\end{itemize}
+\end{regola}
+
+Questo doppio movimento obbligato crea un problema pratico: come gestire quattro note che risolvono su una triade di tre? La soluzione risiede nella gestione delle note omesse.
+
+\begin{definizione}[V7 Completa vs. Incompleta]
+	\label{def:v7_completa_incompleta}
+	Esistono due modi principali per risolvere la V7:
+	\begin{enumerate}
+		\item \textbf{V7 completa $\rightarrow$ I incompleta:} Si usano tutte e quattro le note della V7. Seguendo i vettori obbligati, l'accordo di tonica risultante sarà privo della quinta e avrà la fondamentale raddoppiata tre volte.
+		\item \textbf{V7 incompleta $\rightarrow$ I completa:} Si omette la quinta dalla V7 (la nota meno caratterizzante) e si raddoppia la fondamentale. Questo permette di risolvere su un accordo di tonica completo, con fondamentale, terza e quinta.
+	\end{enumerate}
+\end{definizione}
+
+\begin{esempio}[Le due risoluzioni della V7]
+	\label{ex:due_risoluzioni_v7}
+	\textbf{A. V7 completa $\rightarrow$ I incompleta}
+	\musica{
+		\partilate
+		{ \key do \major \time 4/4 }
+		{ \freccia fa'2 \glissando mi'2 }
+		{ re'2 do'2 }
+		{ \freccia si2 \glissando do'2 }
+		{ sol,2 do2 }
+		\lyricmode { "V7"2 "I"2 }
+		\figuremode { <7>2 s2 }
+	}
+	
+	\vspace{1cm}
+	\textbf{B. V7 incompleta $\rightarrow$ I completa}
+	\musica{
+		\partilate
+		{ \key do \major \time 4/4 }
+		{ \freccia fa'2 \glissando mi'2 }
+		{ si2 do'2 }
+		{ sol2 sol2 }
+		{ sol,2 do2 }
+		\lyricmode { "V7 (senza 5a)"2 "I"2 }
+		\figuremode { <7>2 s2 }
+	}
+\end{esempio}
+
+\section{I quattro stati della V7}
+\label{sec:stati_v7}
+
+L'accordo di settima di dominante può presentarsi in quattro stati: uno fondamentale e tre rivolti. In ogni stato, le regole di risoluzione del tritono (sensibile $\nearrow$ tonica, settima $\searrow$ terza) rimangono il principio guida.
+
+\subsection{V7 allo stato fondamentale (cifratura: 7)}
+\begin{itemize}
+    \item \textbf{Al basso:} fondamentale (Sol in Do M).
+    \item \textbf{Risoluzione:} → I (fondamentale).
+    \item \textbf{Condotta:} 
+    \begin{itemize}
+        \item Basso (Sol): salta a Do.
+        \item Sensibile (Si): sale a Do.
+        \item Settima (Fa): scende a Mi.
+        \item Quinta (Re): scende a Do (I incompleto) o sale a Mi (I completo se V7 è incompleta).
+    \end{itemize}
+\end{itemize}
+Rimandiamo a \ref{def:v7_completa_incompleta} per il dettaglio sulla completezza.
+
+\subsection{V6/5 — Primo rivolto (cifratura: 6/5)}
+\begin{itemize}
+    \item \textbf{Al basso:} terza dell'accordo (Si in Do M), ovvero la \textbf{sensibile}.
+    \item \textbf{Risoluzione:} → I6 (basso sale a Do).
+    \item \textbf{Condotta:} 
+    \begin{itemize}
+        \item Basso (Si): sale obbligatoriamente a Do.
+        \item Settima (Fa): scende obbligatoriamente a Mi.
+        \item Quinta (Re) e Fondamentale (Sol): si muovono per grado congiunto verso note reali di I6.
+    \end{itemize}
+\end{itemize}
+
+\subsection{V4/3 — Secondo rivolto (cifratura: 4/3)}
+\begin{itemize}
+    \item \textbf{Al basso:} quinta dell'accordo (Re in Do M).
+    \item \textbf{Risoluzione:} → I6 (basso sale a Mi).
+    \item \textbf{Condotta:} 
+    \begin{itemize}
+        \item Basso (Re): sale di grado a Mi.
+        \item Sensibile (Si): sale a Do.
+        \item Settima (Fa): scende a Mi (attenzione ai raddoppi con il basso).
+    \end{itemize}
+\end{itemize}
+
+\subsection{V2 — Terzo rivolto (cifratura: 2 o 4/2)}
+\begin{itemize}
+    \item \textbf{Al basso:} settima dell'accordo (Fa in Do M).
+    \item \textbf{Risoluzione:} → I6 (basso scende a Mi).
+    \item \textbf{Condotta:} 
+    \begin{itemize}
+        \item Basso (Fa): scende obbligatoriamente a Mi.
+        \item Sensibile (Si): sale a Do.
+    \end{itemize}
+\end{itemize}
+
+\section{Sintesi dei rivolti della V7}
+\label{sec:sintesi_rivolti_v7}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Stato & Cifratura & Nota al basso & Risolve su & Basso obbligato \\
+\hline
+Fond. & 7 & Fondamentale & I & No \\
+I rv. & 6/5 & Sensibile & I6 & Sì (sale) \\
+II rv. & 4/3 & Quinta & I6 & No \\
+III rv. & 2 & Settima & I6 & Sì (scende) \\
+\hline
+\end{tabular}
+\end{center}
+
+L'applicazione sistematica dei rivolti della V7 all'armonizzazione della scala è trattata nel Capitolo \ref{chap:regola_ottava_completa} sulla Regola dell'Ottava.
+
+\begin{fisica}[La doppia tensione della V7 nel modo minore]
+	Nel modo minore, la settima di dominante (ad esempio Mi-\Soldiesis -Si-Re in La minore) presenta una particolare intensità acustica dovuta alla sovrapposizione di due tipi di tensione:
+	
+	\begin{enumerate}
+		\item \textbf{Tensione melodica:} La sensibile alterata (\Soldiesis  verso La) crea un semitono ascendente con forte attrazione gravitazionale
+		\item \textbf{Tensione armonica:} La settima (Re verso Do) crea un'altra attrazione per semitono discendente
+		\item \textbf{Tensione intervallare:} L'intervallo di quinta diminuita \Soldiesis -Re (tritono) è acusticamente instabile
+	\end{enumerate}
+	
+	Dal punto di vista fisico, il tritono produce \textbf{battimenti} percepibili a causa della vicinanza dei suoi armonici superiori. Il rapporto di frequenza del tritono temperato ($2^{6/12} = \sqrt{2} \approx 1.414$) non corrisponde a nessun rapporto semplice tra numeri interi piccoli, generando continue interferenze tra le onde sonore.
+	
+	Questa "rugosità acustica" del tritono, combinata con le due tensioni melodiche opposte (\Soldiesis  ↑ e Re ↓), spiega perché la V7 nel modo minore suoni particolarmente drammatica e richieda imperiosamente la risoluzione sulla tonica.
+\end{fisica}

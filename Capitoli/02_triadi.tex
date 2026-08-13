@@ -1,0 +1,261 @@
+% ============================================================
+% CAPITOLO B - LE TRIADI
+% ============================================================
+\chapter{Le triadi}
+\label{chap:triadi}
+
+Dopo aver esaminato le fondamenta fisiche e gli intervalli nel Capitolo \ref{chap:fondamenti}, possiamo ora affrontare la costruzione degli accordi. L'elemento base dell'armonia tonale, la sua "molecola" fondamentale, è la \textbf{triade}. Quasi tutta la musica occidentale, dalla polifonia rinascimentale al pop moderno, si basa sulla successione e sulla manipolazione di questi accordi di tre note.
+
+\section{Costruzione della triade}
+\label{sec:costruzione_triade}
+
+Come suggerisce il nome, una triade è un accordo composto da tre suoni.
+
+\begin{definizione}[La triade]
+	\label{def:triade}
+	Una \textbf{triade} è un accordo di tre note costruito sovrapponendo due intervalli di terza a partire da una nota base, detta \textbf{fondamentale}. Le altre due note prendono il nome di \textbf{terza} e \textbf{quinta} dell'accordo, in base all'intervallo che formano con la fondamentale.
+\end{definizione}
+
+La combinazione dei due tipi di terza (maggiore e minore) genera le diverse "specie" o "qualità" di triadi, ognuna con un colore e una funzione armonica distinti.
+
+\begin{definizione}[Specie di triadi]
+	\begin{itemize}
+	\item \textbf{Triade maggiore:} terza maggiore + terza minore. È la triade "naturale", generata direttamente dalla serie armonica.
+	\item \textbf{Triade minore:} terza minore + terza maggiore. Stabile, ma con un colore più scuro.
+	\item \textbf{Triade diminuita:} terza minore + terza minore. Contiene il tritono (quinta diminuita), intervallo dissonante che genera forte tensione.
+	\item \textbf{Triade eccedente (o aumentata):} terza maggiore + terza maggiore. L'intervallo di quinta aumentata conferisce un carattere ambiguo e instabile.
+\end{itemize}
+\end{definizione}
+
+Di queste quattro specie, solo le prime due (maggiore e minore) sono considerate \textbf{consonanti} e possono fungere da punto di riposo. Le triadi diminuita ed eccedente sono \textbf{dissonanti} e richiedono risoluzione.
+
+\begin{esempio}[Le quattro specie principali di triadi]
+	\label{ex:quattro_triadi}
+\musica{
+	\paper {
+		indent = 0\mm
+		  % Regola questa misura
+	}
+	
+	\new Staff { 
+		\clef treble 
+		\key do \major 
+		\override Score.SpacingSpanner.spacing-increment = #2.0  % Aumenta lo spazio
+		<do' mi' sol'>1-\markup{"maggiore"} 
+		<do' mib' sol'>1-\markup{"minore"} 
+		<do' mib' solb'>1-\markup{"diminuita"} 
+		<do' mi' sold'>1-\markup{"eccedente"} 
+	}
+}
+\end{esempio}
+
+% ============================================================
+% INTEGRAZIONE SCIENTIFICA - FISICA
+% ============================================================
+\begin{fisica}[I rapporti di frequenza e la stabilità degli accordi]
+	\label{phys:rapporti_frequenza_triadi}
+	
+	Per comprendere perché alcune triadi suonano più "stabili" di altre, dobbiamo analizzare i rapporti di frequenza tra le note che le compongono. Abbiamo visto nel Capitolo \ref{chap:fondamenti} che la serie armonica genera naturalmente rapporti semplici tra le frequenze.
+	
+	\textbf{La triade maggiore e i rapporti semplici}
+	
+	Consideriamo una triade di Do maggiore (Do-Mi-Sol). Se assumiamo che la fondamentale Do abbia frequenza $f_1$, le frequenze approssimative delle altre note nella scala temperata sono:
+	\begin{itemize}
+		\item Do (fondamentale): $f_1$
+		\item Mi (terza maggiore): $\approx 1.26 \cdot f_1$ (rapporto ideale $5:4 = 1.25$)
+		\item Sol (quinta giusta): $\approx 1.50 \cdot f_1$ (rapporto ideale $3:2 = 1.50$)
+	\end{itemize}
+	
+	Nel sistema di \textbf{intonazione naturale} (o "giusta"), questi rapporti sono esatti: $4:5:6$. Questo significa che se Do vibra a 200 Hz, Mi vibra a 250 Hz e Sol a 300 Hz. Questi rapporti tra \textbf{numeri interi piccoli} sono ciò che il nostro orecchio percepisce come massimamente consonante.
+	
+	\textbf{La triade diminuita e i rapporti complessi}
+	
+	Confrontiamo ora con una triade diminuita (Do-\Mibemolle -\Solbemolle ). I rapporti approssimativi sono:
+	\begin{itemize}
+		\item Do: $f_1$
+		\item \Mibemolle  (terza minore): $\approx 1.19 \cdot f_1$ (rapporto $6:5$)
+		\item \Solbemolle  (quinta diminuita): $\approx 1.41 \cdot f_1$ (rapporto complesso, circa $\sqrt{2}:1$)
+	\end{itemize}
+	
+	Il \textbf{tritono} (Do-\Solbemolle , rapporto $\sqrt{2}:1$ nel temperamento equabile) in particolare non può essere espresso come rapporto di numeri interi piccoli per la nota irrazionalità di $\sqrt{2}$. Se tentassimo di approssimarlo, otterremmo qualcosa come $45:32$ o $64:45$ — numeri molto più grandi e complessi.
+	
+	\textbf{Il fenomeno dei battimenti acustici}
+	
+	Quando due frequenze vicine suonano insieme, si genera un fenomeno chiamato \textbf{battimento}. La frequenza del battimento è pari alla differenza tra le due frequenze:
+	\[
+	f_{\text{battimento}} = |f_2 - f_1|
+	\]
+	
+	Con rapporti semplici (come 3:2), gli armonici delle due note tendono a coincidere o a essere molto distanziati, minimizzando i battimenti. Con rapporti complessi, invece, molti armonici cadono a frequenze vicine ma non coincidenti, generando battimenti multipli che l'orecchio percepisce come "ruvidità" o \textbf{dissonanza}.
+	
+	\textbf{Tavola comparativa}
+	
+	\begin{center}
+	\begin{tabular}{|l|c|l|}
+	\hline
+	\textbf{Triade} & \textbf{Rapporti (ideali)} & \textbf{Percezione} \\
+	\hline
+	Maggiore & $4:5:6$ & Stabile, luminosa \\
+	Minore & $10:12:15$ & Stabile, malinconica \\
+	Diminuita & include tritono & Instabile, tesa \\
+	Eccedente & include 5a aumentata & Ambigua, irrequieta \\
+	\hline
+	\end{tabular}
+	\end{center}
+	
+	\textbf{Conclusione}
+	
+	La stabilità di un accordo ha quindi una base fisica oggettiva: triadi con rapporti di frequenza semplici generano meno interferenze acustiche e vengono percepite come più consonanti. Questo spiega perché la triade maggiore e minore sono i pilastri dell'armonia tonale, mentre la triade diminuita richiede quasi sempre risoluzione verso accordi più stabili. L'armonia non è solo convenzione culturale: è profondamente radicata nelle leggi della fisica.
+\end{fisica}
+
+
+\section{Costruzione delle triadi sui gradi della scala}
+\label{sec:triadi_sui_gradi}
+
+Ogni grado della scala può essere la fondamentale di una triade. La qualità di questa triade è determinata dalla struttura della scala stessa. Analizziamo il modo maggiore.
+
+\begin{definizione}[Triadi diatoniche nel modo maggiore]
+	\label{def:triadi_diatoniche_maggiore}
+	Le triadi costruite sui sette gradi della scala maggiore sono:
+	\begin{itemize}
+		\item \textbf{I, IV, V:} Triadi maggiori (funzione di stabilità)
+		\item \textbf{II, III, VI:} Triadi minori (funzione secondaria)
+		\item \textbf{VII:} Triade diminuita (funzione di tensione)
+	\end{itemize}
+\end{definizione}
+
+\begin{esempio}[Le sette triadi diatoniche di Do Maggiore]
+	\label{ex:triadi_diatoniche_do}
+	\musica{
+		\new Staff {
+			\clef treble
+			\key do \major
+			<do' mi' sol'>1-\markup{"I (M)"} 
+			<re' fa' la'>1-\markup{"II (m)"} 
+			<mi' sol' si'>1-\markup{"III (m)"} 
+			<fa' la' do''>1-\markup{"IV (M)"} 
+			<sol' si' re''>1-\markup{"V (M)"} 
+			<la' do'' mi''>1-\markup{"VI (m)"} 
+			<si' re'' fa''>1-\markup{"VII° (dim)"}
+		}
+	}
+\end{esempio}
+
+La nomenclatura dell'esempio \ref{ex:triadi_diatoniche_do} usa numeri romani maiuscoli per tutti gli accordi (I, II, III, IV, V, VI, VII), specificando tra parentesi la natura dell'accordo (M per maggiore, m per minore, dim per diminuito).
+
+\section{I rivolti della triade}
+\label{sec:rivolti_triade}
+
+Finora abbiamo considerato le triadi nel loro \textbf{stato fondamentale}, ovvero con la fondamentale dell'accordo posizionata al basso. Tuttavia, è possibile disporre le note dell'accordo in modo diverso, ponendo al basso la terza o la quinta anziché la fondamentale. Queste diverse disposizioni sono chiamate \textbf{rivolti}.
+
+\subsection{Basso fondamentale e basso reale}
+\label{subsec:basso_fondamentale_reale}
+
+Prima di descrivere i rivolti, è necessario chiarire una distinzione terminologica fondamentale.
+
+\begin{definizione}[Basso fondamentale e basso reale]
+	\label{def:basso_fondamentale_reale}
+	In un accordo si distinguono due concetti:
+	\begin{itemize}
+		\item \textbf{Basso fondamentale:} la nota che dà il nome all'accordo e sulla quale l'accordo è costruito per terze sovrapposte. È un concetto teorico-funzionale, indipendente dalla disposizione effettiva delle note.
+		\item \textbf{Basso reale:} la nota più grave effettivamente suonata, qualunque essa sia.
+	\end{itemize}
+	
+	Se basso reale e fondamentale coincidono, si dice che l'accordo è in stato fondamentale, altrimenti si dice che è in stato di rivolto.
+	
+\end{definizione}
+
+\begin{esempio}[Basso fondamentale vs. basso reale in Do Maggiore]
+	\label{ex:basso_fond_reale}
+	Lo stesso accordo di Do maggiore (basso fondamentale: Do) con tre diversi bassi reali.
+\musica{
+	\paper {
+		indent = 0\mm
+		  % Regola questa misura secondo necessità
+	}
+	
+	\new Staff {
+		\clef bass
+		\key do \major
+		\override Score.SpacingSpanner.spacing-increment = #4.0  % Aumenta lo spazio
+		<do mi sol>1-\markup{\column{{"Basso reale: Do"}}}
+		<mi sol do'>1-\markup{\column{{"Basso reale: Mi"}}}
+		<sol do' mi'>1-\markup{\column{{"Basso reale: Sol"}}}
+	}
+}
+	In tutti e tre i casi l'accordo è sempre "Do maggiore" (basso fondamentale = Do), ma il basso reale cambia.
+\end{esempio}
+
+
+\subsection{Il primo rivolto delle triadi (stato di sesta)}
+\label{subsec:primo_rivolto}
+
+Il primo rivolto si ottiene ponendo la \textbf{terza} dell'accordo al basso.
+
+\begin{definizione}[Primo rivolto delle triadi]
+	\label{def:primo_rivolto}
+	Un accordo è in \textbf{primo rivolto} quando la sua terza si trova al basso. Viene indicato con la cifratura \textbf{6} (o talvolta 6/3), poiché rispetto al basso la fondamentale si trova a distanza di sesta e la quinta a distanza di terza.
+\end{definizione}
+
+\begin{esempio}[Una triade in primo rivolto]
+	\label{ex:primo_rivolto_triadi}
+	\musica{
+		\new Staff {
+			\clef bass
+			\key do \major
+			<mi sol do'>1-\markup{\column{\line{"Do M"}\line{"(I6)"}}}
+		}
+	}
+\end{esempio}
+
+\subsection{Il secondo rivolto delle triadi (stato di quarta e sesta)}
+\label{subsec:secondo_rivolto}
+
+Il secondo rivolto si ottiene ponendo la \textbf{quinta} dell'accordo al basso.
+
+\begin{definizione}[Secondo rivolto delle triadi]
+	\label{def:secondo_rivolto}
+	Un accordo è in \textbf{secondo rivolto} quando la sua quinta si trova al basso. Viene indicato con la cifratura \textbf{6/4}, poiché rispetto al basso la fondamentale si trova a distanza di quarta e la terza a distanza di sesta.
+\end{definizione}
+
+\begin{esempio}[Una triade in secondo rivolto]
+	\label{ex:secondo_rivolto_triadi}
+	\musica{
+		\new Staff {
+			\clef bass
+			\key do \major
+			<sol do' mi'>1-\markup{\column{\line{"Do M"}\line{"(I6/4)"}}}
+		}
+	}
+\end{esempio}
+
+\subsection{Il problema del secondo rivolto}
+\label{subsec:problema_secondo_rivolto}
+
+Il secondo rivolto presenta una peculiarità acustica che lo rende profondamente diverso dallo stato fondamentale e dal primo rivolto: pur essendo costituito dalle stesse note di una triade consonante, viene percepito come \textbf{dissonante}. Il suo uso sarà quindi molto limitato.
+
+\begin{fisica}[Il conflitto acustico dell'accordo di quarta e sesta]
+	\label{phys:conflitto_6_4}
+	
+	Quando ascoltiamo un accordo, il nostro orecchio tende a identificare la nota più grave (il basso reale) come fondamentale "percepita". Questo avviene perché la nota al basso genera la propria serie armonica, che domina la percezione complessiva.
+	
+	\textbf{Il conflitto della quarta}
+	
+	Nel secondo rivolto, la fondamentale dell'accordo si trova a distanza di \textbf{quarta} dal basso. Questo intervallo è problematico per ragioni fisiche:
+	
+	\begin{itemize}
+		\item La quarta (rapporto $4:3$) non compare tra i primi armonici semplici della serie del basso
+		\item Si crea un'interferenza: l'orecchio "sente" il basso come fondamentale, ma la struttura dell'accordo suggerisce una nota diversa
+		\item Questa ambiguità genera instabilità percettiva
+	\end{itemize}
+	
+	\textbf{Rappresentazione matematica}
+	
+	Se il basso suona a frequenza $f_b$, i suoi armonici principali sono $f_b$, $2f_b$, $3f_b$, $4f_b$, $5f_b$... La quarta sopra il basso ha frequenza $f_4 = \frac{4}{3}f_b$. Questo rapporto non appare tra i primi armonici semplici, mentre la quinta ($3:2$) è il secondo rapporto più consonante dopo l'ottava.
+	
+	\textbf{Conclusione}
+	
+	L'accordo di 6/4 non è dissonante perché contiene note "sbagliate", ma perché la disposizione delle note crea un conflitto tra ciò che l'orecchio percepisce (il basso come fondamentale) e ciò che la struttura dell'accordo implica (una nota diversa come fondamentale). Per questa ragione, l'accordo di quarta e sesta richiede sempre un trattamento particolare e non può essere usato liberamente come un rivolto qualsiasi.
+\end{fisica}
+
+

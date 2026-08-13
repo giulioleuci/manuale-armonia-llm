@@ -1,0 +1,767 @@
+\chapter{Progressioni armoniche per l'armonizzazione del basso}
+\label{chap:progressioni_armoniche}
+
+Dopo aver studiato le funzioni armoniche, le cadenze e la Regola dell'Ottava, siamo pronti ad affrontare uno dei compiti più creativi e allo stesso tempo più tecnici dell'armonia: l'\textbf{armonizzazione di un basso dato}. Questo capitolo è dedicato alle \textbf{progressioni armoniche}, ovvero successioni di accordi che si ripetono trasposte, costituendo uno strumento essenziale per armonizzare efficacemente passaggi scalari, sequenze modulanti e movimenti melodici complessi.
+
+\section{Che cos'è una progressione armonica}
+\label{sec:definizione_progressione}
+
+\begin{definizione}[Progressione armonica]
+	\label{def:progressione_armonica}
+	Una \textbf{progressione armonica} (o \textbf{sequenza armonica}) è una successione di accordi che viene ripetuta trasportata su diversi gradi della scala. Questa ripetizione crea un movimento armonico coerente e prevedibile che può essere utilizzato per costruire frasi musicali più lunghe o per effettuare modulazioni.
+	
+	Elementi caratteristici:
+	\begin{itemize}
+		\item \textbf{Schema di base (modello):} Una breve successione di accordi (tipicamente 2-4 accordi)
+		\item \textbf{Trasposizione:} Il modello viene ripetuto su gradi diversi della scala
+		\item \textbf{Direzione:} La progressione può muoversi verso l'acuto (ascendente) o verso il grave (discendente)
+		\item \textbf{Numero di ripetizioni:} Tipicamente 2-4 volte, raramente di più per evitare monotonia
+	\end{itemize}
+\end{definizione}
+
+Le progressioni armoniche sono particolarmente utili nell'armonizzazione del basso per diversi motivi:
+
+\begin{itemize}
+	\item Forniscono una soluzione sistematica per passaggi scalari lunghi
+	\item Creano movimento e dinamismo armonico
+	\item Facilitano la modulazione verso tonalità vicine
+	\item Rendono il discorso musicale coerente e memorabile
+\end{itemize}
+
+\begin{fisica}[Perché le progressioni sono così efficaci?]
+	Dal punto di vista percettivo, le progressioni sfruttano uno dei principi fondamentali della cognizione musicale: il \textbf{riconoscimento di pattern}. 
+	
+	Il cervello umano è straordinariamente abile nell'identificare schemi ricorrenti. Quando ascoltiamo una progressione, dopo la prima o seconda ripetizione del modello, il nostro sistema cognitivo:
+	\begin{enumerate}
+		\item \textbf{Anticipa} il movimento successivo
+		\item \textbf{Categorizza} il materiale come "coerente"
+		\item \textbf{Elabora} più facilmente la struttura complessiva
+	\end{enumerate}
+	
+	Questo fenomeno, studiato dalla psicologia della Gestalt, spiega perché le progressioni risultano così naturali all'ascolto: non solo creano varietà armonica, ma lo fanno in modo che il nostro cervello possa seguire agevolmente.
+	
+	Interessante notare che studi di neuroimaging hanno dimostrato che, quando una progressione viene interrotta inaspettatamente, si attiva una risposta cerebrale specifica (chiamata N400) associata alla violazione delle aspettative, confermando che il cervello costruisce attivamente modelli predittivi durante l'ascolto musicale.
+\end{fisica}
+
+\section{Progressioni fondamentali}
+\label{sec:progressioni_fondamentali}
+
+Esistono diverse famiglie di progressioni, classificabili in base alla direzione del movimento armonico. Le più comuni sono le progressioni per \textbf{quinte discendenti} (o quarte ascendenti) e le progressioni per \textbf{terze} (ascendenti o discendenti).
+
+\subsection{Progressione per quinte discendenti}
+\label{subsec:progressione_quinte}
+
+La progressione per quinte discendenti è una delle più potenti e naturali nel sistema tonale, poiché replica il movimento cadenzale V-I su ogni grado della scala.
+
+\begin{regola}[Progressione per quinte discendenti]
+	\label{reg:progressione_quinte_disc}
+	Nella \textbf{progressione per quinte discendenti}, ogni accordo viene seguito da un altro la cui fondamentale è una quinta sotto (o una quarta sopra). La successione tipica è:
+	
+	\textbf{Nel modo maggiore:}
+	I - IV - VII - III - VI - II - V - I
+	
+	\textbf{Nel modo minore:}
+	i - iv - VII - III - VI - ii° - V - i
+	
+	Caratteristiche:
+	\begin{itemize}
+		\item Il movimento del basso procede per \textbf{quarte ascendenti} (equivalente intervallare della quinta discendente)
+		\item Gli accordi alternano generalmente stati fondamentali e primi rivolti per mantenere il movimento del basso fluido
+		\item La sensazione armonica è di continua "risoluzione" e direzione verso la tonica
+	\end{itemize}
+\end{regola}
+
+\begin{esempio}[Progressione per quinte discendenti in Do Maggiore]
+	\label{ex:progressione_quinte_disc}
+	Progressione completa con alternanza di stati fondamentali e rivolti.
+	\musica{
+		\partilate
+		{ \key do \major \time 4/4 }
+		{ mi''2 fa'' | re'' mi'' | do'' re'' | do'' si' | do''1 }
+		{ do''2 do'' | si' do'' | la' si' | sol' sol' | mi'1 }
+		{ sol'2 la' | sol' sol' | fa' fa' | mi' re' | sol1 }
+		{ do2 fa | sol do' | la re | mi sol | do1 }
+		\lyricmode { "I"2 "IV" | "VII" "III" | "VI" "II" | "III" "V" | "I"1 }
+		\figuremode { \unset FiguredBass.useBassFigureExtenders 
+			s2 s | s <6> | s s | <6> s | s1 }
+	}
+	
+	Notare come l'alternanza tra stato fondamentale (5) e primo rivolto (6) mantiene il basso in movimento per grado congiunto o salti piccoli, evitando salti eccessivi.
+\end{esempio}
+
+\begin{matematica}[Il cerchio delle quinte e la progressione]
+	La progressione per quinte discendenti non è altro che una "passeggiata" lungo il \textbf{cerchio delle quinte}. Questo cerchio può essere rappresentato come un grafo ciclico dove ogni nodo rappresenta una tonalità e gli archi connettono tonalità adiacenti per quinte.
+	
+	Se rappresentiamo le 7 note diatoniche di Do Maggiore sul cerchio delle quinte, otteniamo:
+	
+	\begin{center}
+	\begin{tikzpicture}[scale=1.2]
+		\foreach \note/\angle in {Fa/0, Do/51.43, Sol/102.86, Re/154.29, La/205.71, Mi/257.14, Si/308.57} {
+			\node[circle, draw, minimum size=0.8cm] (\note) at (\angle:2cm) {\note};
+		}
+		\draw[->, thick] (Do) to[bend left=15] (Fa);
+		\draw[->, thick] (Fa) to[bend left=15] (Si);
+		\draw[->, thick] (Si) to[bend left=15] (Mi);
+		\draw[->, thick] (Mi) to[bend left=15] (La);
+		\draw[->, thick] (La) to[bend left=15] (Re);
+		\draw[->, thick] (Re) to[bend left=15] (Sol);
+		\draw[->, thick] (Sol) to[bend left=15] (Do);
+	\end{tikzpicture}
+	\end{center}
+	
+	La progressione per quinte discendenti percorre questo cerchio in senso antiorario. Dal punto di vista della teoria dei grafi, questo è un \textbf{cammino hamiltoniano} sul sottografo ciclico delle note diatoniche.
+	
+	Interessante notare che in temperamento equabile, dopo 12 quinte giuste si torna alla nota di partenza (a meno di una piccola discrepanza chiamata \textit{comma pitagorico}), ma nel sistema diatonico, dopo 7 passi si ritorna alla tonica originale.
+\end{matematica}
+
+\subsection{Progressione per terze discendenti}
+\label{subsec:progressione_terze_disc}
+
+La progressione per terze discendenti crea un movimento armonico più morbido e cromatico rispetto a quella per quinte.
+
+\begin{regola}[Progressione per terze discendenti]
+	\label{reg:progressione_terze_disc}
+	Nella \textbf{progressione per terze discendenti}, ogni accordo scende di terza (maggiore o minore) rispetto al precedente. Una forma comune è:
+	
+	\textbf{Nel modo maggiore:}
+	I - VI - IV - II - VII - V - I
+	
+	Caratteristiche:
+	\begin{itemize}
+		\item Il movimento è più graduale e "dolce" rispetto alla progressione per quinte
+		\item Spesso utilizzata in passaggi espressivi o melanconici
+		\item Il basso può muoversi per terze o, più frequentemente, per grado congiunto usando rivolti appropriati
+	\end{itemize}
+\end{regola}
+
+\begin{esempio}[Progressione per terze discendenti in Do Maggiore]
+	\label{ex:progressione_terze_disc}
+	Sequenza che scende per terze con movimento del basso per grado congiunto.
+	\musica{
+		\partilate
+		{ \key do \major \time 3/4 }
+		{ mi''2. | do'' | la' | fa' | re' | si' | do''2. }
+		{ do''2. | la' | fa' | re' | si' | sol' | mi'2. }
+		{ sol'2. | mi' | do' | la' | sol' | re' | sol'2. }
+		{ do'2. | la | fa | re | sol | sol | do2. }
+		\lyricmode { "I"2. | "VI" | "IV" | "II" | "VII" | "V" | "I"2. }
+		\figuremode { \unset FiguredBass.useBassFigureExtenders 
+			s2. | <6> | s | <6> | <6> | s | s2. }
+	}
+	Questa progressione scende cromaticamente attraverso la scala, creando una sensazione di dolce malinconia.
+\end{esempio}
+
+\section{Applicazione pratica: armonizzare un basso dato}
+\label{sec:applicazione_basso_dato}
+
+L'abilità di riconoscere quando e come applicare le progressioni è essenziale per l'armonizzazione del basso. Vediamo un metodo sistematico.
+
+\begin{regola}[Strategia per l'armonizzazione del basso]
+	\label{reg:strategia-armonizzazione}
+	Quando ci troviamo di fronte a un basso da armonizzare, seguire questi passi:
+	
+	\begin{enumerate}
+		\item \textbf{Identificare la struttura:}
+		\begin{itemize}
+			\item Cadenze (dove si trovano i punti di riposo?)
+			\item Passaggi scalari (ascendenti o discendenti)
+			\item Salti significativi (quarte, quinte, ottave)
+		\end{itemize}
+		
+		\item \textbf{Scegliere la tecnica appropriata:}
+		\begin{itemize}
+			\item Per \textbf{movimenti scalari brevi} (2-4 note): applicare la Regola dell'Ottava
+			\item Per \textbf{movimenti scalari lunghi} (5+ note): considerare progressioni
+			\item Per \textbf{salti}: usare prevalentemente stati fondamentali
+		\end{itemize}
+		
+		\item \textbf{Applicare le progressioni:}
+		\begin{itemize}
+			\item Identificare il pattern che il basso suggerisce (quinte, terze, seconde?)
+			\item Applicare la progressione appropriata
+			\item Verificare che la condotta delle voci sia corretta
+		\end{itemize}
+		
+		\item \textbf{Raffinare:}
+		\begin{itemize}
+			\item Correggere parallelismi
+			\item Migliorare il canto (linea del soprano)
+			\item Aggiungere varietà ritmica se necessario
+		\end{itemize}
+	\end{enumerate}
+\end{regola}
+
+\begin{esempio}[Basso dato con progressione per quinte]
+	\label{ex:basso_dato_progressione}
+	
+	\textbf{Basso da armonizzare:}
+	\musica{
+		\new Staff {
+			\clef bass
+			\key do \major
+			\time 4/4
+			do4 fa sol do' | la re sol do
+		}
+	}
+	
+	\textbf{Analisi:}
+	\begin{itemize}
+		\item Battuta 1: salto Do-Fa (quarta) suggerisce I-IV
+		\item Fa-Sol-Do': parte di una progressione per quinte (IV-VII-III o IV-V-I)
+		\item Battuta 2: La-Re-Sol-Do continua la discesa per quinte
+	\end{itemize}
+	
+	\textbf{Soluzione armonizzata:}
+	\musica{
+		\partilate
+		{ \key do \major \time 4/4 }
+		{ mi'4 fa' sol' mi' | do' re' re' do' }
+		{ do'4 do' re' do' | la si si mi' }
+		{ sol4 la si sol | mi sol sol sol }
+		{ do4 fa sol do' | la re sol do }
+		\lyricmode { "I"4 "IV" "V" "III" | "VI" "II" "V" "I" }
+		\figuremode { \unset FiguredBass.useBassFigureExtenders 
+			s4 s s <6> | s s s s }
+	}
+	
+	La progressione per quinte (IV-V-III-VI-II-V-I) permette di creare un movimento armonico fluido e convincente.
+\end{esempio}
+
+\section{Progressioni con settime}
+\label{sec:progressioni_settime}
+
+L'uso delle settime nelle progressioni aumenta considerevolmente la ricchezza armonica e la tensione direzionale.
+
+\begin{regola}[Progressioni di settime]
+	\label{reg:progressioni_settime}
+	Nelle progressioni, le settime possono essere impiegate in due modi:
+	
+	\begin{enumerate}
+		\item \textbf{Settime alternate:} Solo alcuni accordi della progressione hanno la settima
+		\item \textbf{Settime consecutive:} Ogni accordo della progressione è un accordo di settima
+	\end{enumerate}
+	
+	Nel caso di settime consecutive, la condotta delle voci segue una regola precisa:
+	\begin{itemize}
+		\item La settima di ciascun accordo \textbf{scende di grado} nell'accordo successivo
+		\item Questa nota diventa spesso la \textbf{terza} dell'accordo successivo
+		\item Il pattern crea una "catena" di risoluzioni che lega gli accordi
+	\end{itemize}
+\end{regola}
+
+\begin{esempio}[Progressione per quinte con settime consecutive]
+	\label{ex:progressione_settime}
+	Ogni accordo è una settima che risolve nel successivo.
+	\musica{
+		\partilate
+		{ \key do \major \time 4/4 }
+		{ fa''2 mi'' | re'' do'' | si'1 }
+		{ re''2 do'' | si' la' | sol'1 }
+		{ la'2 sol' | sol' fa' | re'1 }
+		{ re2 do | sol, la, | sol,1 }
+		\lyricmode { "II7"2 "V7" | "I7" "IV7" | "VII°7"1 }
+		\figuremode { \unset FiguredBass.useBassFigureExtenders 
+			<7>2 <7> | <7> <7> | <\markup{\flat}7>1 }
+	}
+	
+	Notare come ogni settima (Fa nel II7, Fa nel V7, Si nel I7, Mi nel IV7) scende di grado per diventare la terza dell'accordo successivo.
+\end{esempio}
+
+\begin{errore}[Progressioni troppo lunghe]
+	\label{err:progressioni_lunghe}
+	Un errore comune è quello di applicare meccanicamente una progressione per troppe ripetizioni, creando monotonia. 
+	
+	\textbf{Problema:}
+	\musica{
+		\new Staff {
+			\clef bass
+			\key do \major
+			\time 4/4
+			do4 fa si, mi | la, re sol, do | fa, si,, mi, la,, | re,1
+		}
+	}
+	
+	Questa progressione per quinte discendenti si estende per tre battute complete, risultando meccanica e prevedibile.
+	
+	\textbf{Soluzione:}
+	Interrompere la progressione dopo 2-3 cicli e introdurre varietà:
+	\begin{itemize}
+		\item Usare una cadenza per chiudere la frase
+		\item Cambiare tipo di progressione
+		\item Inserire un accordo di passaggio o nota pedale
+	\end{itemize}
+	
+	In generale, raramente si dovrebbero superare le 3-4 ripetizioni consecutive dello stesso modello.
+\end{errore}
+
+\section{Progressioni modulanti}
+\label{sec:progressioni_modulanti}
+
+Una delle applicazioni più affascinanti delle progressioni è la loro capacità di facilitare la modulazione verso tonalità vicine.
+
+\begin{definizione}[Progressione modulante]
+	\label{def:progressione_modulante}
+	Una \textbf{progressione modulante} è una sequenza armonica che, attraverso le sue ripetizioni trasposte, conduce naturalmente da una tonalità a un'altra. La modulazione avviene spesso in modo graduale e quasi impercettibile, sfruttando la coerenza del pattern ripetitivo.
+\end{definizione}
+
+\begin{regola}[Modulazione attraverso progressioni]
+	\label{reg:modulazione_progressioni}
+	Per modulare usando una progressione:
+	
+	\begin{enumerate}
+		\item Iniziare la progressione nella tonalità di partenza
+		\item Continuare il pattern introducendo gradualmente alterazioni che appartengono alla nuova tonalità
+		\item Confermare la nuova tonalità con una cadenza autentica
+	\end{enumerate}
+	
+	Le progressioni per quinte discendenti sono particolarmente efficaci perché:
+	\begin{itemize}
+		\item Ogni "quinta" può potenzialmente diventare una dominante della tonalità successiva
+		\item L'introduzione di alterazioni cromati (es. \# per creare sensibili) avviene naturalmente
+		\item Il movimento è direzionale e porta organicamente verso la nuova tonica
+	\end{itemize}
+\end{regola}
+
+\begin{esempio}[Progressione modulante: da Do Maggiore a Sol Maggiore]
+	\label{ex:progressione_modulante}
+	Una progressione per quinte che modula al tono della dominante.
+	\musica{
+		\partilate
+		{ \key do \major \time 4/4 }
+		{ mi''4 fa'' fad'' sol'' | sol'' fad'' sol''2 }
+		{ do''4 do'' re'' si' | re'' re'' si'2 }
+		{ sol'4 la' la' re'' | si' la' re'2 }
+		{ do4 fa si, mi | la, re sol,2 }
+		\lyricmode { "I (Do)"4 "IV" "V/V" "V" | "II (Sol)" "V" "I"2 }
+		\figuremode { \unset FiguredBass.useBassFigureExtenders 
+			s4 s <6 \markup{\sharp}> s | s s s2 }
+	}
+	
+	Il \Fadiesis  introdotto nel secondo accordo trasforma il VII° di Do in V di Sol, preparando la modulazione. La conferma avviene con la cadenza II-V-I in Sol Maggiore.
+\end{esempio}
+
+\section{Esercizi di armonizzazione}
+\label{sec:esercizi_progressioni}
+
+Per padroneggiare le progressioni, è essenziale esercitarsi con bassi dati di complessità crescente.
+
+\begin{esempio}[Esercizio 1: Basso con progressione per quinte]
+	\label{ex:esercizio_1}
+	
+	\textbf{Basso da armonizzare:}
+	\musica{
+		\new Staff {
+			\clef bass
+			\key sol \major
+			\time 3/4
+			sol,4 do4 si, | la, re sol, | do2.
+		}
+	}
+	
+	\textbf{Suggerimenti:}
+	\begin{itemize}
+		\item Identificare la progressione per quinte: Sol-Do (I-IV), Do-Si (IV-III), Si-La (III-II), La-Re-Sol (II-V-I)
+		\item Usare rivolti per mantenere il movimento fluido del basso
+		\item Fare attenzione alla condotta della sensibile (\Fadiesis )
+	\end{itemize}
+\end{esempio}
+
+\begin{esempio}[Esercizio 2: Basso con Monte Romanesca]
+	\label{ex:esercizio_2}
+	
+	\textbf{Basso da armonizzare:}
+	\musica{
+		\new Staff {
+			\clef bass
+			\key fa \major
+			\time 4/4
+			fa,4 sol, la, sib, | do re mib do | fa,1
+		}
+	}
+	
+	\textbf{Suggerimenti:}
+	\begin{itemize}
+		\item Riconoscere il Monte (salita) Fa-Sol-La-\Sibemolle -Do
+		\item Il \Mibemolle  introduce una breve colorazione cromatica
+		\item Applicare l'alternanza 6-5 caratteristica del Monte
+		\item Concludere con cadenza plagale o autentica
+	\end{itemize}
+\end{esempio}
+
+\begin{esempio}[Esercizio 3: Basso misto (Regola dell'Ottava + Progressione)]
+	\label{ex:esercizio_3}
+	
+	\textbf{Basso da armonizzare:}
+	\musica{
+		\new Staff {
+			\clef bass
+			\key re \minor
+			\time 4/4
+			re4 mi fa sol | la sib do' la | re1
+		}
+	}
+	
+	\textbf{Suggerimenti:}
+	\begin{itemize}
+		\item Battuta 1 (Re-Mi-Fa-Sol): applicare Regola dell'Ottava ascendente
+		\item Battuta 2 (La-\Sibemolle -Do-La): breve progressione (IV-V-VI-IV) o cadenza d'inganno
+		\item Combinare le due tecniche per creare un'armonizzazione coerente
+	\end{itemize}
+\end{esempio}
+
+\section{Progressioni nella letteratura musicale}
+\label{sec:progressioni_letteratura}
+
+Le progressioni armoniche non sono semplici esercizi scolastici, ma costituiscono una delle tecniche compositive più utilizzate nella storia della musica.
+
+\begin{esempio}[Progressioni in Bach]
+	\label{ex:bach_progressioni}
+	Johann Sebastian Bach utilizza magistralmente le progressioni in molte opere:
+	
+	\begin{itemize}
+		\item \textbf{Preludio in Do Maggiore BWV 846} (Clavicembalo ben temperato I): Progressione per quinte discendenti che attraversa l'intera gamma tonale
+		
+		\item \textbf{Ciaccona dalla Partita II per violino solo BWV 1004}: Progressione per terze discendenti ripetuta con variazioni
+		
+		\item \textbf{Fuga in \Dodiesis  minore BWV 849}: Monte Romanesca utilizzato per costruire tensione nel contrappunto
+	\end{itemize}
+	
+	In Bach, le progressioni non sono mai meccaniche ma sono integrate in un discorso contrappuntistico ricco, dove ogni voce mantiene interesse melodico indipendente.
+\end{esempio}
+
+\begin{fisica}[La "fisica" delle progressioni: energia armonica]
+	Possiamo pensare alle progressioni armoniche in termini di \textbf{energia potenziale armonica}. Ogni accordo in una tonalità possiede un certo livello di "tensione" rispetto alla tonica:
+	
+	\begin{itemize}
+		\item \textbf{Tonica (I):} Energia minima (riposo)
+		\item \textbf{Dominante (V):} Energia massima (tensione)
+		\item \textbf{Altri gradi:} Livelli intermedi
+	\end{itemize}
+	
+	Le progressioni possono essere viste come "percorsi" attraverso questo paesaggio energetico:
+	
+	\begin{enumerate}
+		\item \textbf{Progressione per quinte discendenti}: Simile a una "cascata" energetica dove ogni accordo "cade" verso il successivo (come dominante locale)
+		
+		\item \textbf{Monte Romanesca}: Come una "salita" graduale che accumula tensione fino a un punto di rilascio
+		
+		\item \textbf{Progressione per terze}: Movimento più "orizzontale", mantenendo livelli energetici simili
+	\end{enumerate}
+	
+	Questa metafora non è puramente astratta: studi sulla percezione armonica hanno dimostrato che gli ascoltatori percepiscono effettivamente diverse successioni di accordi come aventi diversi gradi di "stabilità" o "tensione", e che queste percezioni sono sorprendentemente coerenti tra ascoltatori di culture diverse.
+\end{fisica}
+
+\section{Progressioni con salti di quinta e di quarta}
+\label{sec:progressioni_salti_quinta}
+
+Oltre alle progressioni scalari che abbiamo finora esaminato, esistono progressioni particolarmente efficaci che si basano su \textbf{salti di quinta} (o quarta, che è l'inversione intervallare della quinta) nel basso. Queste progressioni creano un movimento armonico robusto e diretto, ideale per passaggi virtuosistici o per stabilire con forza il centro tonale.
+
+\subsection{Progressione di quinte con numera 5}
+\label{subsec:progressione_quinte_5}
+
+La progressione più semplice e diretta con salti di quinta prevede l'uso di \textbf{accordi allo stato fondamentale} (numerati tutti 5, o senza numerazione esplicita). Il basso si muove per salti di quinta discendente (o quarta ascendente), e ogni accordo è presentato nella sua forma più stabile.
+
+\begin{regola}[Progressione per quinte discendenti (tutti 5)]
+	\label{reg:progressione_5}
+	Nella progressione per salti di quinta con accordi allo stato fondamentale:
+	
+	\begin{itemize}
+		\item Il \textbf{basso} si muove per salti di quinta discendente (o quarta ascendente)
+		\item Tutti gli accordi sono allo \textbf{stato fondamentale} (cifra 5 o non numerati)
+		\item Schema tipico: I - IV - VII - III - VI - II - V - I
+		\item La condotta delle voci richiede particolare attenzione per evitare quinte e ottave parallele
+	\end{itemize}
+	
+	\textbf{Tecnica di condotta delle voci:}
+	Nel collegamento tra due accordi allo stato fondamentale con basso che salta di quinta, una tecnica efficace è muovere le tre voci superiori in \textbf{moto contrario} rispetto al basso, oppure mantenere una o due note comuni quando possibile.
+\end{regola}
+
+\begin{esempio}[Progressione per quinte discendenti (tutti 5) in Sol Maggiore]
+	\label{ex:progressione_5_sol}
+	Una sequenza di accordi tutti allo stato fondamentale.
+	\musica{
+		\partilate
+		{ \key sol \major \time 4/4 }
+		{ si'1 | la' | sol' | fad' | sol'1 }
+		{ sol'1 | fad' | mi' | re' | si1 }
+		{ re'1 | re' | si | la | sol1 }
+		{ sol1 | do' | mi | la, | sol,1 }
+		\lyricmode { "I"1 | "IV" | "VII" | "III" | "I"1 }
+		\figuremode { s1 | s | <6> | s | s1 }
+	}
+	
+	In questo esempio, il basso salta per quinte discendenti (Sol-Do-Mi-La-Sol), creando una forte progressione cadenzale. Notare che per evitare problemi di condotta si può usare occasionalmente un rivolto (come il VII6 nell'esempio).
+\end{esempio}
+
+\subsection{Progressione di quinte con numera 7 (catena di settime)}
+\label{subsec:progressione_quinte_7}
+
+Una variante più sofisticata della progressione per quinte prevede l'uso sistematico di \textbf{accordi di settima}, tutti allo stato fondamentale. Questa tecnica, chiamata anche \textbf{catena di settime}, crea un movimento armonico particolarmente fluido e ricco.
+
+\begin{regola}[Progressione per quinte con accordi di settima (tutti 7)]
+	\label{reg:progressione_7}
+	Nella \textbf{catena di settime}:
+	
+	\begin{itemize}
+		\item Ogni accordo è una \textbf{settima} allo stato fondamentale (numerato 7)
+		\item Il basso si muove per salti di quinta discendente (o quarta ascendente)
+		\item La settima di ogni accordo \textbf{deve essere preparata} (apparire come consonanza nell'accordo precedente)
+		\item La settima \textbf{risolve scendendo di grado} nell'accordo successivo
+		\item Questa tecnica crea un movimento quasi automatico delle voci
+	\end{itemize}
+	
+	\textbf{Meccanismo della risoluzione:}
+	La settima di un accordo diventa automaticamente la terza dell'accordo successivo (che è una quinta sotto), creando una catena di preparazioni e risoluzioni perfettamente interconnesse.
+\end{regola}
+
+\begin{esempio}[Catena di settime in Re minore]
+	\label{ex:catena_settime}
+	Una progressione con accordi di settima che si susseguono.
+	\musica{
+		\partilate
+		{ \key re \minor \time 4/4 }
+		{ fa'2 mi' | re' do' | si' la' | sol'1 }
+		{ re'2 do' | si' la' | sol' fa' | mi'1 }
+		{ la2 sol | fa mi | re do | si1 }
+		{ re2 la | si, fa | sol re | mi1 }
+		\lyricmode { "I7"2 "IV7" | "VII7" "III7" | "VI7" "II7" | "V"1 }
+		\figuremode { <7>2 <7> | <7> <7> | <7> <7> | s1 }
+	}
+	\begin{itemize}
+		\item Il Do del soprano (settima di I7) scende al Si (terza di IV7)
+		\item Il La del contralto (settima di IV7) scende al Sol (terza di VII7)
+		\item Questo schema si ripete in tutta la progressione
+		\item L'ultima settima (II7) risolve sulla dominante pura (V senza settima)
+	\end{itemize}
+\end{esempio}
+
+\begin{matematica}[La struttura ciclica delle progressioni per quinte]
+	Le progressioni per quinte discendenti hanno una bellissima struttura matematica legata al \textbf{gruppo ciclico} $\mathbb{Z}_7$ (i sette gradi della scala diatonica).
+	
+	Se rappresentiamo i gradi come numeri modulo 7:
+	\[
+	\text{Gradi: } I=0, II=1, III=2, IV=3, V=4, VI=5, VII=6
+	\]
+	
+	Un salto di quinta discendente corrisponde a \textbf{sottrarre 3 modulo 7} (oppure aggiungere 4, che è equivalente). La progressione completa può essere scritta come:
+	
+	\[
+	0 \xrightarrow{-3} 4 \xrightarrow{-3} 1 \xrightarrow{-3} 5 \xrightarrow{-3} 2 \xrightarrow{-3} 6 \xrightarrow{-3} 3 \xrightarrow{-3} 0
+	\]
+	
+	Ovvero (traducendo in gradi):
+	\[
+	I \rightarrow V \rightarrow II \rightarrow VI \rightarrow III \rightarrow VII \rightarrow IV \rightarrow I
+	\]
+	
+	Questa è esattamente la progressione per quinte discendenti! Notare che:
+	\begin{itemize}
+		\item Dopo 7 passi si torna alla tonica (il gruppo è ciclico di ordine 7)
+		\item Ogni grado viene visitato esattamente una volta (la funzione $x \mapsto x-3 \mod 7$ è una permutazione)
+		\item L'operazione $-3$ è l'inversa di $+3$ (salto di quarta ascendente), quindi le due progressioni sono simmetriche
+	\end{itemize}
+	
+	\textbf{Proprietà del gruppo:} Poiché 3 e 7 sono coprimi ($\gcd(3,7) = 1$), l'operazione $x \mapsto x-3 \mod 7$ genera l'intero gruppo $\mathbb{Z}_7$. Questo garantisce che la progressione percorra tutti i gradi della scala prima di tornare alla tonica.
+	
+	Se invece usassimo un intervallo di terza ($-2 \mod 7$), otterremmo cicli più corti, che non percorrono tutti i gradi. Ad esempio:
+	\[
+	0 \xrightarrow{-2} 5 \xrightarrow{-2} 3 \xrightarrow{-2} 1 \xrightarrow{-2} 6 \xrightarrow{-2} 4 \xrightarrow{-2} 2 \xrightarrow{-2} 0
+	\]
+	
+	Ancora una volta, la musica rivela la sua profonda struttura algebrica!
+\end{matematica}
+
+\section{Progressioni cromatiche}
+\label{sec:progressioni_cromatiche}
+
+Le progressioni cromatiche introducono note alterate che non appartengono alla scala diatonica di partenza. Queste progressioni sono particolarmente efficaci per creare movimento ascendente o discendente per gradi congiunti cromatici, e sono state ampiamente utilizzate dai compositori barocchi per costruire tensione o per modulare verso tonalità lontane.
+
+\subsection{Progressione cromatica ascendente (5, 6/5)}
+\label{subsec:progressione_cromatica_ascendente}
+
+La progressione cromatica ascendente è caratterizzata da un basso che sale per semitoni, armonizzato alternando accordi allo stato fondamentale con accordi di settima al primo rivolto.
+
+\begin{regola}[Progressione cromatica ascendente (numera 5, 6/5)]
+	\label{reg:progressione_cromatica_asc}
+	Nella \textbf{progressione cromatica ascendente}:
+	
+	\begin{itemize}
+		\item Il basso sale per \textbf{semitoni} (movimento cromatico)
+		\item Gli accordi alternano \textbf{triadi in stato fondamentale} (cifra 5) e \textbf{settime al primo rivolto} (cifra 6/5)
+		\item Schema tipico: 5 - 6/5 - 5 - 6/5 - 5...
+		\item Le alterazioni cromatiche creano sensibili "artificiali" che tendono a salire
+		\item Particolarmente efficace per costruire tensione verso un climax
+	\end{itemize}
+	
+	\textbf{Meccanismo armonico:}
+	Ogni accordo di settima (6/5) contiene una dissonanza che tende a risolvere sull'accordo successivo. Le alterazioni cromatiche (di solito \#) creano delle "piccole dominanti" che spingono il discorso armonico verso l'alto.
+\end{regola}
+
+\begin{esempio}[Progressione cromatica ascendente in Do minore]
+	\label{ex:progressione_cromatica_asc}
+	Una salita cromatica dal VI al I grado.
+	\musica{
+		\partilate
+		{ \key do \minor \time 4/4 }
+		{ mib'4 mib' mi' mi' | fa' fa' fad' fad' | sol'1 }
+		{ do'4 sib lab' do' | do' re' la' do' | si'1 }
+		{ lab4 sol fa' mi' | mib' la si' la' | re'1 }
+		{ lab,4 sol, lab, do | la, re si, re | sol,1 }
+		\lyricmode { "VI"4 "V7/VI" "VI" "V7" | "I" "V7/II" "II" "V7/V" | "V"1 }
+		\figuremode { s4 <6 5> s <6 5> | s <6 5> s <6 5> | s1 }
+	}
+	
+	In questo esempio:
+	\begin{itemize}
+		\item Il basso sale cromaticamente: \Labemolle  - Sol - \Labemolle  - Do - La - Re - Si - Re - Sol
+		\item L'alterazione del basso (La$\natural$ invece di \Labemolle ) crea una dominante secondaria di Re (II grado)
+		\item Il Si$\natural$ crea una dominante della dominante (V/V)
+		\item L'intera progressione spinge energicamente verso la dominante finale (Sol)
+	\end{itemize}
+\end{esempio}
+
+\begin{fisica}[L'energia cinetica delle progressioni ascendenti]
+	Dal punto di vista percettivo, le progressioni cromatiche ascendenti hanno un effetto psicoacustico molto specifico: creano una sensazione di \textbf{accumulo di energia}.
+	
+	Questo fenomeno può essere compreso attraverso due principi:
+	
+	\begin{enumerate}
+		\item \textbf{Il pitch ascendente e l'eccitazione}: Studi di psicoacustica hanno dimostrato che l'ascolto di altezze crescenti attiva nel cervello meccanismi simili a quelli della risposta allo stress o all'eccitazione. Il movimento verso l'acuto è percepito come "energizzante" e "tensivo".
+		
+		\item \textbf{La densità delle risoluzioni}: In una progressione cromatica, la frequenza delle risoluzioni dissonanza-consonanza è molto alta (praticamente ad ogni accordo). Ogni micro-risoluzione crea un piccolo rilascio di tensione, ma poiché subito dopo si presenta una nuova dissonanza, l'effetto netto è di \textbf{tensione crescente}.
+	\end{enumerate}
+	
+	Il risultato è simile a una salita in montagna: ogni passo richiede energia, e anche se ci sono piccoli momenti di "riposo", la fatica complessiva aumenta fino al raggiungimento della vetta (il climax armonico).
+	
+	I compositori hanno utilizzato questo effetto per secoli. Ad esempio, nelle fughe di Bach, le progressioni cromatiche ascendenti sono spesso usate negli \textit{stretti} finali per creare la massima tensione prima della risoluzione conclusiva.
+\end{fisica}
+
+\subsection{Progressione cromatica discendente (2 7)}
+\label{subsec:progressione_cromatica_discendente}
+
+La progressione cromatica discendente è in un certo senso speculare alla precedente: il basso scende per semitoni, armonizzato con una particolare sequenza di accordi.
+
+\begin{regola}[Progressione cromatica discendente (numera 2 7)]
+	\label{reg:progressione_cromatica_disc}
+	Nella \textbf{progressione cromatica discendente}:
+	
+	\begin{itemize}
+		\item Il basso scende per \textbf{semitoni} (movimento cromatico discendente)
+		\item Gli accordi alternano \textbf{settime al terzo rivolto} (cifra 2) e \textbf{settime allo stato fondamentale} (cifra 7)
+		\item Schema tipico: 2 - 7 - 2 - 7 - 2...
+		\item Le alterazioni cromati (spesso $\flat$) facilitano la discesa cromatica
+		\item Crea un effetto di discesa controllata, spesso con carattere malinconico o patetico
+	\end{itemize}
+	
+	\textbf{Meccanismo armonico:}
+	Il terzo rivolto (2) ha il basso che è la settima dell'accordo. Questa settima deve risolvere scendendo di grado, creando naturalmente un movimento discendente. La successione 2-7 permette di mantenere questo movimento cromatico nel basso mentre le altre voci si muovono più liberamente.
+\end{regola}
+
+\begin{esempio}[Progressione cromatica discendente in La minore]
+	\label{ex:progressione_cromatica_disc}
+	Una discesa cromatica con alternanza 2-7.
+	\musica{
+		\partilate
+		{ \key la \minor \time 3/4 }
+		{ la'2. | sol' | fa' | mi' | re' | do' | si' | la'2. }
+		{ fa'2. | mi' | re' | do' | si' | la' | sol' | mi'2. }
+		{ re'2. | do' | si' | la | sold | mi | re | do'2. }
+		{ re2. | do | si, | la, | sold, | sol, | fa, | mi2. }
+		\lyricmode { "II7"2. | "I7" | "VII7" | "VI7" | "V7" | "IV7" | "III7" | "I"2. }
+		\figuremode { <2>2. | <7> | <2> | <7> | <2> | <7> | <2> | s2. }
+	}
+	In questo esempio:
+	\begin{itemize}
+		\item Il basso scende cromaticamente da Re a Mi (passando per \Dodiesis , Do$\natural$, Si, La, \Soldiesis , Sol$\natural$, \Fadiesis )
+		\item L'alternanza tra terzo rivolto (2) e stato fondamentale (7) mantiene la continuità del movimento
+		\item Le settime risolvono regolarmente scendendo di grado
+		\item L'effetto complessivo è di una discesa controllata e espressiva
+	\end{itemize}
+\end{esempio}
+
+\begin{esempio}[Uso della progressione 2-7 in Bach]
+	\label{ex:bach_27}
+	J.S. Bach utilizza frequentemente la progressione cromatica discendente (2-7) in passaggi particolarmente espressivi:
+	
+	\begin{itemize}
+		\item \textbf{Clavicembalo ben temperato I, Fuga n. 4 in \Dodiesis  minore}: Una memorabile discesa cromatica con alternanza 2-7 al culmine dello sviluppo
+		
+		\item \textbf{Passione secondo Matteo, Aria "Erbarme dich"}: L'accompagnamento del violino obbligato include discese cromatiche armonizzate con questa tecnica, sottolineando il testo patetico
+		
+		\item \textbf{Messa in Si minore, Crucifixus}: L'intero movimento è costruito su un basso ostinato cromatico discendente, simboleggiando la discesa di Cristo dalla croce
+	\end{itemize}
+	
+	In tutti questi casi, la progressione 2-7 non è solo una tecnica compositiva, ma un mezzo espressivo per comunicare dolore, compassione o tragedia. Il movimento discendente cromatico è stato tradizionalmente associato nella retorica musicale barocca al \textit{passus duriusculus} (passo difficile), una figura retorica che rappresenta sofferenza.
+\end{esempio}
+
+\begin{matematica}[Cromatismo e temperamento equabile]
+	Le progressioni cromatiche sollevano una questione interessante legata al \textbf{temperamento equabile}.
+	
+	Nel sistema diatonico puro, i semitoni non sono tutti uguali:
+	\begin{itemize}
+		\item \textbf{Semitono cromatico}: Es. Do-\Dodiesis  (rapporto $\approx 25:24 \approx 1.042$)
+		\item \textbf{Semitono diatonico}: Es. Mi-Fa (rapporto $\approx 16:15 \approx 1.067$)
+	\end{itemize}
+	
+	In temperamento equabile, invece, tutti i semitoni sono identici:
+	\[
+	\text{Rapporto di semitono} = 2^{1/12} \approx 1.059
+	\]
+	
+	Questo valore è una media geometrica che rende possibile la modulazione libera e le progressioni cromatiche che percorrono tutte le dodici note della scala cromatica.
+	
+	Possiamo vedere la progressione cromatica come una \textbf{passeggiata sul gruppo ciclico} $\mathbb{Z}_{12}$:
+	
+	Se partiamo da Do (0) e saliamo cromaticamente:
+	\[
+	0 \rightarrow 1 \rightarrow 2 \rightarrow 3 \rightarrow 4 \rightarrow 5 \rightarrow 6 \rightarrow 7 \rightarrow 8 \rightarrow 9 \rightarrow 10 \rightarrow 11 \rightarrow 0
+	\]
+	
+	Dopo 12 semitoni torniamo esattamente all'ottava superiore della nota di partenza. Questa proprietà è garantita solo dal temperamento equabile.
+	
+	Nel sistema di intonazione naturale (basato su rapporti semplici di frequenze), una sequenza di 12 semitoni non tornerebbe esattamente all'ottava ma avrebbe una discrepanza chiamata \textbf{comma pitagorico}:
+	\[
+	\text{Discrepanza} = \left(\frac{3}{2}\right)^{12} \div 2^7 \approx 1.013
+	\]
+	
+	Il temperamento equabile "distribuisce" questo errore uniformemente su tutti i semitoni, permettendo la libertà modulatoria e cromatica che caratterizza la musica dal Barocco in poi.
+\end{matematica}
+
+\section{Sintesi: quando usare quale progressione}
+\label{sec:sintesi_progressioni}
+
+\begin{regola}[Guida alla scelta delle progressioni]
+	\label{reg:scelta_progressioni}
+	
+	\begin{tabular}{|p{4.5cm}|p{4.5cm}|p{4.5cm}|}
+		\hline
+		\textbf{Tipo di basso} & \textbf{Progressione consigliata} & \textbf{Effetto espressivo} \\
+		\hline
+		Salita scalare lunga (5+ note) & Progressione scalare ascendente per gradi (con alternanza 5, 6/5 secondo la Regola dell'Ottava, \ref{chap:regola_ottava_completa}) \footnotemark & Costruzione di tensione progressiva verso la cadenza \\
+		\hline
+
+		Discesa scalare & Progressione per terze o Regola dell'Ottava & Dolcezza, malinconia \\
+		\hline
+		Movimento circolare & Progressione per quinte discendenti & Forza, direzione, conclusività \\
+		\hline
+		Passaggio modulante & Progressione per quinte con alterazioni & Transizione fluida \\
+		\hline
+		Basso statico (note pedale) & Variazione armonica sopra nota fissa & Stabilità con varietà \\
+		\hline
+		Salti di quarta/quinta & Stati fondamentali (5) o Catena di settime (7) & Chiarezza strutturale, robustezza \\
+		\hline
+		Salita cromatica & Progressione 5, 6/5 & Accumulo di tensione, virtuosismo \\
+		\hline
+		Discesa cromatica & Progressione 2, 7 & Pathos, espressività, discesa controllata \\
+		\hline
+	\end{tabular}
+\end{regola}
+\footnotetext{Alcune fonti citano la "Romanesca" come schema per armonizzare salite scalari. La Romanesca è in realtà una progressione di basso ostinato specifica del repertorio rinascimentale e barocco — non una tecnica generica di armonizzazione scalare. La sua trattazione esula dall'ambito di questo manuale introduttivo.}
+
+\vspace{1cm}
+
+Le progressioni armoniche rappresentano uno strumento compositivo straordinariamente versatile. La loro padronanza richiede pratica costante: armonizzare bassi dati quotidianamente, analizzare partiture di grandi compositori per identificare le progressioni utilizzate, e sperimentare creative combinazioni di pattern diversi. Con il tempo, l'uso delle progressioni diventerà intuitivo, permettendo di affrontare con sicurezza anche i bassi più complessi.
+
+% ============================================================
+% FINE CAPITOLO M - PROGRESSIONI ARMONICHE
+% ============================================================

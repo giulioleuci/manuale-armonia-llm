@@ -1,0 +1,73 @@
+\chapter{La struttura della frase e il periodo}
+\label{chap:struttura_frase}
+
+La musica non è una successione casuale di accordi, ma un discorso organizzato. Le cadenze fungono da punteggiatura, definendo unità strutturali chiamate frasi e periodi.
+
+\section{La frase musicale}
+\label{sec:frase_musicale}
+
+\begin{definizione}[Frase musicale]
+    È l'unità minima di senso compiuto nel discorso tonale. Tipicamente composta da 4 misure (ma con varianti), termina sempre con una cadenza che ne delimita il confine.
+\end{definizione}
+
+\begin{regola}
+    In un basso dato, ogni frase deve concludersi con una cadenza riconoscibile. Proprio come una frase verbale ha un soggetto, uno sviluppo e un punto finale, la frase musicale ha un inizio, un percorso armonico e una conclusione cadenzale.
+\end{regola}
+
+\section{Il periodo}
+\label{sec:periodo}
+
+\begin{definizione}[Il periodo]
+    È una struttura di norma di 8 misure, formata dalla successione di due frasi in relazione tra loro:
+    \begin{itemize}
+        \item \textbf{Antecedente} (mis. 1-4): termina con una cadenza non conclusiva (sospesa o imperfetta). Rimanda a \ref{def:cadenza_sospesa} e \ref{def:cadenza_imperfetta}.
+        \item \textbf{Conseguente} (mis. 5-8): termina con una cadenza conclusiva (perfetta). Rimanda a \ref{def:cadenza_perfetta}.
+    \end{itemize}
+\end{definizione}
+
+La relazione tra antecedente e conseguente è analoga a quella tra domanda e risposta: la prima frase crea un'aspettativa, la seconda la soddisfa.
+
+\begin{esempio}[Struttura del periodo in un basso dato]
+    Indichiamo con \textit{markup} i punti cadenzali di un basso di 8 misure.
+    \musica{
+        \new Staff {
+            \key do \major \time 4/4
+            \relative do {
+                \clef bass
+                do2 fa | sol2 do,^\markup{C. Imperfetta} |
+                do2 fa | sol1^\markup{C. Sospesa} \bar "||"
+                do,2 fa | sol2 mi |
+                fa2 sol | do,1^\markup{C. Perfetta} \bar "|."
+            }
+        }
+    }
+\end{esempio}
+
+\section{Applicazione al basso dato}
+\label{sec:applicazione_frase}
+
+\begin{regola}[Pianificazione cadenzale]
+    Prima di armonizzare un basso, individuare:
+    \begin{itemize}
+        \item \textbf{Metà (mis. 4 di 8):} Deve presentare una cadenza sospesa (V) o imperfetta (I non fondamentale o soprano non in ottava).
+        \item \textbf{Finale (mis. 8):} Deve presentare una cadenza perfetta (V-I in stato fondamentale).
+    \end{itemize}
+\end{regola}
+
+\begin{regola}[Scelta della cadenza di metà]
+    Preferire la cadenza sospesa su V se il basso si ferma sulla dominante; preferire la cadenza imperfetta se il basso approda al I ma senza la forza conclusiva necessaria per il finale.
+\end{regola}
+
+\begin{esempio}[Armonizzazione di un periodo di 8 misure]
+    Mostriamo come la scelta delle cadenze definisce la struttura formale del brano.
+    \musica{
+        \partilate
+        { \key do \major \time 4/4 }
+        { mi'2 fa' | re'2 mi' | mi'2 fa' | re'1 }
+        { do'2 do' | si2 do' | do'2 do' | si1 }
+        { sol2 la | sol2 sol | sol2 la | sol1 }
+        { do2 fa | sol2 do | do2 fa | sol1 }
+        \lyricmode { "I"2 "IV" | "V"2 "I" | "I"2 "IV" | "V"1 }
+        \figuremode { s2 s | s <5> | s s | s }
+    }
+\end{esempio}
