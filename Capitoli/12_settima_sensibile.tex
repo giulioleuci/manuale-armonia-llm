@@ -68,6 +68,64 @@ Come tutti gli accordi di settima, anche la VII7 può essere rivoltata. Il suo u
 	}
 \end{esempio}
 
+\begin{regola}[Comportamento delle voci della VII7]
+	\label{reg:comportamento_vii7}
+	Alla risoluzione della settima di sensibile valgono le seguenti norme:
+	\begin{itemize}
+		\item La \textbf{fondamentale} (la sensibile) \textbf{sale di grado} alla tonica e \textbf{non si raddoppia}.
+		\item La \textbf{quinta} e la \textbf{settima} sono note a risoluzione obbligata: \textbf{scendono di grado} e \textbf{non si raddoppiano}.
+		\item La \textbf{terza} è parte libera. \textbf{Attenzione}: quando la terza si trova nella parte grave, al di sotto della settima, deve obbligatoriamente \textbf{salire di grado}, per evitare due quinte parallele per moto retto.
+	\end{itemize}
+\end{regola}
+
+\begin{osservazione}[Disposizione della settima]
+	\label{oss:disposizione_settima}
+	La settima dell'accordo deve trovarsi a distanza di \textbf{settima} dalla sensibile, mai di seconda o di nona. La distanza di nona è tuttavia tollerata al terzo rivolto, purché la settima sia preparata da un accordo consonante.
+\end{osservazione}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Stato & Cifratura & Grado al basso & Risolve su & Basso obbligato \\
+\hline
+Fond. & 7 & VII & I & Sì (sale) \\
+I rv. & 6/5 & II & I6 & Sì (sale) \\
+II rv. & 4/3 & IV & I6/4, poi I6 & Sì (scende) \\
+III rv. & 4/2 & VI & V (I6/4) & Sì (scende) \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Risoluzioni anticipate della VII7}
+\label{subsec:risoluzioni_anticipate}
+
+Se si hanno a disposizione due movimenti, è sempre possibile far risolvere \textbf{anticipatamente} la settima dell'accordo (sia allo stato fondamentale sia nei rivolti): la settima scende di grado e il VII7 si trasforma direttamente in un accordo di settima di dominante (V7) o in un suo rivolto, prima di cadere sulla tonica.
+
+\begin{regola}[Risoluzioni anticipate]
+	\label{reg:risoluzioni_anticipate}
+	\begin{itemize}
+		\item $VII^7 \rightarrow V^6_5 \rightarrow I$
+		\item $VII^6_5 \rightarrow V^4_3 \rightarrow I$ (oppure $I^6$)
+		\item $VII^4_3 \rightarrow V^4_2 \rightarrow I^6$
+		\item $VII^4_2 \rightarrow V^7 \rightarrow I$
+	\end{itemize}
+\end{regola}
+
+\begin{esempio}[Risoluzione anticipata VII7 $\rightarrow$ V6/5 $\rightarrow$ I in Do Maggiore]
+	\label{ex:risoluzione_anticipata}
+	La settima (La) scende anticipatamente sulla settima di dominante (Sol): il VII7 diventa un V6/5 che risolve regolarmente sulla tonica.
+	\musica{
+		\partilate
+		{ \key do \major \time 4/4 }
+		{ la'1 | sol'1 | sol'1 }
+		{ fa'1 | fa'1 | mi'1 }
+		{ re'1 | re'1 | do'1 }
+		{ si,1 | si,1 | do1 }
+		\lyricmode { "VIIø7"1 "V6/5"1 "I"1 }
+		\figuremode { <7>1 <6 5>1 s1 }
+	}
+\end{esempio}
+
 \section{La settima sul secondo grado nel modo minore (II7)}
 \label{sec:ii7_minore}
 
