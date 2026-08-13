@@ -79,3 +79,28 @@ The project uses several `tcolorbox` environments to categorize information:
 *   **Modular Chapters:** Keep individual chapters in the `Capitoli/` directory.
 *   **Cross-references:** Use `\label` and `\ref` extensively to link concepts across the manual.
 *   **Shared Definitions:** Update `definizioni.ly` for any global LilyPond graphical overrides or functions.
+
+## Codebase Memory (codebase-memory-mcp)
+
+This project is indexed with `codebase-memory-mcp` as a knowledge graph (project name: **`manualearmonia`**). ALWAYS prefer the MCP graph tools over grep/glob for structural queries about the codebase.
+
+### Priority Order
+
+1. `search_graph` — find LilyPond functions, LaTeX commands/environments, and files by pattern (BM25 full-text search).
+2. `trace_path` — trace who calls a function or what it calls.
+3. `get_code_snippet` — read the source of a specific function/class symbol.
+4. `query_graph` — run Cypher queries for complex multi-hop patterns.
+5. `get_architecture` — high-level project summary and module detection.
+
+### When to fall back to grep/glob
+
+- Searching for string literals, error messages, or config values.
+- Searching non-code files (e.g. `.tex`, `.ly`, `.txt` content).
+- When MCP tools return insufficient results.
+
+### Examples
+
+- Find a LilyPond function: `search_graph(query="partilate", project="manualearmonia")`
+- Read its source: `get_code_snippet(qualified_name="definizioni.ly.partilate", project="manualearmonia")`
+- High-level structure: `get_architecture(project="manualearmonia", aspects=['all'])`
+- See all indexed projects: `list_projects`
