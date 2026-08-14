@@ -10,8 +10,9 @@ Uso:
   python3 tools/verifica_voci.py --chapter 04   # solo un capitolo (numero file)
   python3 tools/verifica_voci.py --verbose  # stampa tutte le verticali dei blocchi falliti
   python3 tools/verifica_voci.py --json     # output macchina (per CI/commit check)
+  python3 tools/verifica_voci.py --accept-avvisi  # tollera i blocchi warn-only (SOLO AVVISI)
 
-Exit code: 0 se nessuna violazione, 1 altrimenti.
+Exit code: 0 se nessuna violazione dura, o solo SOLO AVVISI con --accept-avvisi; 1 altrimenti.
 """
 import argparse, glob, json, re, sys
 
@@ -119,6 +120,8 @@ def analyze(fn, block_idx, content, verbose):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--chapter', help='filtra per capitolo (numero file, es. 04)')
+    ap.add_argument('--accept-avvisi', action='store_true',
+                    help='esce 0 se restano solo blocchi warn-only (SOLO AVVISI)')
     ap.add_argument('--verbose', action='store_true')
     ap.add_argument('--json', action='store_true')
     args = ap.parse_args()
@@ -157,7 +160,7 @@ def main():
                 for line in r['rows']:
                     print(line)
     print("Blocchi SATB con violazioni: %d" % len(bad))
-    return 1 if bad else 0
+    return 1 if bad and not (args.accept_avvisi and all(r['warn_only'] for r in bad)) else 0
 
 if __name__ == '__main__':
     sys.exit(main())
