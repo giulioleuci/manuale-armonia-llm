@@ -18,12 +18,15 @@ La caratteristica fondamentale della V7 è la presenza, al suo interno, di un tr
 \begin{esempio}[La V7 e il suo tritono in Do Maggiore]
 	\label{ex:tritono_v7}
 	\musica{
-		\new Staff {
-			\clef treble
-			<sol' si' re'' fa''>1-\markup{V7}
-			<si' fa''>1-\markup{"Tritono (5a dim.)"}
-		}
-	}
+	\partilate
+	{ \key do \major \time 4/4 }
+	{ re''1 fa'1 }
+	{ fa'1 re'1 }
+	{ si1 si1 }
+	{ sol,1 sol,1 }
+	\lyricmode { "V7"1 "Tritono (5a dim.)"1 }
+	\figuremode { <7>1 s1 }
+}
 \end{esempio}
 
 \begin{regola}[Preparazione e Risoluzione della Dissonanza]

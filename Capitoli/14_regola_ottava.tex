@@ -219,11 +219,32 @@ Nelle tabelle della Regola dell'Ottava completa, sul VI grado discendente appare
 
 \begin{itemize}
     \item \textbf{Sesta italiana (It+6):} Formata da VI$\flat$ (basso), tonica e IV$\sharp$ (sesta eccedente). Solo tre note.
-    \musica{ \new Staff { \clef treble \key do \minor <lab' do'' fad''>1 } }
+    \musica{ \partilate
+	{ \key do \minor \time 4/4 }
+	{ lab'1 }
+	{ fad'1 }
+	{ do'1 }
+	{ lab1 }
+	\lyricmode { "It$^6$"1 }
+	\figuremode { s1 } }
     \item \textbf{Sesta francese (Fr+6):} Aggiunge il II grado alla sesta italiana. In Do m: \Labemolle -Do-Re-\Fadiesis .
-    \musica{ \new Staff { \clef treble \key do \minor <lab' do'' re'' fad''>1 } }
+    \musica{ \partilate
+	{ \key do \minor \time 4/4 }
+	{ fad'1 }
+	{ do'1 }
+	{ re1 }
+	{ lab,1 }
+	\lyricmode { "Fr$^6$"1 }
+	\figuremode { s1 } }
     \item \textbf{Sesta tedesca (Ger+6):} Aggiunge il III$\flat$ alla sesta italiana. In Do m: \Labemolle -Do-\Mibemolle -\Fadiesis . Produce quinte parallele se risolve direttamente su V; si usa spesso il I6/4 come ponte (\ref{chap:quarta_sesta}).
-    \musica{ \new Staff { \clef treble \key do \minor <lab' do'' mib'' fad''>1 } }
+    \musica{ \partilate
+	{ \key do \minor \time 4/4 }
+	{ fad'1 }
+	{ mib'1 }
+	{ do'1 }
+	{ lab,1 }
+	\lyricmode { "Ger$^6$"1 }
+	\figuremode { s1 } }
 \end{itemize}
 
 \begin{regola}[Risoluzione della sesta eccedente]
