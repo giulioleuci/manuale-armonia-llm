@@ -21,5 +21,12 @@
 # LilyPond / lyluatex temporary files
 tmp-ly/
 
+# Python (tools/)
+__pycache__/
+*.pyc
+
+# Superpowers SDD scratch (ledger, briefs, review packages)
+.superpowers/
+
 # macOS
 .DS_Store
