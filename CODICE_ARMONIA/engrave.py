@@ -18,6 +18,21 @@ HW = 8.6           # head width
 STEMLEN = 3.3*S
 VCOL = {'S': HexColor('#1f5fbf'), 'A': HexColor('#2e8b3d'), 'T': HexColor('#d9730d'), 'B': HexColor('#c0392b')}
 VNAME = ['S','A','T','B']
+
+VOICE_DIRECTIONS = {
+    0: {'stem': +1, 'tie': +1},  # S: gambo in su (+1), legatura sopra (+1)
+    1: {'stem': -1, 'tie': -1},  # A: gambo in giù (-1), legatura sotto (-1)
+    2: {'stem': +1, 'tie': +1},  # T: gambo in su (+1), legatura sopra (+1)
+    3: {'stem': -1, 'tie': -1},  # B: gambo in giù (-1), legatura sotto (-1)
+}
+
+def get_stem_direction(vi):
+    """Restituisce la direzione del gambo per la voce vi (+1 in su, -1 in giù)."""
+    return VOICE_DIRECTIONS[vi]['stem'] if isinstance(vi, int) else VOICE_DIRECTIONS[VNAME.index(vi)]['stem']
+
+def get_tie_direction(vi):
+    """Restituisce la direzione della legatura per la voce vi (+1 sopra, -1 sotto)."""
+    return VOICE_DIRECTIONS[vi]['tie'] if isinstance(vi, int) else VOICE_DIRECTIONS[VNAME.index(vi)]['tie']
 GAP = 5.4*S        # between treble bottom line and bass top line
 ACC_SC = 2.6*S/950.0
 
@@ -102,6 +117,33 @@ def arrow(c, x1, y1, x2, y2, color, dashed=False, lw=1.15):
     c.drawPath(p, stroke=0, fill=1)
     c.restoreState()
 
+def draw_tie(c, x1, y1, x2, y2, direction=+1, color=black):
+    """Disegna una legatura di valore (tie) tra due note dello stesso pitch.
+    direction: +1 sopra le note (S, T), -1 sotto le note (A, B).
+    """
+    c.saveState()
+    c.setFillColor(color); c.setStrokeColor(color)
+    xa = x1 + HW/2 - 0.5
+    xb = x2 - HW/2 + 0.5
+    dx = xb - xa
+    if dx <= 0:
+        c.restoreState()
+        return
+    y_off = 3.5 * direction
+    ya = y1 + y_off
+    yb = y2 + y_off
+    sag = 5.2 * direction
+    mid_y = (ya + yb) / 2 + sag
+    thick = 1.3 * direction
+
+    p = c.beginPath()
+    p.moveTo(xa, ya)
+    p.curveTo(xa + 0.25 * dx, mid_y + thick, xa + 0.75 * dx, mid_y + thick, xb, yb)
+    p.curveTo(xa + 0.75 * dx, mid_y - thick, xa + 0.25 * dx, mid_y - thick, xa, ya)
+    p.close()
+    c.drawPath(p, stroke=0, fill=1)
+    c.restoreState()
+
 def text_c(c, x, y, t, font='DV', size=8, color=black):
     c.setFont(font, size); c.setFillColor(color); c.drawCentredString(x, y, t)
 
@@ -166,7 +208,7 @@ def draw_system(c, x0, ytop, x1, chords, nacc=0, caps=None, dx=None, show_labels
     kalt = ks_alt(nacc)
     memT, memB = {}, {}
     info = []   # per chord: per voice head x, y, acc info
-    tail = [False]*4   # voce che prosegue la minima del tempo precedente: nessuna testa
+    active_ties = []   # list of (i, i+1, voice_idx)
     for i, ch in enumerate(chords):
         v = ch['v']
         # accidentals memory reset after barline
@@ -174,27 +216,27 @@ def draw_system(c, x0, ytop, x1, chords, nacc=0, caps=None, dx=None, show_labels
             memT.clear(); memB.clear()
         xc = xs[i]
         heads = {}
-        skip = tail[:]
-        mini = [not skip[k] and i < n-1 and not ch.get('bar') and chords[i+1]['v'][k] == v[k] for k in range(4)]
-        tail = mini[:]
+        # Rileva note legate con l'accordo successivo (due semiminime legate al posto della minima)
+        if i < n - 1:
+            nxt_v = chords[i+1]['v']
+            explicit_ties = ch.get('ties', [])
+            for k in range(4):
+                if nxt_v[k] == v[k] or k in explicit_ties or VNAME[k] in explicit_ties:
+                    active_ties.append((i, i+1, k))
         for st, mem, vi in ((T, memT, (0,1)), (B, memB, (2,3))):
             up_i, dn_i = vi     # up stem voice, down stem voice
             hx = {up_i: xc, dn_i: xc}
             pu, pd = v[up_i], v[dn_i]
-            if pu == pd or skip[up_i] or skip[dn_i]:
+            if pu == pd:
                 pass
             elif abs(step(pu) - step(pd)) == 1:
                 hx[dn_i] = xc - HW + 0.8
             # accidentals (process top to bottom)
-            notes = sorted([(vi_, v[vi_], st.y(v[vi_])) for vi_ in vi if not skip[vi_]], key=lambda t: -t[2])
-            # memory order: left-to-right chord order doesn't matter within chord; use top-down
+            notes = sorted([(vi_, v[vi_], st.y(v[vi_])) for vi_ in vi], key=lambda t: -t[2])
             accs = layout_accs(notes, kalt, mem)
             cols = []   # list of lists of y in column
             accx = {}
-            act = [k for k in vi if not skip[k]]
-            if not act:
-                for vi_ in vi: heads[vi_] = (hx[vi_], st.y(v[vi_]))
-                continue
+            act = list(vi)
             leftmost = min(hx[k] for k in act) - HW/2
             for idx, p, yy in notes:
                 kind = accs[idx]
@@ -219,17 +261,16 @@ def draw_system(c, x0, ytop, x1, chords, nacc=0, caps=None, dx=None, show_labels
                 lx0 = min(hx[k] for k in act) - HW/2 - 3.2; lx1 = max(hx[k] for k in act) + HW/2 + 3.2
                 c.setStrokeColor(black); c.setLineWidth(0.6)
                 for r in led: c.line(lx0, st.ly(r), lx1, st.ly(r))
-            # heads and stems
+            # heads and stems: sempre semiminime piene
             for vi_ in act:
                 yy = st.y(v[vi_]); xx = hx[vi_]
-                head(c, xx, yy, filled=not mini[vi_])
+                head(c, xx, yy, filled=True)
             c.setStrokeColor(black); c.setLineWidth(0.9)
-            for vi_, direction in ((up_i, +1), (dn_i, -1)):
-                if skip[vi_]: continue
+            for vi_ in vi:
+                direction = get_stem_direction(vi_)
                 yy = st.y(v[vi_]); xx = hx[vi_]
                 if direction > 0:
                     xs_ = xx + HW/2 - 0.55
-                    ytip = max(yy + STEMLEN, st.yb + 2*S) if True else 0
                     ytip = yy + STEMLEN
                     c.line(xs_, yy + 0.8, xs_, ytip)
                 else:
@@ -248,7 +289,14 @@ def draw_system(c, x0, ytop, x1, chords, nacc=0, caps=None, dx=None, show_labels
             else:
                 c.setStrokeColor(black); c.setLineWidth(0.8); c.line(xb, T.yb+4*S, xb, B.yb)
                 c.setLineWidth(0.8)
+    # legature di valore (ties)
+    for (ci, c_next, k) in active_ties:
+        (xa, ya) = info[ci][k]
+        (xb, yb) = info[c_next][k]
+        tdir = get_tie_direction(k)
+        draw_tie(c, xa, ya, xb, yb, direction=tdir)
     # arrows
+    tied_set = {(ci, c_next, k) for (ci, c_next, k) in active_ties}
     if arrows:
         for i, ch in enumerate(chords[:-1]):
             if not ch.get('conn'): continue
@@ -261,7 +309,8 @@ def draw_system(c, x0, ytop, x1, chords, nacc=0, caps=None, dx=None, show_labels
                 col = VCOL[VNAME[k]]
                 same = (ch['v'][k] == nxt['v'][k])
                 if same:
-                    arrow(c, x_start, ya, x_end, yb, col, dashed=True)
+                    if (i, i+1, k) not in tied_set:
+                        arrow(c, x_start, ya, x_end, yb, col, dashed=True)
                 else:
                     # shorten slightly vertical to avoid overlapping heads
                     arrow(c, x_start, ya, x_end, yb, col)
