@@ -31,10 +31,10 @@ Storicamente, le cadenze sono state codificate nella pratica compositiva come fo
 		\musica{
 			\partilate
 			{ \key do \major \time 4/4 }
-			{ re'2 do'2 }
-			{ si2 sol2 }
-			{ sol2 mi2 }
-			{ sol,2 do2 }
+			{ re''2 do''2 }
+			{ si'2 sol'2 }
+			{ re'2 mi'2 }
+			{ sol2 do2 }
 			\lyricmode { "V"2 "I"2 }
 			\figuremode {}
 		}
@@ -52,16 +52,26 @@ Storicamente, le cadenze sono state codificate nella pratica compositiva come fo
 	\end{definizione}
 
 	\begin{esempio}[Esempi di Cadenza Imperfetta]
-		Mostriamo due varianti: soprano sulla terza e V6 invece di V.
+		Mostriamo due varianti: soprano sulla terza (V-I) e V6 invece di V (V6-I).
 		\musica{
 			\partilate
 			{ \key do \major \time 4/4 }
-			{ re'2 mi' | r2 re' | si2 do' }
-			{ si2 do' | r2 si | sol2 sol }
-			{ sol2 sol | r2 fa | re2 mi }
-			{ sol,2 do | r2 sol, | sol,2 do }
-			\lyricmode { "V-I (sop.3a)" | "V6-I" }
-			\figuremode { s2 s | r <6> | s s }
+			{ re''2 mi'' }
+			{ sol'2 sol' }
+			{ si2 do' }
+			{ sol2 do }
+			\lyricmode { "V-I (sop.3a)" }
+			\figuremode { s2 s }
+		}
+		\musica{
+			\partilate
+			{ \key do \major \time 4/4 }
+			{ re''2 do'' }
+			{ sol'2 sol' }
+			{ re'2 mi' }
+			{ si,2 do }
+			\lyricmode { "V6"2 "I" }
+			\figuremode { <6>2 s }
 		}
 	\end{esempio}
 
@@ -84,10 +94,10 @@ Storicamente, le cadenze sono state codificate nella pratica compositiva come fo
 		\musica{
 			\partilate
 			{ \key do \major \time 4/4 }
-			{ fa'2 mi'2 }
+			{ fa''2 mi''2 }
+			{ la'2 sol'2 }
 			{ do'2 do'2 }
-			{ la2 sol2 }
-			{ fa,2 do2 }
+			{ fa2 do2 }
 			\lyricmode { "IV"2 "I"2 }
 			\figuremode {}
 		}
@@ -108,10 +118,10 @@ Storicamente, le cadenze sono state codificate nella pratica compositiva come fo
 		\musica{
 			\partilate
 			{ \key do \major \time 4/4 }
-			{ fa'2 sol'2 }
-			{ do'2 re'2 }
-			{ la2 si2 }
-			{ fa,2 sol,2 }
+			{ fa''2 re''2 }
+			{ la'2 sol'2 }
+			{ do'2 si2 }
+			{ fa2 sol2 }
 			\lyricmode { "IV"2 "V"2 }
 			\figuremode {}
 		}
@@ -130,9 +140,9 @@ Storicamente, le cadenze sono state codificate nella pratica compositiva come fo
 			\partilate
 			{ \key do \major \time 4/4 }
 			{ si'2 do''2 } % La sensibile (Si) sale alla tonica (Do)
-			{ re'2 mi'2 }
-			{ sol2 la2 }
-			{ sol,2 la,2 }   % Il basso sale di grado
+			{ sol'2 mi'2 }
+			{ re'2 do'2 }
+			{ sol2 la2 }   % Il basso sale di grado
 			\lyricmode { "V"2 "VI"2 }
 			\figuremode {}
 		}
@@ -161,10 +171,10 @@ Storicamente, le cadenze sono state codificate nella pratica compositiva come fo
 		\musica{
 			\partilate
 			{ \key do \major \time 4/4 }
-			{ mi'4 fa'4 sol'4 do''4 }
-			{ do'4 do'4 re'4 mi'4 }
-			{ sol4 la4 si4 sol4 }
-			{ do4 fa,4 sol,4 do4 }
+			{ mi''4 fa''4 re''4 mi''4 }
+			{ sol'4 la'4 sol'4 sol'4 }
+			{ do'4 do'4 si4 do'4 }
+			{ do4 fa4 sol4 do4 }
 			\lyricmode { "I (T)"4 "IV (S)"4 "V (D)"4 "I (T)"4 }
 			\figuremode {}
 		}

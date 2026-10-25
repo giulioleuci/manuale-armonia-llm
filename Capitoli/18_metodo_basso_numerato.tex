@@ -166,12 +166,12 @@ Numerica: \texttt{s2 s | <7>2 <4 3>}
 \musica{
 	\partilate
 	{ \key do \major \time 4/4 }
-	{ mi'2 fa' | \freccia fa'4 \glissando mi'4 mi'2 }
-	{ do'2 do' | re'2 do'2 }
-	{ sol2 la | si2 sol2 }
-	{ do2 fa, | sol,2 do2 }
+	{ mi'2 fa'2 | fa'2~ \freccia fa'4 \glissando mi'4 }
+	{ do'2 do'2 | si2 do'2 }
+	{ sol2 la2 | sol2 sol2 }
+	{ do2 fa,2 | sol,2 do2 }
 	\lyricmode { "I"2 "IV" | "V7"2 "I"2 }
-	\figuremode { s2 s | <7>2 <4 3>2 }
+	\figuremode { s2 s | <7>2 <4>4 <3>4 }
 }
 
 \subsection{Basso numerato con modulazione implicita}
@@ -184,22 +184,22 @@ Numerica: \texttt{s2 s | <7>2 <4 3>}
 		}
 	}
 }
-Numerica: \texttt{s2 s | <6>2 s | s2 s | <6>1}
+Numerica: \texttt{s2 <6> | <6>2 <6> | s2 <6> | <6>1}
 
 \textbf{Analisi:}
 \begin{itemize}
 	\item Tonalità: Re maggiore (\Fadiesis{}, \Dodiesis{}).
-	\item Battuta 4: \Dodiesis{} con 6 $\rightarrow$ accordo di \Dodiesis{} con la terza al basso. \Dodiesis{} è la sensibile di Re. L'accordo sarà VII°6 di Re maggiore $\rightarrow$ rimaniamo in Re maggiore.
+	\item Battuta 4: \Dodiesis{} con 6 $\rightarrow$ accordo di La (V6) con la terza al basso: \Dodiesis{} è la sensibile di Re. Rimaniamo in Re maggiore.
 	\item Il brano sale per gradi congiunti (I-II-III-IV-V-VI-VII): Regola dell'Ottava completa ascendente in Re maggiore.
 \end{itemize}
 
 \musica{
 	\partilate
 	{ \key re \major \time 4/4 }
-	{ fad'2 fad' | fad' sol' | la'2 si' | do''1 }
-	{ re'2 re' | re' re' | fad'2 sol' | la'1 }
-	{ la2 si | la si | do'2 re' | la1 }
+	{ la'2 sol'2 | la'2 si'2 | la'2 sol'2 | la'1 }
+	{ re'2 dod'2 | re'2 si2 | dod'2 re'2 | mi'1 }
+	{ fad2 sol2 | fad2 mi2 | mi2 sol2 | mi1 }
 	{ re,2 mi, | fad, sol, | la,2 si, | dod1 }
-	\lyricmode { "I"2 "V" | "I6" "II6" | "V"2 "III" | "VII°6"1 }
-	\figuremode { s2 s | <6>2 <6> | s2 s | <6>1 }
+	\lyricmode { "I"2 "VII°6" | "I6" "II6" | "V"2 "IV6" | "V6"1 }
+	\figuremode { s2 <6> | <6>2 <6> | s2 <6> | <6>1 }
 }
