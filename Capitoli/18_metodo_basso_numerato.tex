@@ -140,14 +140,7 @@ Il segreto di un buon basso non è solo l'assenza di errori, ma la \textbf{coere
 
 \subsection{Basso numerato con settima di dominante e ritardo}
 
-\musica{
-	\new Staff {
-		\clef bass \key do \major \time 4/4
-		\relative do, {
-			do2 fa | sol2 do
-		}
-	}
-}
+\musica{es_cap18_01}
 Numerica: \texttt{s2 s | <7>2 <4 3>}
 
 \textbf{Lettura:}
@@ -163,27 +156,11 @@ Numerica: \texttt{s2 s | <7>2 <4 3>}
 	\item Il soprano può avere il Do (ritardo 4, poi Mi, risoluzione 3) oppure un'altra voce porta il ritardo.
 \end{itemize}
 
-\musica{
-	\partilate
-	{ \key do \major \time 4/4 }
-	{ mi'2 fa'2 | fa'2~ \freccia fa'4 \glissando mi'4 }
-	{ do'2 do'2 | si2 do'2 }
-	{ sol2 la2 | sol2 sol2 }
-	{ do2 fa,2 | sol,2 do2 }
-	\lyricmode { "I"2 "IV" | "V7"2 "I"2 }
-	\figuremode { s2 s | <7>2 <4>4 <3>4 }
-}
+\musica{es_cap18_02}
 
 \subsection{Basso numerato con modulazione implicita}
 
-\musica{
-	\new Staff {
-		\clef bass \key re \major \time 4/4
-		\relative re, {
-			re2 mi | fad2 sol | la2 si | dod1
-		}
-	}
-}
+\musica{es_cap18_03}
 Numerica: \texttt{s2 <6> | <6>2 <6> | s2 <6> | <6>1}
 
 \textbf{Analisi:}
@@ -193,13 +170,4 @@ Numerica: \texttt{s2 <6> | <6>2 <6> | s2 <6> | <6>1}
 	\item Il brano sale per gradi congiunti (I-II-III-IV-V-VI-VII): Regola dell'Ottava completa ascendente in Re maggiore.
 \end{itemize}
 
-\musica{
-	\partilate
-	{ \key re \major \time 4/4 }
-	{ la'2 sol'2 | la'2 si'2 | la'2 sol'2 | la'1 }
-	{ re'2 dod'2 | re'2 si2 | dod'2 re'2 | mi'1 }
-	{ fad2 sol2 | fad2 mi2 | mi2 sol2 | mi1 }
-	{ re,2 mi, | fad, sol, | la,2 si, | dod1 }
-	\lyricmode { "I"2 "VII°6" | "I6" "II6" | "V"2 "IV6" | "V6"1 }
-	\figuremode { s2 <6> | <6>2 <6> | s2 <6> | <6>1 }
-}
+\musica{es_cap18_04}

@@ -21,12 +21,9 @@
 \newcommand{\Sidiesis}{Si\diesis{}}
 \newcommand{\Sibemolle}{Si\bemolle{}}
 
-% Macro integrata per l'inclusione di blocchi LilyPond.
+% Macro per l'inclusione di esempi musicali vettoriali
 \newcommand{\musica}[1]{%
 	\begin{center}
-		\lily[nofragment]{
-            \include "definizioni.ly"
-			#1
-		}%
+		\includegraphics[max width=\linewidth]{esempi_gen/#1.pdf}%
 	\end{center}
 }

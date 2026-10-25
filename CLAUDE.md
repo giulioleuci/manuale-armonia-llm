@@ -4,13 +4,12 @@ This project is a comprehensive manual on tonal harmony, blending musical theory
 
 ## Project Overview
 
-The document is a LaTeX-based book titled **"Appunti sparsi di Armonia"**. It uses LilyPond for high-quality music notation integrated directly into the LaTeX source via the `lyluatex` package.
+The document is a LaTeX-based book titled **"Appunti sparsi di Armonia"**. It uses a custom Python engraving engine (`tools/armonia/`, derived from `CODICE_ARMONIA`) to render musical examples into vector PDFs (`esempi_gen/`), included in LaTeX via the `\musica{id}` macro.
 
 ### Key Technologies
 
 *   **LaTeX (LuaLaTeX):** The primary typesetting engine.
-*   **LilyPond (v2.24.0+):** For musical notation.
-*   **lyluatex:** The bridge between LaTeX and LilyPond.
+*   **Custom Python Engraver (`tools/armonia/`):** Based on ReportLab and FontTools for vector musical snippets (SATB grand staff, voice-leading arrows, figured bass, Roman numerals).
 *   **TikZ:** Used for geometric diagrams (e.g., the Circle of Fifths).
 *   **tcolorbox:** Provides stylized containers for definitions, examples, and technical notes.
 
@@ -24,19 +23,22 @@ The document is a LaTeX-based book titled **"Appunti sparsi di Armonia"**. It us
 ### Prerequisites
 
 1.  **TeX Live:** A full TeX distribution (e.g., TeX Live 2023 or newer).
-2.  **LuaLaTeX:** The document MUST be compiled with `lualatex` as required by the `lyluatex` package.
-3.  **LilyPond:** Version 2.24.0 or compatible must be installed and accessible in the system's PATH.
-4.  **Fonts:** `fontspec` is used. The environment must support the musical glyphs provided by the packages.
+2.  **LuaLaTeX:** The document is compiled with `lualatex`.
+3.  **Python 3:** With `reportlab` and `fonttools` (`pip install reportlab fonttools`).
 
-### Compilation Command
+### Generation and Compilation Commands
 
-To compile the project, run the following command from the root directory:
-
+1.  **Generate musical examples:**
 ```bash
-lualatex --shell-escape manuale.tex
+python3 tools/build_esempi.py
 ```
 
-*Note: The `--shell-escape` flag is required by `lyluatex` to invoke LilyPond during the compilation process.*
+2.  **Compile the manual:**
+```bash
+lualatex manuale.tex
+```
+
+*Note: LilyPond and `--shell-escape` are no longer required.*
 
 ## Development Conventions
 
@@ -45,19 +47,16 @@ lualatex --shell-escape manuale.tex
 *   **Sharps and Flats in Text:** For musical alterations within the LaTeX text, **always use the commands `\sharp` and `\flat`** (often within math mode: `$\sharp$` and `$\flat$`).
     *   *Do not* use literal Unicode characters (♯, ♭) or simple characters (#, b) in the main body text.
     *   Example: `Do$\sharp$`, `Si$\flat$`.
-*   **LilyPond Notation:** Inside LilyPond blocks, use the standard LilyPond language (Italian): `dodies` for Do♯, `sib` for Si♭.
 
-### LilyPond Integration: `partilate`
+### Musical Examples Integration
 
-For 4-part harmony (SATB) writing, always use the custom `partilate` function defined in `definizioni.ly`. It ensures a consistent "PianoStaff" layout with analysis and figured bass.
-
-**Syntax:**
-```lilypond
-\partilate
-    { \key do \major \time 4/4 } % 1. Global (key, time)
-    { do'2 mi' }                 % 2. Soprano
-    { sol1 }                     % 3. Alto
-    { mi1 }                      % 4. Tenor
+Musical examples are defined in `tools/esempi_data.py` and included in LaTeX via:
+```latex
+\begin{esempio}[Titolo esempio]
+    \label{ex:mio_esempio}
+    \musica{es_capXX_YY}
+\end{esempio}
+```
     { do1 }                      % 5. Bass
     \lyricmode { I IV }          % 6. Analysis (Roman numerals/Degrees)
     \figuremode { s1 <6> }       % 7. Figured Bass (Numbers)

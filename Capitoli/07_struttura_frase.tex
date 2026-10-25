@@ -29,18 +29,7 @@ La relazione tra antecedente e conseguente è analoga a quella tra domanda e ris
 
 \begin{esempio}[Struttura del periodo in un basso dato]
     Indichiamo con \textit{markup} i punti cadenzali di un basso di 8 misure.
-    \musica{
-        \new Staff {
-            \key do \major \time 4/4
-            \relative do {
-                \clef bass
-                do2 fa | sol2 do,^\markup{C. Imperfetta} |
-                do2 fa | sol1^\markup{C. Sospesa} \bar "||"
-                do,2 fa | sol2 mi |
-                fa2 sol | do,1^\markup{C. Perfetta} \bar "|."
-            }
-        }
-    }
+    \musica{es_cap07_01}
 \end{esempio}
 
 \section{Applicazione al basso dato}
@@ -60,14 +49,5 @@ La relazione tra antecedente e conseguente è analoga a quella tra domanda e ris
 
 \begin{esempio}[Armonizzazione di un periodo di 8 misure]
     Mostriamo come la scelta delle cadenze definisce la struttura formale del brano.
-    \musica{
-        \partilate
-        { \key do \major \time 4/4 }
-        { do''2 do''2 | si'2 do''2 | do''2 do''2 | si'1 }
-        { mi'2 fa'2 | re'2 mi'2 | mi'2 fa'2 | re'1 }
-        { sol2 la2 | sol2 sol2 | sol2 la2 | sol1 }
-        { do2 fa | sol,2 do | do2 fa | sol,1 }
-        \lyricmode { "I"2 "IV" | "V"2 "I" | "I"2 "IV" | "V"1 }
-        \figuremode { s2 s | s <5> | s s | s }
-    }
+    \musica{es_cap07_02}
 \end{esempio}

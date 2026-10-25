@@ -21,19 +21,7 @@ L'ordine in cui gli armonici appaiono è universale e immutabile. Se prendiamo c
 \begin{esempio}[I primi 7 suoni armonici di Do]
 	\label{ex:serie_armonici_do}
 	% Questo esempio non è SATB, quindi usa la sintassi standard di LilyPond
-	\musica{
-		\new Staff {
-			\clef bass \time 4/4
-			do,1^\markup \bold "Fond." 
-			do1^\markup \bold "8va" 
-			\clef treble
-			sol1^\markup \bold "5a" 
-			do'1^\markup \bold "8va" 
-			mi'1^\markup \bold "3a magg." 
-			sol'1^\markup \bold "5a" 
-			sib'1^\markup \bold "7a min."
-		}
-	}
+	\musica{es_cap01_01}
 \end{esempio}
 
 Come si può osservare nell'Esempio \ref{ex:serie_armonici_do}, la natura stessa ci fornisce gli intervalli fondamentali dell'armonia. Dopo l'ottava (il raddoppio della fondamentale), il primo nuovo suono a comparire è la \textbf{quinta giusta} (Do-Sol), seguito dalla \textbf{terza maggiore} (Do-Mi). Questi tre suoni (Do, Mi, Sol), presi insieme, formano l'accordo perfetto maggiore (come scopriremo nel Capitolo \ref{chap:triadi}), la cellula base di tutta la musica tonale. La serie armonica, quindi, non è un'astrazione teorica, ma la giustificazione fisica dell'esistenza e della stabilità dell'accordo maggiore.
@@ -113,13 +101,7 @@ Il rivolto non è una semplice trasposizione: cambia la natura stessa dell'inter
 \begin{esempio}[Inversione di una Terza Maggiore]
 	\label{ex:inversione_intervallo}
 	Una terza maggiore (Do-Mi) si rivolta in una sesta minore (Mi-Do). Aritmeticamente: $3+6=9$.
-	\musica{
-		\new Staff {
-			\clef treble
-			<do' mi'>2^\markup "3ª Maggiore"
-			<mi' do''>2^\markup "6ª Minore"
-		}
-	}
+	\musica{es_cap01_02}
 \end{esempio}
 
 Questo principio è fondamentale non solo per la teoria, ma anche per la pratica, poiché la natura di un accordo e la sua funzione possono cambiare drasticamente a seconda di quale intervallo si forma con la nota più grave (il basso).
