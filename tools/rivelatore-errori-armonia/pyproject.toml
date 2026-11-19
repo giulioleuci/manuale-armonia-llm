@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "armonia-complementare"
+version = "0.1.0"
+description = "Analisi didattica offline di corali SATB in MusicXML"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["music21==10.5.0", "defusedxml==0.7.1"]
+
+[project.scripts]
+armonia = "armonia.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["armonia*"]
+
+[tool.setuptools.package-data]
+armonia = ["profili/*.toml"]

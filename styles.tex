@@ -6,14 +6,21 @@
 		enhanced,
 		breakable, 
 		colback=white,
-		attach boxed title to top left={yshift=-2mm, xshift=2mm},
+		coltitle=white,
+		toptitle=1.2mm,
+		bottomtitle=1.2mm,
 		boxrule=1pt, 
 		separator sign={:},
 		before skip=12pt, 
 		after skip=12pt,
-		fonttitle=\bfseries\large
+		fonttitle=\bfseries\large\raggedright
 	}
 }
+
+% \label nel corpo di un box rimanda al numero del box (non a quello della sezione)
+\makeatletter
+\newcommand{\tcbsetcurrentlabel}{\protected@edef\@currentlabel{\thetcbcounter}}
+\makeatother
 
 % Fabbrica di box per OCP (Open/Closed Principle)
 \newcommand{\newmanualbox}[3]{%
@@ -22,7 +29,8 @@
     % #3 = additional tcb keys
     \newtcolorbox[auto counter,number within=chapter,list inside=#1]{#1}[1][]{%
         stilebase,
-        adjusted title={#2 \thetcbcounter: ##1},
+        adjusted title={#2 \thetcbcounter\if\relax\detokenize{##1}\relax\else: ##1\fi},
+        before upper={\tcbsetcurrentlabel},
         #3
     }%
 }
@@ -31,7 +39,7 @@
 \newmanualbox{definizione}{Definizione}{colframe=black!80!white}
 
 % Ambiente per esempi
-\newmanualbox{esempio}{Esempio}{colframe=black!60!white, boxrule=0.6pt}
+\newmanualbox{esempio}{Esempio}{colframe=black!60!white, boxrule=0.6pt, before upper app={\interlinepenalty=10000\relax}}
 
 % Ambiente per regole
 \newmanualbox{regola}{Regola}{colframe=black!80!white}

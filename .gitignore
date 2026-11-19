@@ -31,3 +31,7 @@ __pycache__/
 # macOS
 .DS_Store
 .venv/
+.playwright-mcp/
+*.egg-info/
+build/
+dist/

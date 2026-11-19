@@ -21,9 +21,18 @@
 \newcommand{\Sidiesis}{Si\diesis{}}
 \newcommand{\Sibemolle}{Si\bemolle{}}
 
-% Macro per l'inclusione di esempi musicali vettoriali
+% Sigla di accordo nel testo: \sigla{grado}{cifra in alto}{cifra in basso}, es. \sigla{V}{6}{5} = V con 6 sopra 5 (numerica sintetica)
+\newcommand{\sigla}[3]{\texorpdfstring{\ensuremath{\text{#1}\ifx\relax#2\relax\else^{\text{#2}}\fi\ifx\relax#3\relax\else_{\text{#3}}\fi}}{#1#2#3}}
+
+% Numerica in colonna (due cifre una sopra l'altra), come sotto il grado nelle figure
+\newcommand{\cifre}[2]{\begin{tabular}[c]{@{}c@{}}#1\\#2\end{tabular}}
+
+% Macro per l'inclusione di esempi musicali vettoriali: tutti alla stessa scala
+% (SCALA in tools/armonia/render_snippet.py; gli esempi lunghi vanno a capo su piu' sistemi)
+\newcommand{\scalamusica}{0.8}
+% (\nopagebreak: lo spartito non si separa mai dalla didascalia che lo precede)
 \newcommand{\musica}[1]{%
-	\begin{center}
-		\includegraphics[max width=\linewidth]{esempi_gen/#1.pdf}%
-	\end{center}
+	\par\nopagebreak\smallskip
+	{\centering\includegraphics[scale=\scalamusica]{esempi_gen/#1.pdf}\par}%
+	\smallskip
 }

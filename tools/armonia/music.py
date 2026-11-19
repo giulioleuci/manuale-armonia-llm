@@ -1,7 +1,9 @@
 import itertools, re
+from functools import lru_cache
 LETTERS = 'CDEFGAB'
 SEMI = [0,2,4,5,7,9,11]
 
+@lru_cache(None)
 def parse(p):
     m = re.match(r'^([A-G])(bb|b|##|#|n)?(-?\d)$', p)
     L, acc, o = m.group(1), m.group(2) or '', int(m.group(3))
@@ -12,10 +14,12 @@ def name_parse(n):
     m = re.match(r'^([A-G])(bb|b|##|#)?$', n)
     return LETTERS.index(m.group(1)), {'':0,'#':1,'##':2,'b':-1,'bb':-2}[m.group(2) or '']
 
+@lru_cache(None)
 def midi(p):
     l, o, a, _ = parse(p)
     return 12*(o+1) + SEMI[l] + a
 
+@lru_cache(None)
 def step(p):
     l, o, a, _ = parse(p)
     return o*7 + l

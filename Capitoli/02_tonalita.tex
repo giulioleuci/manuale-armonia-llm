@@ -1,0 +1,109 @@
+% ============================================================
+% CAPITOLO 2 - LA TONALITA'
+% ============================================================
+\chapter{La tonalità}
+\label{chap:tonalita}
+
+Una tonalità è una scala con un centro, la tonica, intorno a cui si dispongono gli altri gradi. Questo capitolo dà i nomi dei gradi, distingue il modo maggiore dal minore e mostra come le tonalità sono collegate fra loro.
+
+\section{Gradi della scala e loro nomi}
+\label{sec:gradi_scala}
+
+\begin{definizione}[Gradi della scala]
+	\label{def:gradi_scala}
+	I sette gradi della scala si indicano con numeri romani e hanno un nome:
+	\begin{center}
+	\begin{tabular}{cl}
+	\toprule
+	\textbf{Grado} & \textbf{Nome} \\
+	\midrule
+	I & tonica \\
+	II & sopratonica \\
+	III & mediante \\
+	IV & sottodominante \\
+	V & dominante \\
+	VI & sopradominante \\
+	VII & sensibile (nel minore naturale: sottotonica) \\
+	\bottomrule
+	\end{tabular}
+	\end{center}
+\end{definizione}
+
+La tonica è il centro di gravità della scala. La dominante, quinta sopra la tonica, e la sottodominante, quinta sotto, sono i due gradi che le stanno intorno. La sensibile dista solo un semitono dalla tonica e tende a salire su di essa. Le funzioni che questi gradi svolgono nel discorso armonico si studiano nel Capitolo \ref{chap:funzioni_armoniche}.
+
+\section{Modo maggiore e modo minore}
+\label{sec:modi}
+
+Il modo maggiore e il modo minore si distinguono per la successione di toni e semitoni. Conta soprattutto l'intervallo tra il I e il III grado: una terza maggiore dà il modo maggiore, una terza minore il modo minore.
+
+Una seconda asimmetria riguarda il VII grado. Nel modo maggiore c'è una vera sensibile. Nel minore naturale il VII grado è un tono sotto la tonica e si chiama sottotonica. Per ottenere la tensione necessaria alla cadenza lo si alza di un semitono, e nasce così la \textbf{scala minore armonica}.
+
+L'alzamento della sottotonica crea però, tra il VI grado e la sensibile, una \textbf{seconda aumentata}, che la melodia tende a evitare (Capitolo \ref{chap:errori_condotta}).
+
+\section{Il circolo delle quinte}
+\label{sec:circolo_quinte}
+
+Le relazioni tra le tonalità si leggono sul \textbf{circolo delle quinte}. Ogni passo corrisponde a una quinta giusta ascendente, o a una quarta giusta discendente, e aggiunge un diesis (o toglie un bemolle) all'armatura di chiave.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[scale=3.2]
+		% --- Cerchi concentrici ---
+		\draw[thick, gray!80] (0,0) circle (1.5cm);
+		\draw[thick, gray!80] (0,0) circle (1.1cm);
+
+		% --- Tonalità maggiori (cerchio esterno) ---
+		\node at (90:1.3cm) {\textbf{Do}};
+		\node at (60:1.3cm) {\textbf{Sol}};
+		\node at (30:1.3cm) {\textbf{Re}};
+		\node at (0:1.3cm) {\textbf{La}};
+		\node at (330:1.3cm) {\textbf{Mi}};
+		\node at (300:1.3cm) {\textbf{Si}};
+		\node at (270:1.3cm) {\textbf{\Fadiesis{}/\Solbemolle{}}};
+		\node at (240:1.3cm) {\textbf{\Rebemolle{}}};
+		\node at (210:1.3cm) {\textbf{\Labemolle{}}};
+		\node at (180:1.3cm) {\textbf{\Mibemolle{}}};
+		\node at (150:1.3cm) {\textbf{\Sibemolle{}}};
+		\node at (120:1.3cm) {\textbf{Fa}};
+
+		% --- Tonalità minori (cerchio interno) ---
+		\node[scale=0.85] at (90:0.8cm) {la m};
+		\node[scale=0.85] at (60:0.8cm) {mi m};
+		\node[scale=0.85] at (30:0.8cm) {si m};
+		\node[scale=0.85] at (0:0.8cm) {fa\sharp\ m};
+		\node[scale=0.85] at (330:0.8cm) {do\sharp\ m};
+		\node[scale=0.85] at (300:0.8cm) {sol\sharp\ m};
+		\node[scale=0.85] at (270:0.8cm) {re\sharp/mi\flat\ m};
+		\node[scale=0.85] at (240:0.8cm) {si\flat\ m};
+		\node[scale=0.85] at (210:0.8cm) {fa m};
+		\node[scale=0.85] at (180:0.8cm) {do m};
+		\node[scale=0.85] at (150:0.8cm) {sol m};
+		\node[scale=0.85] at (120:0.8cm) {re m};
+
+		% --- Elenco esplicito delle alterazioni (anello più esterno) ---
+		\node[gray, scale=0.7] at (90:1.75cm) {Nessuna};
+		\node[gray, scale=0.7] at (60:1.75cm) {\Fadiesis{}};
+		\node[gray, scale=0.7, align=center] at (30:1.75cm) {\Fadiesis{}, \Dodiesis{}};
+		\node[gray, scale=0.7, align=center] at (0:1.75cm) {\Fadiesis{}, \Dodiesis{}, \Soldiesis{}};
+		\node[gray, scale=0.7, align=center] at (330:1.75cm) {\Fadiesis{}, \Dodiesis{}, \Soldiesis{}, \Rediesis{}};
+		\node[gray, scale=0.7, align=center] at (300:1.75cm) {\Fadiesis{}, \Dodiesis{}, \Soldiesis{}, \Rediesis{}, \Ladiesis{}};
+		\node[gray, scale=0.65, align=center] at (270:1.85cm) {%
+			$\substack{\text{\Fadiesis{}, \Dodiesis{}, \Soldiesis{}, \Rediesis{}, \Ladiesis{}, \Midiesis{}} \\ \text{\Sibemolle{}, \Mibemolle{}, \Labemolle{}, \Rebemolle{}, \Solbemolle{}, \Dobemolle{}}}$};
+		\node[gray, scale=0.7, align=center] at (240:1.75cm) {\Sibemolle{}, \Mibemolle{}, \Labemolle{}, \Rebemolle{}, \Solbemolle{}};
+		\node[gray, scale=0.7, align=center] at (210:1.75cm) {\Sibemolle{}, \Mibemolle{}, \Labemolle{}, \Rebemolle{}};
+		\node[gray, scale=0.7, align=center] at (180:1.75cm) {\Sibemolle{}, \Mibemolle{}, \Labemolle{}};
+		\node[gray, scale=0.7, align=center] at (150:1.75cm) {\Sibemolle{}, \Mibemolle{}};
+		\node[gray, scale=0.7] at (120:1.75cm) {\Sibemolle{}};
+
+		% --- Frecce indicatrici ---
+		\draw[->, very thick, red!70, line width=1.2pt] (100:2.1cm) arc (100:20:2.1cm);
+		\node[red!70, rotate=-30] at (60:2.35cm) {\textbf{QUINTE} $\rightarrow$};
+
+		\draw[->, very thick, blue!70, line width=1.2pt] (140:2.1cm) arc (140:220:2.1cm);
+		\node[blue!70, rotate=90] at (180:2.3cm) {$\leftarrow$ \textbf{QUARTE}};
+	\end{tikzpicture}
+	\caption{Il circolo delle quinte e delle quarte con elenco esplicito delle alterazioni.}
+	\label{fig:circolo_quinte_migliorato_compatto}
+\end{figure}
+
+Le tonalità vicine sul circolo condividono più note e più armonici, e l'orecchio le sente più vicine. Questa vicinanza sarà il criterio per scegliere le tonalità di arrivo di una modulazione (Capitolo \ref{chap:modulazione}). Una trattazione matematica del circolo, con l'aritmetica modulare, è nell'Approfondimento \ref{math:aritmetica_modulare}.

@@ -9,7 +9,8 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
-from tools.esempi_data import ESEMPI
+from tools.esempi.dati import ESEMPI
+from tools.esempi import genera
 from tools.armonia.render_snippet import render_satb_snippet, render_block_snippet
 
 def build_all_esempi(out_dir=None, limit=None):
@@ -18,7 +19,7 @@ def build_all_esempi(out_dir=None, limit=None):
     os.makedirs(out_dir, exist_ok=True)
 
     generated = []
-    items = list(ESEMPI.items())
+    items = list({**ESEMPI, **genera()}.items())
     if limit is not None:
         items = items[:limit]
 
@@ -29,12 +30,13 @@ def build_all_esempi(out_dir=None, limit=None):
         caps = spec.get('caps')
         marks = spec.get('marks')
         chords = spec.get('chords', [])
+        dx = spec.get('dx')
 
         if ex_type == 'satb':
-            render_satb_snippet(chords, out_path, nacc=nacc, caps=caps, marks=marks)
+            render_satb_snippet(chords, out_path, nacc=nacc, caps=caps, marks=marks, **({'dx': dx} if dx else {}))
         else:
             clef = spec.get('clef', 'treble')
-            render_block_snippet(chords, out_path, nacc=nacc, clef=clef, caps=caps)
+            render_block_snippet(chords, out_path, nacc=nacc, clef=clef, caps=caps, **({'dx': dx} if dx else {}))
 
         generated.append(out_path)
 

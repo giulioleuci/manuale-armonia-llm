@@ -1,0 +1,80 @@
+% ============================================================
+% PARTE I - BASI ACUSTICHE E TONALI
+% CAPITOLO 1 - SUONO E INTERVALLI
+% ============================================================
+\part{Basi acustiche e tonali}
+
+\chapter{Suono e intervalli}
+\label{chap:fondamenti}
+
+L'armonia tonale è un sistema logico che poggia su fenomeni acustici naturali. Prima di costruire accordi bisogna sapere che cosa contiene un suono e come si misura la distanza tra due suoni.
+
+\section{La serie armonica e il temperamento}
+\label{sec:natura_suono}
+
+Un suono musicale, cioè di altezza determinata, è un fenomeno composto. Quando una corda di chitarra o la colonna d'aria di un flauto vibrano, lo fanno per l'intera lunghezza e insieme per sue parti uguali (metà, un terzo, un quarto e così via). Ognuna di queste vibrazioni secondarie produce un suono più acuto e meno intenso, che si fonde con il suono principale.
+
+\begin{definizione}[La serie degli armonici]
+	\label{def:serie_armonici}
+	La \textbf{serie degli armonici naturali} è la successione di suoni secondari che accompagnano un suono fondamentale. Questi suoni, detti \textbf{armonici} (o ipertoni), hanno frequenze che sono multipli interi della frequenza del suono fondamentale.
+\end{definizione}
+
+L'ordine degli armonici è sempre lo stesso. Prendendo come fondamentale un Do, i primi suoni che emergono sono, in ordine: un Do più acuto, un Sol, un altro Do, un Mi, un altro Sol e un \Sibemolle{} leggermente calante rispetto al sistema moderno.
+
+\begin{esempio}[I primi 7 suoni armonici di Do]
+	\label{ex:serie_armonici_do}
+	\musica{es_cap01_01}
+\end{esempio}
+
+L'Esempio \ref{ex:serie_armonici_do} mostra che gli intervalli principali dell'armonia sono già contenuti nella serie. Dopo l'ottava compare la \textbf{quinta giusta} (Do-Sol), poi la \textbf{terza maggiore} (Do-Mi). Questi tre suoni, Do-Mi-Sol, formano l'accordo perfetto maggiore (Capitolo \ref{chap:triadi}), cellula di base della musica tonale. La serie armonica spiega quindi sul piano fisico la stabilità dell'accordo maggiore. La tabella degli armonici di ogni nota è nell'Appendice \ref{app:armonici}.
+
+Il settimo armonico è un \Sibemolle{} stonato rispetto al nostro sistema, e questo porta al \textbf{temperamento}. Per suonare in tutte le tonalità su strumenti a intonazione fissa come il pianoforte è stato necessario alterare leggermente gli intervalli rispetto ai loro rapporti fisici puri. Il \textbf{temperamento equabile}, oggi in uso, divide l'ottava in dodici semitoni uguali: sacrifica un poco la purezza acustica e in cambio permette di modulare ovunque.
+
+Per chi vuole la formulazione matematica: Approfondimento \ref{phys:serie_armonici_fondamento} (onde stazionarie) e \ref{math:aritmetica_modulare} (aritmetica modulare), nell'Appendice \ref{app:approfondimenti}.
+
+\section{Gli intervalli}
+\label{sec:intervalli}
+
+Un intervallo è la distanza tra due suoni. Per misurarlo si usano due criteri: il numero, quantitativo, e la specie, qualitativa.
+
+\begin{definizione}[Nomenclatura degli intervalli]
+	\label{def:intervalli}
+	Un intervallo si definisce contando il numero di gradi della scala compresi tra le due note, estremi inclusi. La sua specie può essere:
+	\begin{itemize}
+		\item \textbf{Maggiore (M)} o \textbf{minore (m)}: per le seconde, le terze, le seste e le settime.
+		\item \textbf{Giusto (G)}: per unisono, quarta, quinta e ottava.
+		\item \textbf{Aumentato (eccedente)} o \textbf{diminuito}: quando un intervallo maggiore, minore o giusto viene ampliato o ristretto di un semitono cromatico.
+	\end{itemize}
+\end{definizione}
+
+Dal punto di vista della sonorità, le \textbf{consonanze} danno un effetto di stabilità e riposo, mentre le \textbf{dissonanze} generano tensione e chiedono una risoluzione.
+
+\section{Il rivolto degli intervalli e la regola del 9}
+\label{sec:rivolto_intervalli}
+
+Invertire la posizione delle due note di un intervallo ne produce il rivolto (o inversione).
+
+\begin{definizione}[Rivolto di un intervallo]
+	\label{def:rivolto_intervallo}
+	Il \textbf{rivolto} (o \textbf{inversione}) di un intervallo si ottiene spostando la nota più grave un'ottava sopra, oppure la più acuta un'ottava sotto. La nota che era al grave diventa acuta e viceversa.
+\end{definizione}
+
+Il rivolto cambia la natura dell'intervallo: una terza maggiore diventa una sesta minore, una quinta giusta diventa una quarta giusta. La trasformazione segue una regola aritmetica precisa.
+
+\begin{regola}[Aritmetica dei rivolti: la Regola del 9]
+	\label{reg:regola_del_9}
+	La somma di un intervallo e del suo rivolto è sempre 9. La specie si trasforma così:
+	\begin{itemize}
+		\item maggiore diventa minore, e viceversa;
+		\item giusto resta giusto;
+		\item aumentato diventa diminuito, e viceversa.
+	\end{itemize}
+\end{regola}
+
+\begin{esempio}[Inversione di una terza maggiore]
+	\label{ex:inversione_intervallo}
+	Una terza maggiore (Do-Mi) si rivolta in una sesta minore (Mi-Do): $3+6=9$.
+	\musica{es_cap01_02}
+\end{esempio}
+
+La regola del 9 ritorna quando si parla di rivolti degli accordi, perché la natura di un accordo e la sua funzione dipendono dall'intervallo che la nota più grave forma con le altre.

@@ -22,20 +22,17 @@ FIX = '--fix' in sys.argv
 refs, labels, tot = set(), set(), 0
 for fn in sorted(glob.glob('Capitoli/*.tex')) + ['manuale.tex']:
     lines = open(fn).read().split('\n')
-    out, in_ly = [], False
+    out = []
     for n, line in enumerate(lines, 1):
         code = re.sub(r'(?<!\\)%.*', '', line)
         labels.update(re.findall(r'\\label\{([^}]+)\}', code))
         refs.update((fn, n, r) for r in re.findall(r'\\(?:ref|pageref|autoref|eqref)\{([^}]+)\}', code))
-        in_ly = in_ly or '\\musica{' in code
-        if not in_ly:  # niente controlli dentro LilyPond
-            for rx, rep, msg in REGOLE:
-                if msg is None: continue
-                for m in re.finditer(rx, code):
-                    if FIX and rep is not None:
-                        line = re.sub(rx, rep, line); break
-                    print('%s:%d: %s: "%s"' % (fn, n, msg, m.group(0))); tot += 1
-        if in_ly and code.strip() == '}' and not line.startswith(' ' * 8): in_ly = False
+        for rx, rep, msg in REGOLE:
+            if msg is None: continue
+            for m in re.finditer(rx, code):
+                if FIX and rep is not None:
+                    line = re.sub(rx, rep, line); break
+                print('%s:%d: %s: "%s"' % (fn, n, msg, m.group(0))); tot += 1
         out.append(line)
     if FIX: open(fn, 'w').write('\n'.join(out))
 for fn, n, r in sorted(refs):

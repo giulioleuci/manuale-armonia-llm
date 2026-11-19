@@ -4,18 +4,30 @@ from reportlab.lib.colors import Color, HexColor, white, black
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont as RLTTFont
 from .music import *
-from .glyphs import draw_glyph
+from .glyphs import *
 
 pdfmetrics.registerFont(RLTTFont('DV', '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'))
 pdfmetrics.registerFont(RLTTFont('DVB', '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'))
 pdfmetrics.registerFont(RLTTFont('DVI', '/usr/share/fonts/truetype/dejavu/DejaVuSans-Oblique.ttf'))
 pdfmetrics.registerFont(RLTTFont('DVBI', '/usr/share/fonts/truetype/dejavu/DejaVuSans-BoldOblique.ttf'))
 pdfmetrics.registerFontFamily('DV', normal='DV', bold='DVB', italic='DVI', boldItalic='DVBI')
+# Testo dei bassi (titoli, numeri di battuta): lo stesso serif usato nella versione LilyPond.
+pdfmetrics.registerFont(RLTTFont('GAR', str(FONTS / 'EBGaramond12-Regular.ttf')))
+pdfmetrics.registerFont(RLTTFont('GARI', str(FONTS / 'EBGaramond12-Italic.ttf')))
 
 S = 6.5            # staff space
 H = S/2
-HW = 8.6           # head width
-STEMLEN = 3.3*S
+GSC = 4*S/UPM      # pt per unità del font (SMuFL: 1 em = 4 spazi)
+# Spessori e misure dagli engravingDefaults e dalle ancore di Bravura (in spazi del rigo).
+HW = 1.18*S        # larghezza della testa nera
+STEM_W = 0.12*S
+STEM_DX = HW/2 - STEM_W/2      # dal centro della testa all'asse del gambo
+STEMLEN = 3.5*S
+LEDGER_W = 0.16*S
+LEDGER_X = HW/2 + 0.4*S        # semiampiezza dei tagli addizionali
+STAFF_W = 0.13*S
+THIN_W, THICK_W, BAR_SEP = 0.16*S, 0.5*S, 0.4*S
+BEAM_W = 0.5*S
 VCOL = {'S': HexColor('#1f5fbf'), 'A': HexColor('#2e8b3d'), 'T': HexColor('#d9730d'), 'B': HexColor('#c0392b')}
 VNAME = ['S','A','T','B']
 
@@ -34,7 +46,6 @@ def get_tie_direction(vi):
     """Restituisce la direzione della legatura per la voce vi (+1 sopra, -1 sotto)."""
     return VOICE_DIRECTIONS[vi]['tie'] if isinstance(vi, int) else VOICE_DIRECTIONS[VNAME.index(vi)]['tie']
 GAP = 5.4*S        # between treble bottom line and bass top line
-ACC_SC = 2.6*S/950.0
 
 SHARPS_ORDER = 'FCGDAEB'
 FLATS_ORDER = 'BEADGCF'
@@ -69,36 +80,29 @@ class Staff:
         return out
     def ly(self, rel): return self.yb + rel*H
 
+# glyph e larghezza (in spazi) delle alterazioni
+ACC = {'#': (SHARP, .996), 'n': (NATURAL, .672), 'b': (FLAT, .904), 'bb': (DOUBLE_FLAT, 1.644), '##': (DOUBLE_SHARP, .988)}
+
 def draw_acc(c, kind, x, y, color=black):
     """x = left edge, y = note y (center of bowl / glyph)"""
     c.setFillColor(color)
-    if kind == '#':
-        draw_glyph(c, 0x266F, x - 50*ACC_SC, y - 198*ACC_SC, ACC_SC)
-        return 5.8
-    if kind == 'n':
-        draw_glyph(c, 0x266E, x - 56*ACC_SC, y - 198*ACC_SC, ACC_SC)
-        return 5.2
-    if kind == 'b':
-        draw_glyph(c, 0x266D, x - 56*ACC_SC, y - 150*ACC_SC, ACC_SC)
-        return 5.0
-    if kind == 'bb':
-        draw_glyph(c, 0x266D, x - 56*ACC_SC, y - 150*ACC_SC, ACC_SC)
-        draw_glyph(c, 0x266D, x + 4.6 - 56*ACC_SC, y - 150*ACC_SC, ACC_SC)
-        return 9.6
-    if kind == '##':
-        draw_glyph(c, 0x1D12A, x, y, ACC_SC)  # rarely used
-        return 6.0
-    return 0
+    draw_glyph(c, ACC[kind][0], x, y, GSC)
+    return acc_width(kind)
 
-def acc_width(kind): return {'#':5.8,'n':5.2,'b':5.0,'bb':9.6,'##':6.0}[kind]
+def acc_width(kind): return ACC[kind][1]*S
+
+def ks_width(nacc):
+    """Larghezza dell'armatura disegnata da draw_keysig."""
+    return abs(nacc) * (acc_width('#' if nacc > 0 else 'b') + 1.8)
 
 def head(c, x, y, filled=False, color=black):
-    c.saveState()
-    c.translate(x, y); c.rotate(20)
-    c.setStrokeColor(color); c.setFillColor(color)
-    c.setLineWidth(1.25)
-    c.ellipse(-HW/2+0.6, -S*0.43, HW/2-0.6, S*0.43, stroke=1, fill=filled)
-    c.restoreState()
+    c.setFillColor(color)
+    draw_glyph(c, NOTEHEAD_BLACK if filled else NOTEHEAD_HALF, x - HW/2, y, GSC)
+
+def draw_brace(c, x, ytop, ybot):
+    """Graffa SMuFL alta quanto il sistema, a sinistra di x."""
+    sc = (ytop - ybot) / UPM            # il glyph è alto 1 em
+    draw_glyph(c, BRACE, x - 0.277*UPM/4*sc - 0.3*S, ybot, sc)
 
 def arrow(c, x1, y1, x2, y2, color, dashed=False, lw=1.15):
     c.saveState()
@@ -117,14 +121,14 @@ def arrow(c, x1, y1, x2, y2, color, dashed=False, lw=1.15):
     c.drawPath(p, stroke=0, fill=1)
     c.restoreState()
 
-def draw_tie(c, x1, y1, x2, y2, direction=+1, color=black):
+def draw_tie(c, x1, y1, x2, y2, direction=+1, color=black, open_start=False, open_end=False):
     """Disegna una legatura di valore (tie) tra due note dello stesso pitch.
     direction: +1 sopra le note (S, T), -1 sotto le note (A, B).
     """
     c.saveState()
     c.setFillColor(color); c.setStrokeColor(color)
-    xa = x1 + HW/2 - 0.5
-    xb = x2 - HW/2 + 0.5
+    xa = x1 if open_start else x1 + HW/2 + 0.1*S
+    xb = x2 if open_end else x2 - HW/2 - 0.1*S
     dx = xb - xa
     if dx <= 0:
         c.restoreState()
@@ -132,30 +136,30 @@ def draw_tie(c, x1, y1, x2, y2, direction=+1, color=black):
     y_off = 3.5 * direction
     ya = y1 + y_off
     yb = y2 + y_off
-    sag = 5.2 * direction
+    sag = min(1.6*S, 0.6*S + 0.04*dx) * direction   # piu' alta se lunga
     mid_y = (ya + yb) / 2 + sag
-    thick = 1.3 * direction
+    if open_start:
+        ya += sag
+    if open_end:
+        yb += sag
+    thick = 0.08*S * direction      # con il contorno: 0.1 spazi agli estremi, 0.22 al centro
 
     p = c.beginPath()
     p.moveTo(xa, ya)
-    p.curveTo(xa + 0.25 * dx, mid_y + thick, xa + 0.75 * dx, mid_y + thick, xb, yb)
-    p.curveTo(xa + 0.75 * dx, mid_y - thick, xa + 0.25 * dx, mid_y - thick, xa, ya)
+    p.curveTo(xa + 0.2 * dx, mid_y + thick, xa + 0.8 * dx, mid_y + thick, xb, yb)
+    p.curveTo(xa + 0.8 * dx, mid_y - thick, xa + 0.2 * dx, mid_y - thick, xa, ya)
     p.close()
-    c.drawPath(p, stroke=0, fill=1)
+    c.setLineWidth(0.1*S); c.setLineJoin(1)
+    c.drawPath(p, stroke=1, fill=1)
     c.restoreState()
 
 def text_c(c, x, y, t, font='DV', size=8, color=black):
     c.setFont(font, size); c.setFillColor(color); c.drawCentredString(x, y, t)
 
 def draw_clef(c, clef, x, staff):
-    sc = 7.2*S/1191
-    if clef == 'treble':
-        yG = staff.yb + 1*S
-        draw_glyph(c, 0x1D11E, x, yG, sc)
-    else:
-        ytop = staff.yb + 4*S
-        y0 = ytop + 0.3*S - 757*sc
-        draw_glyph(c, 0x1D122, x, y0, sc)
+    c.setFillColor(black)
+    if clef == 'treble': draw_glyph(c, G_CLEF, x, staff.yb + S, GSC)      # sulla linea del Sol
+    else: draw_glyph(c, F_CLEF, x, staff.yb + 3*S, GSC)                   # sulla linea del Fa
 
 def draw_keysig(c, nacc, x, staff):
     if nacc == 0: return x
@@ -168,7 +172,7 @@ def draw_keysig(c, nacc, x, staff):
     return x
 
 def draw_staff_lines(c, staff, x0, x1):
-    c.setStrokeColor(black); c.setLineWidth(0.55)
+    c.setStrokeColor(black); c.setLineWidth(STAFF_W)
     for k in range(5):
         y = staff.yb + k*S
         c.line(x0, y, x1, y)
@@ -191,12 +195,9 @@ def draw_system(c, x0, ytop, x1, chords, nacc=0, caps=None, dx=None, show_labels
     T = Staff('treble', ytop - 4*S)
     B = Staff('bass', ytop - 4*S - GAP - 4*S)
     draw_staff_lines(c, T, x0, x1); draw_staff_lines(c, B, x0, x1)
-    # system line + brace
-    c.setStrokeColor(black); c.setLineWidth(0.8)
+    c.setStrokeColor(black); c.setLineWidth(THIN_W)
     c.line(x0, T.yb+4*S, x0, B.yb)
-    c.setLineWidth(2.2); c.line(x0-3.5, T.yb+4*S, x0-3.5, B.yb)
-    c.setLineWidth(1.2)
-    c.line(x0-3.5, T.yb+4*S, x0+2.5, T.yb+4*S+1.2); c.line(x0-3.5, B.yb, x0+2.5, B.yb-1.2)
+    c.setFillColor(black); draw_brace(c, x0, T.yb+4*S, B.yb)
     # clefs & key signatures
     draw_clef(c, 'treble', x0+4, T); draw_clef(c, 'bass', x0+4, B)
     xk = x0 + 4 + 22
@@ -221,7 +222,7 @@ def draw_system(c, x0, ytop, x1, chords, nacc=0, caps=None, dx=None, show_labels
             nxt_v = chords[i+1]['v']
             explicit_ties = ch.get('ties', [])
             for k in range(4):
-                if nxt_v[k] == v[k] or k in explicit_ties or VNAME[k] in explicit_ties:
+                if nxt_v[k] == v[k] and ch.get('conn') or k in explicit_ties or VNAME[k] in explicit_ties:
                     active_ties.append((i, i+1, k))
         for st, mem, vi in ((T, memT, (0,1)), (B, memB, (2,3))):
             up_i, dn_i = vi     # up stem voice, down stem voice
@@ -258,23 +259,23 @@ def draw_system(c, x0, ytop, x1, chords, nacc=0, caps=None, dx=None, show_labels
             for vi_ in act:
                 for r in st.ledgers(v[vi_]): led.add(r)
             if led:
-                lx0 = min(hx[k] for k in act) - HW/2 - 3.2; lx1 = max(hx[k] for k in act) + HW/2 + 3.2
-                c.setStrokeColor(black); c.setLineWidth(0.6)
+                lx0 = min(hx[k] for k in act) - LEDGER_X; lx1 = max(hx[k] for k in act) + LEDGER_X
+                c.setStrokeColor(black); c.setLineWidth(LEDGER_W)
                 for r in led: c.line(lx0, st.ly(r), lx1, st.ly(r))
             # heads and stems: sempre semiminime piene
             for vi_ in act:
                 yy = st.y(v[vi_]); xx = hx[vi_]
                 head(c, xx, yy, filled=True)
-            c.setStrokeColor(black); c.setLineWidth(0.9)
+            c.setStrokeColor(black); c.setLineWidth(STEM_W)
             for vi_ in vi:
                 direction = get_stem_direction(vi_)
                 yy = st.y(v[vi_]); xx = hx[vi_]
                 if direction > 0:
-                    xs_ = xx + HW/2 - 0.55
+                    xs_ = xx + STEM_DX
                     ytip = yy + STEMLEN
                     c.line(xs_, yy + 0.8, xs_, ytip)
                 else:
-                    xs_ = xx - HW/2 + 0.55
+                    xs_ = xx - STEM_DX
                     ytip = yy - STEMLEN
                     c.line(xs_, yy - 0.8, xs_, ytip)
             for vi_ in vi: heads[vi_] = (hx[vi_], st.y(v[vi_]))
@@ -284,11 +285,9 @@ def draw_system(c, x0, ytop, x1, chords, nacc=0, caps=None, dx=None, show_labels
             xb = xc + dx*0.5 if i < n-1 else min(x1, xc + dx*0.55)
             if i == n-1: xb = x1
             if i == n-1 and final:
-                c.setStrokeColor(black); c.setLineWidth(0.8); c.line(x1-3.2, T.yb+4*S, x1-3.2, B.yb)
-                c.setLineWidth(2.2); c.line(x1-0.3, T.yb+4*S, x1-0.3, B.yb)
+                draw_final_barline(c, x1, T.yb+4*S, B.yb)
             else:
-                c.setStrokeColor(black); c.setLineWidth(0.8); c.line(xb, T.yb+4*S, xb, B.yb)
-                c.setLineWidth(0.8)
+                c.setStrokeColor(black); c.setLineWidth(THIN_W); c.line(xb, T.yb+4*S, xb, B.yb)
     # legature di valore (ties)
     for (ci, c_next, k) in active_ties:
         (xa, ya) = info[ci][k]
@@ -317,6 +316,7 @@ def draw_system(c, x0, ytop, x1, chords, nacc=0, caps=None, dx=None, show_labels
                 a = (ch.get('ann') or {}).get(VNAME[k])
                 if a:
                     mx, my = (x_start + x_end)/2, (ya + yb)/2
+                    if (i, i+1, k) in tied_set and get_tie_direction(k) > 0: my += 8   # sopra la legatura
                     c.setFont('DVB', 6.2)
                     tw = c.stringWidth(a, 'DVB', 6.2)
                     c.setFillColor(white); c.setStrokeColor(white)
@@ -339,12 +339,12 @@ def draw_system(c, x0, ytop, x1, chords, nacc=0, caps=None, dx=None, show_labels
     if show_labels:
         for i, ch in enumerate(chords):
             figs = ch.get('fig') or []
+            if ch.get('rn'):                      # sigla: grado sopra, numerica sintetica sotto
+                text_c(c, xs[i], ylab - 4, ch['rn'], 'DVB', 10.2)
             for k, f in enumerate(figs):
-                text_c(c, xs[i], ylab - k*9.2, f, 'DVB', 8.6)
-            if ch.get('rn'):
-                text_c(c, xs[i], ylab - nfig*9.2 - 6, ch['rn'], 'DVB', 10.2)
+                text_c(c, xs[i], ylab - 15 - k*9.2, f, 'DVB', 8.6)
             if ch.get('sub'):
-                text_c(c, xs[i], ylab - nfig*9.2 - 17, ch['sub'], 'DV', 6.8, HexColor('#555555'))
+                text_c(c, xs[i], ylab - 15 - nfig*9.2 - 2, ch['sub'], 'DV', 6.8, HexColor('#555555'))
     # captions
     if caps:
         for (i0, i1, t) in caps:
@@ -357,16 +357,66 @@ def draw_system(c, x0, ytop, x1, chords, nacc=0, caps=None, dx=None, show_labels
     hassub = any(ch.get('sub') for ch in chords)
     return ylab - nfig*9.2 - (24 if hassub else 12)   # bottom y of the system block
 
+def draw_final_barline(c, x1, ytop, ybot):
+    """Stanghetta finale sottile-spessa che termina in x1."""
+    c.setStrokeColor(black)
+    c.setLineWidth(THIN_W); c.line(x1 - THICK_W - BAR_SEP - THIN_W/2, ytop, x1 - THICK_W - BAR_SEP - THIN_W/2, ybot)
+    c.setLineWidth(THICK_W); c.line(x1 - THICK_W/2, ytop, x1 - THICK_W/2, ybot)
+
 def system_height(nfig=2):
     return 4*S + GAP + 4*S + 5.0*S + nfig*9.2 + 26
 
-def draw_blocks(c, x0, ytop, x1, chords, nacc=0, clef='treble', dx=None, caps=None):
-    """Single-staff chord blocks (whole notes). chords: dict(p=[pitches low->high], name='', rn='', sub='')"""
-    st = Staff(clef, ytop - 4*S)
-    draw_staff_lines(c, st, x0, x1)
-    c.setStrokeColor(black); c.setLineWidth(0.8); c.line(x0, st.yb, x0, st.yb+4*S)
-    draw_clef(c, clef, x0+4, st)
-    xe = draw_keysig(c, nacc, x0+4+22, st)
+def _nota_blocco(c, st, ps, xc, kalt, mem):
+    """accidenti, tagli addizionali, teste e gambo di un blocco di note sul rigo st"""
+    notes = sorted([(k, p, st.y(p)) for k, p in enumerate(ps)], key=lambda t: -t[2])
+    accs = layout_accs(notes, kalt, mem)
+    cols = []; accx = {}
+    for idx, p, yy in notes:
+        kind = accs[idx]
+        if not kind: continue
+        col = 0
+        while True:
+            if col >= len(cols): cols.append([]); break
+            if all(abs(yy - y2) >= 5.6*H for y2 in cols[col]): break
+            col += 1
+        cols[col].append(yy); accx[idx] = (kind, col)
+    for idx, (kind, col) in accx.items():
+        w = acc_width(kind)
+        draw_acc(c, kind, xc - HW/2 - 3.2 - w - col*8.2, st.y(ps[idx]))
+    led = set()
+    for p in ps:
+        for r in st.ledgers(p): led.add(r)
+    c.setStrokeColor(black); c.setLineWidth(LEDGER_W)
+    for r in led: c.line(xc - LEDGER_X, st.ly(r), xc + LEDGER_X, st.ly(r))
+    prev_shift = 0; prev = None
+    for p in ps:
+        sh = 0
+        if prev is not None and step(p) - step(prev) == 1 and prev_shift == 0: sh = HW - 0.8
+        head(c, xc + sh, st.y(p), filled=True)
+        prev, prev_shift = p, sh
+    ys = [st.y(p) for p in ps]
+    up = sum(st.rel(p) for p in ps)/len(ps) < 4
+    c.setStrokeColor(black); c.setLineWidth(STEM_W)
+    if up: c.line(xc + STEM_DX, min(ys) + 0.8, xc + STEM_DX, max(ys) + STEMLEN)
+    else: c.line(xc - STEM_DX, max(ys) - 0.8, xc - STEM_DX, min(ys) - STEMLEN)
+
+def _fondo_sigle(chords, ylab):
+    """y del bordo inferiore delle sigle di un sistema a blocchi (per ritagliare il PDF)"""
+    nf = max([len(c.get('fig') or []) for c in chords] + [1])
+    if any(c.get('sub2') for c in chords): return ylab - 14.2 - nf*9.2 - 12
+    if any(c.get('sub') for c in chords): return ylab - 14.2 - nf*9.2 - 4
+    return ylab - 11 - (nf - 1)*9.2 - 5
+
+def draw_blocks_grand(c, x0, ytop, x1, chords, nacc=0, dx=None, caps=None):
+    """Blocchi su sistema a due righi: dal Do centrale in su chiave di violino, sotto chiave di basso."""
+    T = Staff('treble', ytop - 4*S)
+    B = Staff('bass', ytop - 4*S - GAP - 4*S)
+    draw_staff_lines(c, T, x0, x1); draw_staff_lines(c, B, x0, x1)
+    c.setStrokeColor(black); c.setLineWidth(THIN_W)
+    c.line(x0, T.yb+4*S, x0, B.yb)
+    c.setFillColor(black); draw_brace(c, x0, T.yb+4*S, B.yb)
+    draw_clef(c, 'treble', x0+4, T); draw_clef(c, 'bass', x0+4, B)
+    xe = draw_keysig(c, nacc, x0+4+22, T); draw_keysig(c, nacc, x0+4+22, B)
     xfirst = xe + 30
     n = len(chords)
     dx = min(dx or 110, (x1 - xfirst - 20)/max(1, n - 0.35))
@@ -375,49 +425,178 @@ def draw_blocks(c, x0, ytop, x1, chords, nacc=0, clef='treble', dx=None, caps=No
         xc = xfirst + i*dx
         if i > 0 and chords[i-1].get('bar'): mem.clear()
         ps = sorted(ch['p'], key=lambda p: midi(p))
-        # seconds displacement (none expected) ; accidentals
-        notes = sorted([(k, p, st.y(p)) for k, p in enumerate(ps)], key=lambda t: -t[2])
-        accs = layout_accs(notes, kalt, mem)
-        cols = []; accx = {}
-        for idx, p, yy in notes:
-            kind = accs[idx]
-            if not kind: continue
-            col = 0
-            while True:
-                if col >= len(cols): cols.append([]); break
-                if all(abs(yy - y2) >= 5.6*H for y2 in cols[col]): break
-                col += 1
-            cols[col].append(yy); accx[idx] = (kind, col)
-        for idx, (kind, col) in accx.items():
-            w = acc_width(kind)
-            draw_acc(c, kind, xc - HW/2 - 3.2 - w - col*8.2, st.y(ps[idx]))
-        led = set()
-        for p in ps:
-            for r in st.ledgers(p): led.add(r)
-        c.setStrokeColor(black); c.setLineWidth(0.6)
-        for r in led: c.line(xc - HW/2 - 3.4, st.ly(r), xc + HW/2 + 3.4, st.ly(r))
-        prev_shift = 0; prev = None
-        for p in ps:
-            sh = 0
-            if prev is not None and step(p) - step(prev) == 1 and prev_shift == 0: sh = HW - 0.8
-            head(c, xc + sh, st.y(p), filled=True)
-            prev, prev_shift = p, sh
-        ys = [st.y(p) for p in ps]
-        up = sum(st.rel(p) for p in ps)/len(ps) < 4
-        c.setStrokeColor(black); c.setLineWidth(0.9)
-        if up: c.line(xc + HW/2 - 0.55, min(ys) + 0.8, xc + HW/2 - 0.55, max(ys) + STEMLEN)
-        else: c.line(xc - HW/2 + 0.55, max(ys) - 0.8, xc - HW/2 + 0.55, min(ys) - STEMLEN)
-        ylab = st.yb - 3.0*S
+        alto = [p for p in ps if midi(p) >= 60]; basso = [p for p in ps if midi(p) < 60]
+        if alto: _nota_blocco(c, T, alto, xc, kalt, mem)
+        if basso: _nota_blocco(c, B, basso, xc, kalt, mem)
+        ylab = B.yb - 6.4*S
         if ch.get('name'): text_c(c, xc, ylab, ch['name'], 'DVB', 9)
+        figs = ch.get('fig') or []
+        for k, f in enumerate(figs): text_c(c, xc, ylab - 11 - k*9.2, f, 'DVB', 8.6)
         if ch.get('rn'): text_c(c, xc, ylab - 12, ch['rn'], 'DVB', 9.5)
-        if ch.get('sub'): text_c(c, xc, ylab - 23, ch['sub'], 'DV', 6.8, HexColor('#555555'))
-        if ch.get('sub2'): text_c(c, xc, ylab - 31, ch['sub2'], 'DV', 6.8, HexColor('#555555'))
+        ysub = ylab - 14.2 - max(len(figs), 1)*9.2
+        if ch.get('sub'): text_c(c, xc, ysub, ch['sub'], 'DV', 6.8, HexColor('#555555'))
+        if ch.get('sub2'): text_c(c, xc, ysub - 8, ch['sub2'], 'DV', 6.8, HexColor('#555555'))
         if ch.get('bar'):
             xb = xc + dx*0.5
-            c.setStrokeColor(black); c.setLineWidth(0.8); c.line(xb, st.yb, xb, st.yb+4*S)
-    c.setStrokeColor(black); c.setLineWidth(0.8)
+            c.setStrokeColor(black); c.setLineWidth(THIN_W); c.line(xb, T.yb+4*S, xb, B.yb)
+    c.setStrokeColor(black); c.setLineWidth(THIN_W)
+    c.line(x1, T.yb+4*S, x1, B.yb)
+    return _fondo_sigle(chords, B.yb - 6.4*S)
+
+def draw_blocks(c, x0, ytop, x1, chords, nacc=0, clef='treble', dx=None, caps=None):
+    """Single-staff chord blocks (whole notes). chords: dict(p=[pitches low->high], name='', rn='', sub='')"""
+    if clef == 'grand': return draw_blocks_grand(c, x0, ytop, x1, chords, nacc=nacc, dx=dx, caps=caps)
+    st = Staff(clef, ytop - 4*S)
+    draw_staff_lines(c, st, x0, x1)
+    c.setStrokeColor(black); c.setLineWidth(THIN_W); c.line(x0, st.yb, x0, st.yb+4*S)
+    draw_clef(c, clef, x0+4, st)
+    xe = draw_keysig(c, nacc, x0+4+22, st)
+    xfirst = xe + 30
+    n = len(chords)
+    dx = min(dx or 110, (x1 - xfirst - 20)/max(1, n - 0.35))
+    kalt = ks_alt(nacc); mem = {}
+    # sigle sotto il punto piu' basso di teste e gambi in giu' del sistema (mai sovrapposte ai gambi)
+    def _fondo(ps):
+        ys = [st.y(p) for p in ps]
+        return min(ys) - (STEMLEN if sum(st.rel(p) for p in ps)/len(ps) >= 4 else S)
+    ylab = min(st.yb - 3.0*S, min(_fondo(ch['p']) for ch in chords) - 12)
+    for i, ch in enumerate(chords):
+        xc = xfirst + i*dx
+        if i > 0 and chords[i-1].get('bar'): mem.clear()
+        ps = sorted(ch['p'], key=lambda p: midi(p))
+        _nota_blocco(c, st, ps, xc, kalt, mem)
+        if ch.get('name'): text_c(c, xc, ylab, ch['name'], 'DVB', 9)
+        figs = ch.get('fig') or []
+        for k, f in enumerate(figs): text_c(c, xc, ylab - 11 - k*9.2, f, 'DVB', 8.6)
+        if ch.get('rn'): text_c(c, xc, ylab - 12, ch['rn'], 'DVB', 9.5)
+        ysub = ylab - 14.2 - max(len(figs), 1)*9.2
+        if ch.get('sub'): text_c(c, xc, ysub, ch['sub'], 'DV', 6.8, HexColor('#555555'))
+        if ch.get('sub2'): text_c(c, xc, ysub - 8, ch['sub2'], 'DV', 6.8, HexColor('#555555'))
+        if ch.get('bar'):
+            xb = xc + dx*0.5
+            c.setStrokeColor(black); c.setLineWidth(THIN_W); c.line(xb, st.yb, xb, st.yb+4*S)
+    c.setStrokeColor(black); c.setLineWidth(THIN_W)
     c.line(x1, st.yb, x1, st.yb+4*S)
-    return ytop - 4*S - 3.0*S - 40
+    return _fondo_sigle(chords, ylab)
+
+def layout_bass(bars, xfirst, beat_width, tie_out=False):
+    """Bassi in 4/4: dur in semiminime; spazio anche per i movimenti tenuti."""
+    if not bars or beat_width <= 0:
+        raise ValueError('Servono battute e una spaziatura positiva')
+    notes, ends = [], []
+    x = xfirst
+    for bar in bars:
+        beat = 0
+        for note in bar:
+            if note['dur'] not in (.5, 1, 2, 4):
+                raise ValueError('Durate ammesse: 0.5, 1, 2, 4 semiminime')
+            parse(note['p'])
+            notes.append((note, x + 10 + beat * beat_width, beat))
+            beat += note['dur']
+        if beat != 4:
+            raise ValueError('Ogni battuta deve contenere quattro semiminime')
+        x += 10 + 4 * beat_width
+        ends.append(x)
+    for i, (note, _, _) in enumerate(notes):
+        if note.get('tie'):
+            if i == len(notes) - 1:
+                if not tie_out:
+                    raise ValueError('Legatura senza nota successiva')
+            elif parse(note['p'])[:3] != parse(notes[i+1][0]['p'])[:3]:
+                raise ValueError('La legatura di valore richiede la stessa altezza')
+    return notes, ends
+
+
+def draw_bass_system(c, x0, ytop, bars, nacc=0, beat_width=34,
+                     first=False, final=False, tie_in=False, tie_out=False):
+    """Doppio rigo da completare a mano: solo il basso, gambi sempre in giù."""
+    T = Staff('treble', ytop - 4*S)
+    B = Staff('bass', T.yb - 66 - 4*S)
+    xfirst = x0 + 26 + ks_width(nacc) + 36
+    notes, ends = layout_bass(bars, xfirst, beat_width, tie_out=tie_out)
+    x1 = ends[-1]
+    c.setFillColor(black)
+    for st in (T, B):
+        draw_staff_lines(c, st, x0, x1)
+        draw_clef(c, st.clef, x0+4, st)
+        xe = draw_keysig(c, nacc, x0+26, st)
+        if first:
+            draw_glyph(c, TIME_COMMON, xe + 0.8*S, st.yb + 2*S, GSC)
+    c.setStrokeColor(black)
+    c.setLineWidth(THIN_W)
+    c.line(x0, ytop, x0, B.yb)
+    draw_brace(c, x0, ytop, B.yb)
+    for xb in ends[:-1] if final else ends:
+        c.line(xb, ytop, xb, B.yb)
+    if final:
+        draw_final_barline(c, x1, ytop, B.yb)
+
+    mem, kalt, points = {}, ks_alt(nacc), []
+    for i, (note, x, beat) in enumerate(notes):
+        if beat == 0:
+            mem.clear()
+        y = B.y(note['p'])
+        kind = layout_accs([(0, note['p'], y)], kalt, mem)[0]
+        tied = notes[i-1][0].get('tie') if i else tie_in
+        if tied:
+            kind = None
+        if note.get('acc'):
+            kind = {-2: 'bb', -1: 'b', 0: 'n', 1: '#', 2: '##'}[parse(note['p'])[2]]
+        if kind:
+            draw_acc(c, kind, x - HW/2 - 0.3*S - acc_width(kind), y)
+        hw = .844*S if note['dur'] == 4 else HW/2
+        c.setStrokeColor(black)
+        c.setLineWidth(LEDGER_W)
+        for r in B.ledgers(note['p']):
+            c.line(x-hw-0.4*S, B.ly(r), x+hw+0.4*S, B.ly(r))
+        c.setFillColor(black)
+        if note['dur'] == 4:
+            draw_glyph(c, NOTEHEAD_WHOLE, x-hw, y, GSC)
+        else:
+            head(c, x, y, filled=note['dur'] <= 1)
+        if note.get('fermata'):
+            draw_glyph(c, FERMATA_ABOVE, x - 1.21*S, max(y + 1.2*S, B.yb + 4.6*S), GSC)
+        points.append((x, y))
+
+    c.setLineWidth(STEM_W)
+    i = 0
+    while i < len(notes):
+        note, _, beat = notes[i]
+        x, y = points[i]
+        stemx = x - STEM_DX
+        if (note['dur'] == .5 and beat % 1 == 0 and i+1 < len(notes)
+                and notes[i+1][0]['dur'] == .5 and notes[i+1][2] == beat+.5):
+            xn, yn = points[i+1]
+            xn -= STEM_DX
+            # Travatura inclinata come le note, al massimo di uno spazio; gambi lunghi almeno STEMLEN.
+            slope = max(-S, min(S, (yn - y) / 2))
+            tl = min(y, yn - slope) - STEMLEN
+            c.line(stemx, y - .168*S, stemx, tl)
+            c.line(xn, yn - .168*S, xn, tl + slope)
+            p = c.beginPath()
+            p.moveTo(stemx - STEM_W/2, tl)
+            p.lineTo(xn + STEM_W/2, tl + slope)
+            p.lineTo(xn + STEM_W/2, tl + slope + BEAM_W)
+            p.lineTo(stemx - STEM_W/2, tl + BEAM_W)
+            p.close()
+            c.drawPath(p, stroke=0, fill=1)
+            i += 2
+            continue
+        if note['dur'] != 4:
+            c.line(stemx, y - .168*S, stemx, y - STEMLEN)
+            if note['dur'] == .5:      # ancora stemDownSW di flag8thDown
+                draw_glyph(c, FLAG8_DOWN, stemx - STEM_W/2, y - STEMLEN - .132*S, GSC)
+        i += 1
+    for i, (note, _, _) in enumerate(notes):
+        if note.get('tie'):
+            xa, ya = points[i]
+            xb, yb = points[i+1] if i+1 < len(points) else (x1-2, ya)
+            draw_tie(c, xa, ya, xb, yb, direction=+1, open_end=i == len(points)-1)
+    if tie_in:
+        x, y = points[0]
+        draw_tie(c, xfirst-12, y, x, y, direction=+1, open_start=True)
+    return x1
+
 
 def draw_legend(c, x, y, width=770):
     """Legend for voices and arrows."""

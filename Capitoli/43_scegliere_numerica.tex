@@ -1,0 +1,448 @@
+% ============================================================
+% PARTE IX - METODO DI LAVORO
+% CAPITOLO 43 - SCEGLIERE LA NUMERICA DEL BASSO
+% ============================================================
+\part{Metodo di lavoro}
+
+\chapter{Scegliere la numerica del basso}
+\label{chap:scegliere_numerica}
+
+In un basso senza numeri l'accordo di ogni nota va deciso da chi armonizza. Più soluzioni sono corrette, ma alcune seguono meglio la frase, la cadenza e la linea del basso. Il capitolo riduce le scelte a quattro candidati per nota (Sezione \ref{sec:quattro_candidati}), poi dà i criteri per sceglierne uno: la posizione nella frase, il movimento del basso, la durata delle note, le alterazioni. Il Capitolo \ref{chap:metodo_lavoro} inserisce tutto nell'ordine di lavoro dell'esame e lo applica a quattro bassi svolti.
+
+\section{Quattro candidati per ogni nota}
+\label{sec:quattro_candidati}
+
+Scegliere la numerica significa decidere due cose: quale accordo e in quale stato. Lo stato dipende dalla nota che l'accordo ha al basso, quindi la seconda decisione segue dalla prima.
+
+\begin{regola}[Quattro candidati]
+	\label{reg:quattro_candidati}
+	Una nota del basso può essere, in un accordo:
+	\begin{itemize}
+		\item la fondamentale: stato fondamentale (numerica 5/3, sottintesa; 7 nelle settime);
+		\item la terza: primo rivolto (numerica 6; 6/5 nelle settime);
+		\item la quinta: secondo rivolto (numerica 6/4; 4/3 nelle settime);
+		\item la settima: terzo rivolto di un accordo di settima (numerica 2).
+	\end{itemize}
+	I candidati per ogni nota sono quindi quattro accordi: quello costruito sulla nota stessa e quelli costruiti a una terza, a una quinta e a una settima sotto di essa.
+\end{regola}
+
+La quarta possibilità ha una condizione in più. La settima al basso, tranne nella \sigla{V}{7}{} e nella settima diminuita, va preparata: la stessa nota deve essere già al basso nell'accordo precedente, ribattuta o legata, come nota consonante. Poi scende di grado. Per questo si prende in considerazione solo quando il basso ripete o lega una nota (Sezione \ref{sec:basso_legato}).
+
+Le Tabelle \ref{tab:candidati_maggiore} e \ref{tab:settime_maggiore} elencano i candidati in Do maggiore, le Tabelle \ref{tab:candidati_minore} e \ref{tab:settime_minore} quelli in La minore (scala armonica). Le sigle in corsivo sono possibili ma rare. I secondi rivolti sono ammessi solo nei tre casi del Capitolo \ref{chap:quarta_sesta}.
+
+\begin{table}[h]
+	\centering
+	\caption{Triadi sulle note del basso in Do maggiore}
+	\label{tab:candidati_maggiore}
+	\small\renewcommand{\arraystretch}{1.25}
+	\begin{tabularx}{\textwidth}{lccc>{\raggedright\arraybackslash}X}
+		\toprule
+		Basso & Fondamentale (5/3) & Terza (6) & Quinta (6/4) & Uso più frequente \\
+		\midrule
+		Do & \sigla{I}{}{} & \textit{\sigla{vi}{6}{}} & \sigla{IV}{6}{4} & tonica a inizio e fine; il 6/4 è di bordone \\
+		Re & \sigla{ii}{}{} & \sigla{vii°}{6}{} & \sigla{V}{6}{4} & \sigla{ii}{}{} verso V; gli altri due di passaggio fra \sigla{I}{}{} e \sigla{I}{6}{} \\
+		Mi & \textit{\sigla{iii}{}{}} & \sigla{I}{6}{} & --- & \sigla{I}{6}{} sul basso che sale o scende; \sigla{iii}{}{} nelle progressioni per quinte \\
+		Fa & \sigla{IV}{}{} & \sigla{ii}{6}{} & --- & sottodominante prima di V \\
+		Sol & \sigla{V}{}{} & \textit{\sigla{iii}{6}{}} & \sigla{I}{6}{4} & \sigla{V}{}{} in cadenza; \sigla{I}{6}{4} prima di V \\
+		La & \sigla{vi}{}{} & \sigla{IV}{6}{} & --- & \sigla{IV}{6}{} a inizio frase; \sigla{vi}{}{} dopo V o prima di \sigla{ii}{}{} e \sigla{IV}{}{} \\
+		Si & \textit{\sigla{vii°}{}{}} & \sigla{V}{6}{} & --- & \sigla{V}{6}{} verso \sigla{I}{}{} \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\caption{Accordi di settima sulle note del basso in Do maggiore}
+	\label{tab:settime_maggiore}
+	\small\renewcommand{\arraystretch}{1.25}
+	\begin{tabularx}{\textwidth}{lcccc}
+		\toprule
+		Basso & Fondamentale (7) & Terza (6/5) & Quinta (4/3) & Settima (2) \\
+		\midrule
+		Do & \textit{\sigla{I}{7}{}} & \textit{\sigla{vi}{6}{5}} & \textit{\sigla{IV}{4}{3}} & \sigla{ii}{2}{} \\
+		Re & \sigla{ii}{7}{} & \sigla{viiø}{6}{5} & \sigla{V}{4}{3} & \textit{\sigla{iii}{2}{}} \\
+		Mi & \textit{\sigla{iii}{7}{}} & \textit{\sigla{I}{6}{5}} & \textit{\sigla{vi}{4}{3}} & \textit{\sigla{IV}{2}{}} \\
+		Fa & \sigla{IV}{7}{} & \sigla{ii}{6}{5} & \sigla{viiø}{4}{3} & \sigla{V}{2}{} \\
+		Sol & \sigla{V}{7}{} & \textit{\sigla{iii}{6}{5}} & \textit{\sigla{I}{4}{3}} & \textit{\sigla{vi}{2}{}} \\
+		La & \sigla{vi}{7}{} & \textit{\sigla{IV}{6}{5}} & \textit{\sigla{ii}{4}{3}} & \sigla{viiø}{2}{} \\
+		Si & \sigla{viiø}{7}{} & \sigla{V}{6}{5} & \textit{\sigla{iii}{4}{3}} & \textit{\sigla{I}{2}{}} \\
+		\bottomrule
+	\end{tabularx}
+
+	\vspace{0.2cm}
+	\parbox{0.92\textwidth}{\footnotesize Sulle stesse note del basso la \sigla{V}{7}{} e la settima di sensibile si sostituiscono: Si \sigla{V}{6}{5} o \sigla{viiø}{7}{}, Re \sigla{V}{4}{3} o \sigla{viiø}{6}{5}, Fa \sigla{V}{2}{} o \sigla{viiø}{4}{3} (Capitoli \ref{chap:settima_dominante} e \ref{chap:vii7_ii7}). Dopo la dominante il \sigla{ii}{7}{} è l'accordo di settima più usato: la forma più comune è il \sigla{ii}{6}{5}, poi vengono il \sigla{ii}{7}{} e il \sigla{ii}{2}{}.}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\caption{Triadi sulle note del basso in La minore armonico}
+	\label{tab:candidati_minore}
+	\small\renewcommand{\arraystretch}{1.25}
+	\begin{tabularx}{\textwidth}{lccc>{\raggedright\arraybackslash}X}
+		\toprule
+		Basso & Fondamentale (5/3) & Terza (6) & Quinta (6/4) & Uso più frequente \\
+		\midrule
+		La & \sigla{i}{}{} & \textit{\sigla{VI}{6}{}} & \sigla{iv}{6}{4} & tonica a inizio e fine; il 6/4 è di bordone \\
+		Si & \textit{\sigla{ii°}{}{}} & \sigla{vii°}{6}{} & \sigla{V}{6}{4} & \sigla{vii°}{6}{} o \sigla{V}{4}{3} fra \sigla{i}{}{} e \sigla{i}{6}{} \\
+		Do & \textit{\sigla{III}{}{}} & \sigla{i}{6}{} & --- & \sigla{i}{6}{}; \sigla{III}{}{} se si va al relativo maggiore \\
+		Re & \sigla{iv}{}{} & \sigla{ii°}{6}{} & --- & sottodominante prima di V \\
+		Mi & \sigla{V}{}{} & \textit{\sigla{III}{6}{}} & \sigla{i}{6}{4} & \sigla{V}{}{} in cadenza; \sigla{i}{6}{4} prima di V \\
+		Fa & \sigla{VI}{}{} & \sigla{iv}{6}{} & --- & \sigla{VI}{}{} dopo V (inganno); \sigla{iv}{6}{} verso V \\
+		Sol$\sharp$ & \textit{\sigla{vii°}{}{}} & \sigla{V}{6}{} & --- & \sigla{V}{6}{} verso \sigla{i}{}{} \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\caption{Accordi di settima sulle note del basso in La minore armonico}
+	\label{tab:settime_minore}
+	\small\renewcommand{\arraystretch}{1.25}
+	\begin{tabularx}{\textwidth}{lcccc}
+		\toprule
+		Basso & Fondamentale (7) & Terza (6/5) & Quinta (4/3) & Settima (2) \\
+		\midrule
+		La & \textit{\sigla{i}{7}{}} & \textit{\sigla{VI}{6}{5}} & \textit{\sigla{iv}{4}{3}} & \sigla{iiø}{2}{} \\
+		Si & \sigla{iiø}{7}{} & \sigla{vii°}{6}{5} & \sigla{V}{4}{3} & --- \\
+		Do & --- & --- & \textit{\sigla{VI}{4}{3}} & \textit{\sigla{iv}{2}{}} \\
+		Re & \sigla{iv}{7}{} & \sigla{iiø}{6}{5} & \sigla{vii°}{4}{3} & \sigla{V}{2}{} \\
+		Mi & \sigla{V}{7}{} & --- & --- & \textit{\sigla{VI}{2}{}} \\
+		Fa & \textit{\sigla{VI}{7}{}} & \textit{\sigla{iv}{6}{5}} & \sigla{iiø}{4}{3} & \sigla{vii°}{2}{} \\
+		Sol$\sharp$ & \sigla{vii°}{7}{} & \sigla{V}{6}{5} & --- & --- \\
+		\bottomrule
+	\end{tabularx}
+
+	\vspace{0.2cm}
+	\parbox{0.92\textwidth}{\footnotesize Le caselle vuote corrispondono agli accordi costruiti sulla mediante (quinta eccedente), che non si usano nel basso dato (Capitolo \ref{chap:specie_rare}). Sulle stesse note del basso la \sigla{V}{7}{} e la settima diminuita si sostituiscono: Sol$\sharp$ \sigla{V}{6}{5} o \sigla{vii°}{7}{}, Si \sigla{V}{4}{3} o \sigla{vii°}{6}{5}, Re \sigla{V}{2}{} o \sigla{vii°}{4}{3} (Capitolo \ref{chap:quarta_quinta_specie}).}
+\end{table}
+
+\subsection*{La scala minore melodica}
+
+Quando il basso sale per grado verso la tonica in minore, il Fa e il Sol sono di norma alzati (Fa$\sharp$ e Sol$\sharp$ in La minore). Scendendo tornano i gradi naturali. Cambiano così i candidati su quattro note; le altre restano quelle delle Tabelle \ref{tab:candidati_minore} e \ref{tab:settime_minore}.
+
+\begin{table}[h]
+	\centering
+	\caption{La minore melodico: note del basso che cambiano}
+	\label{tab:minore_melodico}
+	\small\renewcommand{\arraystretch}{1.25}
+	\begin{tabularx}{\textwidth}{lXX}
+		\toprule
+		Basso & Salendo (scala melodica) & Scendendo (scala naturale) \\
+		\midrule
+		Re & \sigla{ii}{6}{} o \sigla{ii}{6}{5} (con Fa$\sharp$) & \sigla{iv}{}{}, \sigla{ii°}{6}{} \\
+		Mi & V, \sigla{V}{7}{} & V, \sigla{V}{7}{} (il Sol$\sharp$ resta nell'accordo) \\
+		Fa$\sharp$ o Fa & \sigla{IV}{6}{} (triade maggiore Re-Fa$\sharp$-La) & \sigla{VI}{}{}, \sigla{iv}{6}{} \\
+		Sol$\sharp$ o Sol & \sigla{V}{6}{5}, \sigla{V}{6}{} & \sigla{VII}{}{} (triade maggiore Sol-Si-Re) \\
+		\bottomrule
+	\end{tabularx}
+
+	\vspace{0.2cm}
+	\parbox{0.92\textwidth}{\footnotesize Il Sol naturale al basso, con \sigla{VII}{}{} maggiore, è la dominante del III grado: spesso annuncia una modulazione al relativo maggiore (Sezione \ref{sec:alterazioni_modulazione}). La Regola dell'Ottava per la salita melodica è nel Capitolo \ref{chap:regola_ottava_completa}.}
+\end{table}
+
+Salendo, il basso Fa$\sharp$--Sol$\sharp$ non forma una seconda eccedente, perché il Fa è alzato; per lo stesso motivo il \sigla{IV}{6}{} sul Fa$\sharp$ è maggiore. Se il basso presenta invece Fa naturale e Sol$\sharp$ di seguito, la seconda eccedente c'è già nella partitura e l'accordo sul Fa va scelto in modo che le voci non la ripetano (per esempio \sigla{VI}{}{} o \sigla{iv}{6}{} con il Fa che scende al Mi).
+
+\section{Cinque filtri}
+\label{sec:cinque_filtri}
+
+Fra i candidati si sceglie con cinque filtri, da applicare in quest'ordine.
+
+\begin{regola}[Filtri per scegliere l'accordo]
+	\label{reg:filtri_scelta}
+	\begin{enumerate}
+		\item Cadenze e inizio. Si fissano per prime le note finali di ogni frase (Sezione \ref{sec:formule_frase}) e la prima nota. Queste scelte vincolano le intermedie.
+		\item Tonalità e alterazioni. Si legge l'armatura e si cerca ogni nota alterata: può indicare la sensibile alzata del minore, una dominante secondaria o una modulazione (Sezione \ref{sec:alterazioni_modulazione}).
+		\item Stato. Si scartano i secondi rivolti, salvo i tre casi ammessi: 6/4 cadenzale sulla dominante, di passaggio fra due note a distanza di seconda, di pedale o di ornamento con basso fermo. Si scartano anche i candidati rari che il contesto non giustifica, e la settima al basso se la nota non è legata.
+		\item Movimento e durata del basso. Si guarda l'intervallo con la nota precedente e con la seguente (Sezione \ref{sec:movimento_basso}). Se la nota è ribattuta, legata o lunga si valutano più accordi sullo stesso basso (Sezioni \ref{sec:basso_legato} e \ref{sec:note_lunghe}).
+		\item Linea delle voci. Fra i candidati rimasti si sceglie quello che lascia salire la sensibile, scendere la settima e cantare il soprano (Capitolo \ref{chap:condotta_voci}).
+	\end{enumerate}
+\end{regola}
+
+\section{Formule secondo la posizione nella frase}
+\label{sec:formule_frase}
+
+Il modello T-S-D-T (Regola \ref{reg:tsdt}) descrive una frase che parte dalla tonica, passa per la sottodominante, arriva alla dominante e torna alla tonica. In pratica la posizione nella frase restringe i candidati.
+
+\begin{table}[h]
+	\centering
+	\caption{Formule tipiche secondo la posizione nella frase (Do maggiore)}
+	\label{tab:formule_frase}
+	\small\renewcommand{\arraystretch}{1.3}
+	\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}X}
+		\toprule
+		Posizione & Formule \\
+		\midrule
+		Inizio (T) & \sigla{I}{}{} sul primo tempo. Per muovere il basso: \sigla{I}{}{}--\sigla{V}{6}{}--\sigla{I}{}{} (Do--Si--Do), \sigla{I}{}{}--\sigla{IV}{6}{}--\sigla{I}{6}{} (Do--La--Mi), \sigla{I}{}{}--\sigla{IV}{6}{}--\sigla{V}{6}{5}--\sigla{I}{}{} (Do--La--Si--Do). Con basso legato: \sigla{I}{}{}--\sigla{ii}{2}{}--\sigla{V}{6}{5}--\sigla{I}{}{}. \\
+		Centro & Passaggio dalla tonica alla sottodominante e alla dominante: \sigla{vi}{}{}, \sigla{ii}{}{}, \sigla{IV}{}{}. Qui stanno le progressioni (Capitoli \ref{chap:progressioni_armoniche} e \ref{chap:progressioni_settime}), le tonicizzazioni e la cadenza d'inganno. \\
+		Fine (S-D-T) & \sigla{IV}{}{} o \sigla{ii}{6}{} (anche \sigla{ii}{6}{5}), poi V o \sigla{V}{7}{}, poi \sigla{I}{}{}. Oppure \sigla{IV}{}{}--\sigla{I}{6}{4}--V--\sigla{I}{}{} con 6/4 cadenzale. Nella cadenza sospesa la frase si ferma sulla dominante. \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+Tre formule ricorrono spesso e si riconoscono dalla linea del basso.
+
+\begin{description}
+	\item[\sigla{I}{}{}--\sigla{IV}{6}{}--\sigla{V}{6}{5}--\sigla{I}{}{} (basso Do--La--Si--Do).] Apre la frase prolungando la tonica. Con il soprano Do--Do--Re--Do le note comuni sono già assegnate. Si controllano le parallele fra \sigla{IV}{6}{} e \sigla{V}{6}{5} e la sensibile, che è al basso e non si raddoppia. In minore il Fa naturale darebbe al basso una seconda eccedente con il Sol$\sharp$: si usa il Fa$\sharp$ e il \sigla{IV}{6}{} diventa maggiore (Tabella \ref{tab:minore_melodico}).
+	\item[\sigla{I}{}{}--\sigla{IV}{6}{}--\sigla{I}{6}{} (basso Sol--Mi--Si in Sol maggiore).] È un moto plagale in apertura (cfr.\ Definizione \ref{def:cadenza_plagale}). Il soprano più frequente sale Si--Do--Re e le altre voci procedono per grado o per nota comune.
+	\item[V--vi (basso Sol--La).] È la cadenza d'inganno (Definizione \ref{def:cadenza_inganno}). Si riconosce quando il basso sale di grado dalla dominante e la frase non può ancora chiudere. La sensibile sale, le altre voci scendono contro il basso e si raddoppia la terza del \sigla{vi}{}{}.
+\end{description}
+
+\begin{esempio}[\sigla{I}{}{}--\sigla{IV}{6}{}--\sigla{V}{6}{5}--\sigla{I}{}{} in Do maggiore]
+	\label{ex:i_iv6_v65}
+	Il soprano canta Do--Do--Re--Do. Il Do è comune a \sigla{I}{}{} e \sigla{IV}{6}{}; il Re è la quinta del \sigla{V}{6}{5} e scende alla tonica.
+	\musica{es_cap43_01}
+\end{esempio}
+
+\begin{esempio}[\sigla{I}{}{}--\sigla{IV}{6}{}--\sigla{I}{6}{} in Sol maggiore]
+	\label{ex:i_iv6_i6}
+	Il basso scende per terza e per quarta (Sol--Mi--Si); il soprano sale per grado.
+	\musica{es_cap43_02}
+\end{esempio}
+
+\section{Il movimento del basso}
+\label{sec:movimento_basso}
+
+L'intervallo fra due note consecutive orienta la scelta. Sono tendenze da verificare con gli altri filtri.
+
+\begin{table}[h]
+	\centering
+	\caption{Che cosa suggerisce il movimento del basso}
+	\label{tab:movimento_basso}
+	\small\renewcommand{\arraystretch}{1.3}
+	\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}X}
+		\toprule
+		Basso & Di norma \\
+		\midrule
+		Nota ribattuta o legata & Stesso accordo, con voci superiori che cambiano disposizione. Prima della tonica sulla dominante: \sigla{I}{6}{4}--V. Se la nota scende di grado alla successiva, può diventare la settima di un nuovo accordo (Sezione \ref{sec:basso_legato}). \\
+		Grado congiunto (2--4 note) & Regola dell'Ottava (Capitoli \ref{chap:ottava_preliminare} e \ref{chap:regola_ottava_completa}). Con 5 o più note si valuta una progressione (Capitolo \ref{chap:progressioni_armoniche}). \\
+		Salto di quarta o di quinta & Due accordi in stato fondamentale (V--I, I--IV, ii--V, vi--ii). È la forma tipica della progressione per quinte, che con le settime diventa \sigla{I}{7}{}--\sigla{IV}{7}{}--\sigla{viiø}{7}{}--\sigla{iii}{7}{}--\sigla{vi}{7}{}--\sigla{ii}{7}{}--\sigla{V}{7}{}--\sigla{I}{}{} (Capitolo \ref{chap:progressioni_settime}). \\
+		Salto di terza & Lo stesso accordo in due stati (Do--Mi: \sigla{I}{}{}--\sigla{I}{6}{}) oppure due accordi in rapporto di terza (Do--La: \sigla{I}{}{}--\sigla{vi}{}{} o \sigla{I}{}{}--\sigla{IV}{6}{}). Decidono la cadenza e la nota successiva. \\
+		Salto di ottava & Lo stesso accordo, nello stesso stato. \\
+		Nota alterata & Dominante secondaria o modulazione (Sezione \ref{sec:alterazioni_modulazione}). \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\section{Il basso legato e la settima al basso}
+\label{sec:basso_legato}
+
+Quando una nota è legata o ribattuta, l'accordo può restare lo stesso oppure cambiare, e la nota diventa allora la settima del nuovo accordo, in terzo rivolto (cifra 2). Nel primo caso la tonica o la dominante si prolungano, nel secondo l'armonia si muove sopra un basso fermo e prepara una discesa per grado.
+
+\begin{regola}[Settima al basso]
+	\label{reg:settima_basso}
+	Se la nota è legata o ribattuta e la seguente scende di grado, la nota può essere la settima del nuovo accordo a queste condizioni:
+	\begin{enumerate}
+		\item è consonante nell'accordo precedente: la preparazione è la legatura stessa;
+		\item l'accordo ha quella nota come settima: in Do maggiore \sigla{ii}{2}{} sul Do, \sigla{V}{2}{} sul Fa, \sigla{viiø}{2}{} sul La; in La minore \sigla{iiø}{2}{} sul La, \sigla{V}{2}{} sul Re, \sigla{vii°}{2}{} sul Fa;
+		\item la settima scende di grado, su un accordo coerente: \sigla{V}{6}{5} o \sigla{V}{6}{} dopo \sigla{ii}{2}{}, \sigla{I}{6}{} dopo \sigla{V}{2}{}, \sigla{I}{6}{4} dopo \sigla{viiø}{2}{}.
+	\end{enumerate}
+	La \sigla{V}{2}{} non richiede la preparazione, ma il basso legato resta il modo più naturale di raggiungerla.
+\end{regola}
+
+\begin{table}[h]
+	\centering
+	\caption{Prolungamenti della tonica dal basso (Do maggiore)}
+	\label{tab:basso_legato}
+	\small\renewcommand{\arraystretch}{1.3}
+	\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{4.8cm}>{\raggedright\arraybackslash}X}
+		\toprule
+		Basso & Accordi & Osservazioni \\
+		\midrule
+		Do--Do--Si--Do & \sigla{I}{}{}--\sigla{ii}{2}{}--\sigla{V}{6}{5}--\sigla{I}{}{} & Il Do è legato: è la settima del \sigla{ii}{2}{} e scende al Si. \\
+		Do--Fa--Fa--Mi & \sigla{I}{}{}--\sigla{IV}{}{}--\sigla{V}{2}{}--\sigla{I}{6}{} & Il Fa è legato: fondamentale del IV, poi settima della \sigla{V}{2}{}. \\
+		Do--Si--Do & \sigla{I}{}{}--\sigla{V}{6}{5}--\sigla{I}{}{} & Senza legatura; si può usare anche \sigla{V}{6}{}. \\
+		Do--Re--Mi & \sigla{I}{}{}--\sigla{V}{4}{3}--\sigla{I}{6}{} & Il Re può essere anche \sigla{vii°}{6}{} o \sigla{viiø}{6}{5}. \\
+		Do--Re--Do & \sigla{I}{}{}--\sigla{V}{4}{3}--\sigla{I}{}{} & Meno frequente della precedente. \\
+		La--La--Sol$\sharp$--La (La minore) & \sigla{i}{}{}--\sigla{iiø}{2}{}--\sigla{V}{6}{}--\sigla{i}{}{} & Lo stesso schema del primo, con il La legato. \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\begin{esempio}[\sigla{I}{}{}--\sigla{ii}{2}{}--\sigla{V}{6}{5}--\sigla{I}{}{} in Do maggiore]
+	\label{ex:i_ii2_v65}
+	Il Do del basso è legato: nel \sigla{ii}{2}{} è la settima, già presente come tonica, e scende al Si del \sigla{V}{6}{5}.
+	\musica{es_cap43_04}
+\end{esempio}
+
+\begin{esempio}[\sigla{I}{}{}--\sigla{IV}{}{}--\sigla{V}{2}{}--\sigla{I}{6}{} in Do maggiore]
+	\label{ex:i_iv_v2_i6}
+	Il Fa è legato: è fondamentale del IV, poi settima della \sigla{V}{2}{}, e scende al Mi del \sigla{I}{6}{}.
+	\musica{es_cap43_05}
+\end{esempio}
+
+\section{Note lunghe, posizione nel brano e cadenze}
+\label{sec:note_lunghe}
+
+Una nota del basso che dura due, tre o quattro movimenti (una minima, una minima col punto, una semibreve) può portare più accordi, perché le voci superiori hanno il tempo di cambiare armonia sopra un basso fermo. Il numero degli accordi e la loro scelta dipendono dalla durata e dalla posizione nel brano. Negli spartiti di questo manuale le note comuni sono rese con semiminime legate, quindi una nota lunga con tre accordi appare come tre semiminime legate.
+
+\begin{regola}[Durata e numero di accordi]
+	\label{reg:durata_accordi}
+	\begin{itemize}
+		\item Due movimenti: un solo accordo, oppure due con un movimento ciascuno quando il secondo aggiunge la settima (V--\sigla{V}{7}{}) o è la dominante dopo un 6/4 cadenzale (\sigla{I}{6}{4}--V).
+		\item Tre movimenti (tempo ternario): al più un accordo per movimento. Sono frequenti \sigla{I}{6}{4}--V--\sigla{V}{7}{} e \sigla{I}{}{}--\sigla{IV}{6}{4}--\sigla{I}{}{}.
+		\item Quattro movimenti: due o tre accordi, di rado quattro. Uno schema frequente è \sigla{I}{6}{4} sui primi due movimenti, V sul terzo, \sigla{V}{7}{} sul quarto.
+	\end{itemize}
+\end{regola}
+
+La posizione nel brano indica quali accordi sono adatti.
+
+\begin{table}[h]
+	\centering
+	\caption{Accordi sopra un basso fermo, secondo la nota e la posizione (Do maggiore)}
+	\label{tab:note_lunghe}
+	\small\renewcommand{\arraystretch}{1.3}
+	\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{4.7cm}>{\raggedright\arraybackslash}X}
+		\toprule
+		Basso & Posizione & Accordi & Osservazioni \\
+		\midrule
+		Do & inizio di brano o di frase & \sigla{I}{}{}--\sigla{IV}{6}{4}--\sigla{I}{}{} (bordone) & Le voci superiori muovono per grado (Es.\ \ref{ex:bordone}). \\
+		Do & ultima nota del brano & \sigla{I}{}{} con ritardo 4--3 (Fa--Mi), preceduto da \sigla{V}{7}{} & Il Fa della \sigla{V}{7}{} resta legato e scende al Mi (Capitolo \ref{chap:ritardi}). \\
+		Fa & prima della cadenza & \sigla{IV}{}{}--\sigla{ii}{6}{5}--\sigla{V}{2}{}--\sigla{I}{6}{} & Il Fa non cambia: l'armonia passa da sottodominante a dominante (Es.\ \ref{ex:fa_tenuto}). \\
+		Sol & prima della tonica & \sigla{I}{6}{4}--V, \sigla{I}{6}{4}--V--\sigla{V}{7}{} & Il 6/4 cadenzale (Capitolo \ref{chap:quarta_sesta}) occupa i movimenti forti (Es.\ \ref{ex:sol_tenuto}). \\
+		Sol & metà brano, prima di una ripresa & V--\sigla{I}{6}{4}--V--\sigla{V}{7}{} & Pedale di dominante: il 6/4 è di ornamento. \\
+		Re, Mi, La, Si & ovunque & un solo accordo, con ritardi se la durata lo permette & Con due o più accordi si ricade nei casi precedenti. \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\begin{esempio}[Bordone di tonica: \sigla{I}{}{}--\sigla{IV}{6}{4}--\sigla{I}{}{}]
+	\label{ex:bordone}
+	Il Do del basso resta fermo per tre accordi; il soprano sale Mi--Fa e torna al Mi.
+	\musica{es_cap43_06}
+\end{esempio}
+
+\begin{esempio}[Fa tenuto: \sigla{IV}{}{}--\sigla{ii}{6}{5}--\sigla{V}{2}{}--\sigla{I}{6}{}]
+	\label{ex:fa_tenuto}
+	Il Fa resta al basso per tre accordi e scende al Mi. Il Do del soprano è comune ai primi due accordi e scende al Si nella \sigla{V}{2}{}.
+	\musica{es_cap43_07}
+\end{esempio}
+
+\begin{esempio}[Sol tenuto prima della tonica: \sigla{IV}{}{}--\sigla{I}{6}{4}--V--\sigla{V}{7}{}--\sigla{I}{}{}]
+	\label{ex:sol_tenuto}
+	Il soprano scende per grado da Fa a Do, e il Re resta nel soprano dalla V alla \sigla{V}{7}{}.
+	\musica{es_cap43_08}
+\end{esempio}
+
+\subsection*{Forme cadenzali tipiche}
+
+Nella tabella seguente il numero fra parentesi dopo ogni nota del basso è la durata in movimenti, in tempo di quattro movimenti. La barra verticale indica la stanghetta.
+
+\begin{table}[h]
+	\centering
+	\caption{Forme cadenzali e durata del basso (Do maggiore)}
+	\label{tab:forme_cadenzali}
+	\small\renewcommand{\arraystretch}{1.3}
+	\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{3.7cm}>{\raggedright\arraybackslash}X}
+		\toprule
+		Cadenza & Basso & Accordi \\
+		\midrule
+		Perfetta semplice & Sol (4) $\mid$ Do (4) & V $\mid$ \sigla{I}{}{} \\
+		Perfetta con 6/4 & Sol (4) $\mid$ Do (4) & \sigla{I}{6}{4} (2), V (2) $\mid$ \sigla{I}{}{} \\
+		Perfetta con sottodominante & Fa (2), Sol (2) $\mid$ Do (4) & IV, V $\mid$ \sigla{I}{}{}; oppure \sigla{ii}{6}{}, V $\mid$ \sigla{I}{}{} \\
+		Perfetta con 6/4 e settima & Fa (2), Sol (2) $\mid$ Do (4) & \sigla{IV}{}{}, \sigla{I}{6}{4} (1), V (1) $\mid$ \sigla{I}{}{}; la \sigla{V}{7}{} può occupare il secondo movimento \\
+		Perfetta con ritardo & Sol (2), Do (2) & \sigla{V}{7}{}, \sigla{I}{}{} con il Fa che scende al Mi (4--3) \\
+		Imperfetta & Si (2), Do (2) & \sigla{V}{6}{} (o \sigla{V}{6}{5}), \sigla{I}{}{} \\
+		Sospesa & Fa (2), Sol (2) & IV--V, \sigla{ii}{6}{}--V, \sigla{I}{6}{4}--V \\
+		D'inganno & Sol (2), La (2) & V (o \sigla{V}{7}{}), \sigla{vi}{}{} \\
+		Plagale & Fa (2), Do (2) & IV, I; con la sottodominante minore: IV, iv, I (Sezione \ref{sec:iv_maggiore}) \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\section{Alterazioni al basso: tonicizzazioni e modulazioni}
+\label{sec:alterazioni_modulazione}
+
+Una nota del basso che non appartiene alla scala va letta prima delle altre. Se è un diesis, di solito è la terza di una dominante secondaria in primo rivolto, cioè la sensibile della nuova tonica. Se è un bemolle, di solito è la settima di una dominante secondaria in terzo rivolto, oppure un accordo preso a prestito dal modo parallelo.
+
+\begin{table}[h]
+	\centering
+	\caption{Note alterate al basso in Do maggiore}
+	\label{tab:alterazioni_maggiore}
+	\small\renewcommand{\arraystretch}{1.3}
+	\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{4.3cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}X}
+		\toprule
+		Basso & Lettura & Tonalità & Dopo \\
+		\midrule
+		Fa$\sharp$ & \sigla{V}{6}{}/V o \sigla{V}{6}{5}/V (Re-Fa$\sharp$-La-Do) & Sol maggiore & V (Sol), poi \sigla{I}{}{} \\
+		Do$\sharp$ & \sigla{V}{6}{}/ii (La-Do$\sharp$-Mi) & Re minore & ii (Re) \\
+		Re$\sharp$ & \sigla{V}{6}{}/iii (Si-Re$\sharp$-Fa$\sharp$) & Mi minore & iii (Mi) \\
+		Sol$\sharp$ & \sigla{V}{6}{}/vi (Mi-Sol$\sharp$-Si) & La minore & vi (La) \\
+		Si$\flat$ & \sigla{V}{2}{}/IV (Do-Mi-Sol-Si$\flat$) & Fa maggiore & \sigla{IV}{6}{} (basso La) \\
+		La$\flat$ & \sigla{iv}{6}{} (Fa-La$\flat$-Do), oppure $\flat$VI & resta Do maggiore & V (basso Sol), Sezione \ref{sec:iv_maggiore} \\
+		Re$\flat$ & sesta napoletana, con il Fa al basso & resta Do maggiore & V (Capitolo \ref{chap:sesta_napoletana}) \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+In La minore valgono gli stessi criteri. Il Do$\sharp$ indica la dominante del IV grado (\sigla{V}{6}{}/iv, Re minore), il Re$\sharp$ la dominante del V grado (\sigla{V}{6}{}/V, Mi minore), il Sol naturale la dominante del III grado (V/III, Do maggiore) e il Si$\flat$ la settima della dominante del VI grado (\sigla{V}{2}{}/VI, Fa maggiore).
+
+La stessa alterazione può indicare una tonicizzazione o una modulazione. Dopo la dominante secondaria si guarda che cosa fa il basso.
+
+\begin{regola}[Tonicizzazione o modulazione]
+	\label{reg:ton_mod_basso}
+	\begin{itemize}
+		\item Se il basso ritorna alla tonalità d'impianto entro uno o due accordi e non c'è una cadenza nella nuova tonalità, è una tonicizzazione (Capitolo \ref{chap:tonicizzazione}).
+		\item Se dopo l'accordo di arrivo il basso prosegue con una cadenza nella nuova tonalità (\sigla{IV}{}{}--V--\sigla{I}{}{}, \sigla{I}{6}{4}--V--\sigla{I}{}{}), è una modulazione (Capitoli \ref{chap:modulazione} e \ref{chap:tecnica_modulazione}).
+		\item L'ultimo accordo diatonico prima della prima alterazione è il candidato a pivot: quello che nella tonalità di arrivo ha già un grado e una funzione (per esempio il \sigla{vi}{}{} di Do maggiore è il \sigla{ii}{}{} di Sol maggiore).
+	\end{itemize}
+\end{regola}
+
+Un basso Do--La--Fa$\sharp$--Sol, per esempio, si legge \sigla{I}{}{}--\sigla{vi}{}{}--\sigla{V}{6}{5}--\sigla{I}{}{} con modulazione da Do a Sol: il Fa$\sharp$ è la terza della dominante di Sol (Esempio \ref{ex:basso_svolto_3}, nel capitolo successivo).
+
+\subsection*{La sottodominante minore nel modo maggiore}
+\label{sec:iv_maggiore}
+
+In una tonalità maggiore l'accordo del IV grado può essere minore: Fa--La$\flat$--Do in Do maggiore. È un accordo preso a prestito dal modo parallelo e si scrive \sigla{iv}{}{} anche in maggiore. Il colore è tipico del primo Ottocento e compare spesso in Schubert.
+
+Il La$\flat$ al basso indica \sigla{iv}{6}{} (oppure il VI grado abbassato, La$\flat$--Do--Mi$\flat$) e di norma scende al Sol della dominante: La$\flat$--Sol è un semitono. Con il Fa al basso, \sigla{iv}{}{} prolunga la sottodominante e porta alla tonica (cadenza plagale con la sottodominante minore, \sigla{IV}{}{}--\sigla{iv}{}{}--\sigla{I}{}{}) o alla dominante. Quando il La$\flat$ sta in una voce superiore, scende al Sol e non si raddoppia.
+
+\begin{esempio}[Sottodominante minore: \sigla{I}{}{}--\sigla{IV}{}{}--\sigla{iv}{}{}--\sigla{I}{}{} in Do maggiore]
+	\label{ex:iv_schubert}
+	Il La del contralto diventa La$\flat$ sul Fa tenuto e poi scende al Sol della tonica.
+	\musica{es_cap43_03}
+\end{esempio}
+
+\section{Quando due letture sono possibili}
+\label{sec:due_letture}
+
+Spesso restano in gara due candidati. Il criterio è lo stesso in tutti i casi: l'accordo che conduce meglio all'accordo successivo.
+
+\begin{table}[h]
+	\centering
+	\caption{Coppie di candidati in conflitto (Do maggiore)}
+	\label{tab:coppie_ambigue}
+	\small\renewcommand{\arraystretch}{1.3}
+	\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}X}
+		\toprule
+		Basso & Candidati & Criterio \\
+		\midrule
+		Re & \sigla{ii}{}{}, \sigla{V}{4}{3} o \sigla{vii°}{6}{} & Re fra Do e Mi, di passaggio: \sigla{V}{4}{3} o \sigla{vii°}{6}{}. Re verso Sol: \sigla{ii}{}{}. \\
+		Fa & \sigla{IV}{}{}, \sigla{ii}{6}{} o \sigla{ii}{6}{5} & \sigla{IV}{}{} dopo \sigla{I}{}{}; \sigla{ii}{6}{} dopo \sigla{vi}{}{}. Prima di Sol in cadenza vanno bene tutti, con la \sigla{ii}{6}{5} nelle frasi più ricche. \\
+		Mi & \sigla{I}{6}{} o \sigla{iii}{}{} & \sigla{I}{6}{} se il basso passa fra Do e un'altra nota della tonica; \sigla{iii}{}{} nella progressione per quinte o prima di \sigla{IV}{}{} e \sigla{vi}{}{}. \\
+		La & \sigla{IV}{6}{} o \sigla{vi}{}{} & \sigla{vi}{}{} dopo la dominante (inganno) o prima di \sigla{ii}{}{} e \sigla{IV}{}{}; \sigla{IV}{6}{} fra \sigla{I}{}{} e \sigla{V}{6}{5} o \sigla{I}{6}{}. \\
+		Sol & V o \sigla{I}{6}{4} & \sigla{I}{6}{4} se Sol è ribattuto e la cadenza finale segue; V negli altri casi. \\
+		Do, Do (legato) & \sigla{I}{}{} ripetuto o \sigla{ii}{2}{} & \sigla{ii}{2}{} se il basso scende poi al Si; se sale o salta, \sigla{I}{}{} ripetuto. \\
+		Fa, Fa (legato) & \sigla{IV}{}{} ripetuto o \sigla{V}{2}{} & \sigla{V}{2}{} se il basso scende al Mi (\sigla{I}{6}{}); \sigla{IV}{}{}--V se sale al Sol. \\
+		La$\flat$ & \sigla{iv}{6}{} o $\flat$VI & \sigla{iv}{6}{} se il basso scende al Sol; $\flat$VI se prosegue per grado (Sezione \ref{sec:iv_maggiore}). \\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+Se anche così non si decide, si sceglie la soluzione più semplice: triadi prima delle settime, stato fondamentale e primo rivolto prima dei secondi rivolti, nessuna alterazione che il basso non richieda.
+
+\section{Errori tipici nella scelta}
+\label{sec:errori_scelta}
+
+\begin{errore}[Scelte da evitare]
+	\label{err:scelta_numerica}
+	\begin{enumerate}
+		\item V--I a ogni salto. Un salto di quarta o di quinta indica due stati fondamentali, ma può essere anche I--IV, ii--V, vi--ii.
+		\item Cadenza non preparata. Con un basso Sol--Do la penultima nota porta la dominante, preceduta da una sottodominante o da \sigla{I}{6}{4}. Se la frase chiude con IV--I invece di V--I, la chiusura è plagale e più debole (Regola \ref{reg:gerarchia_cadenze}).
+		\item Secondo rivolto fuori dai tre casi. Un \sigla{I}{6}{4} su un tempo debole senza dominante dopo, o un \sigla{V}{6}{4} senza basso scalare, non è giustificato.
+		\item Un accordo per ogni nota nei passaggi veloci. Le note di passaggio e di volta non portano accordi propri (Capitolo \ref{chap:noteestranee}).
+		\item Dimenticare la sensibile in minore. Sul V e sul \sigla{vii°}{}{} il VII grado è sempre alzato; l'unica eccezione è il VII naturale della discesa (Tabella \ref{tab:minore_melodico}).
+		\item Settima al basso senza legatura. Un \sigla{ii}{2}{} o un \sigla{viiø}{2}{} su un basso che non ripete la nota precedente ha la settima non preparata. La \sigla{V}{2}{} fa eccezione, ma la sua settima scende comunque di grado.
+		\item Leggere un'alterazione come semplice colore. Un Fa$\sharp$ al basso in Do maggiore sostiene una dominante secondaria e va risolto sul grado atteso (Sezione \ref{sec:alterazioni_modulazione}).
+		\item Forzare un grado secondario. Il \sigla{vi}{}{} e il \sigla{iii}{}{} sono scelte di colore: se il basso non le richiede si lascia il candidato principale.
+	\end{enumerate}
+\end{errore}

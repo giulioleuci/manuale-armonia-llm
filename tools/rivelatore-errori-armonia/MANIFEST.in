@@ -1,0 +1,4 @@
+include PROGETTO.md
+recursive-include esempi *.musicxml
+recursive-include armonia/profili *.toml
+recursive-include tests *.py
