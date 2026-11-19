@@ -3,7 +3,7 @@
 Manuale di armonia tonale in italiano, composto in LaTeX (LuaLaTeX).
 
 > **Questo manuale è scritto da LLM.**
-> Il testo, gli esempi musicali e il codice che li produce e li verifica sono stati generati in gran parte da modelli linguistici (Google Gemini e Claude di Anthropic). L'autore, fisico di formazione e insegnante di matematica, ha scelto l'impostazione, ha guidato la stesura a partire dalle lezioni del proprio insegnante e dalla manualistica classica, e ha riletto e corretto il risultato. Gli LLM non hanno orecchio e dicono il falso con lo stesso tono del vero: **il manuale può contenere errori**. Va confrontato con un insegnante e con i testi di riferimento.
+> Il testo, gli esempi musicali e il codice che li produce e li verifica sono stati generati in gran parte da modelli linguistici (Google Gemini e Claude di Anthropic). L'autore, fisico di formazione e insegnante di matematica, ha scelto l'impostazione, ha guidato la stesura a partire dalle lezioni del proprio insegnante e dalla manualistica classica. Gli LLM non hanno orecchio e dicono il falso con lo stesso tono del vero: **il manuale può contenere errori**. Va confrontato con un insegnante e con i testi di riferimento.
 
 ## Che cos'è
 
