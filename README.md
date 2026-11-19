@@ -52,4 +52,4 @@ docs/                                                     materiali di lavoro
 
 ## Licenza e font
 
-Nessuna licenza è stata ancora scelta per testo e codice. I font in `tools/armonia/fonts/` (Bravura, EB Garamond) sono sotto SIL Open Font License; i testi delle licenze sono nella stessa cartella.
+Testo e codice sono rilasciati con licenza GNU GPL v3 o successiva (vedi `LICENSE`). I font in `tools/armonia/fonts/` (Bravura, EB Garamond) restano sotto SIL Open Font License; i testi delle licenze sono nella stessa cartella.
